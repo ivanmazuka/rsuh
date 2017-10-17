@@ -120,6 +120,12 @@ header {
   background-size: cover;
 }
 
+.main .post-href {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .main .announcement {
   margin-bottom: 24px;
 }
@@ -141,6 +147,19 @@ header {
   border-radius: 50%;
   float: left;
   margin-right: 16px;
+}
+
+.main .circle div {
+  margin: 9px 15px;
+  font-weight: bold;
+}
+
+.main .an-href {
+  color: white;
+  float: left;
+  font-weight: bold;
+  margin-top: 30px;
+  text-decoration: none;
 }
 
 .main .title {
