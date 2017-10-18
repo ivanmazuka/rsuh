@@ -150,8 +150,9 @@ header {
 }
 
 .main .circle div {
-  margin: 9px 15px;
+  margin: 11px 10px;
   font-weight: bold;
+  text-align: center;
 }
 
 .main .an-href {

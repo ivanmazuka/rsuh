@@ -4,6 +4,6 @@
         <div class="picture" style="background-image: url('img/{{ $post->picture }}')"></div>
     @endif
     <h3>{{ $post->title }}</h3>
-    <p>{{ $post->time1() }}</p>
+    <p>{{ $post->postTime() }}</p>
     <p>{{ $post->short() }}</p>
 </div>

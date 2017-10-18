@@ -23,11 +23,11 @@ class Post extends Model
     }
 
     //
-    public function time1()
+    public function postTime()
     {
-        $data = $this->created_at;
-        $data = date('d/m/Y');
+        $postTime = $this->created_at;
+        $postTime = date('d/m/Y');
 
-        return $data;
+        return $postTime;
     }
 }

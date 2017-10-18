@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Announcement extends Model
 {
-    public function time2()
+    public function announceTime()
     {
-        $data = $this->created_at;
-        $data = strftime('%d %b');
-        return $data;
+        $dateTime = $this->created_at;
+        $dateTime= strftime('%d %b');
+        return $dateTime;
     }
     //
 }

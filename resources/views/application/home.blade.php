@@ -38,7 +38,9 @@
         @foreach($announcements as $key=>$announcement)
             @if($key<4)
                 <div class="announcement">
-                    <div class="circle"><div>{{  $announcement->time2()  }}</div></div>
+                    <div class="circle">
+                        <div>{{  $announcement->announceTime()  }}</div>
+                    </div>
                     <h3 class="title">{{ $announcement->title}} </h3>
 
                     <div class="clear"></div>
