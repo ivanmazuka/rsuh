@@ -47,6 +47,13 @@
 
             @yield('content')
     </main>
+    <footer>
+      <div class="footer-bg">
+          <div class="rggu">RGGU.RU</div>
+          <div class="notrggu"> ИИНТБ РГГУ © 2001 - 2017</div>
+      </div>
+
+    </footer>
 </body>
 
 </html>
