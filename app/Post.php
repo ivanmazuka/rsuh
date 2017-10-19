@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+
 
 class Post extends Model
 {
@@ -25,8 +27,16 @@ class Post extends Model
     //
     public function postTime()
     {
-        $postTime = $this->created_at;
-        $postTime = date('d/m/Y');
+
+        //TODO: убрать проверуку на null
+        $postTime = new Carbon();
+        if($this->created_at!=null) {
+            $postTime = $this->created_at;
+            $postTime = $postTime->format('d/m/Y');
+        }else{
+            $postTime = Carbon::now();
+            $postTime = $postTime->format('d/m/Y');
+        }
 
         return $postTime;
     }
