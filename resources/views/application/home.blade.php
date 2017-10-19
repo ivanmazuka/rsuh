@@ -5,7 +5,15 @@
 @endsection
 
 @section('content')
+
+    <div class="slider">
+        <div>
+            <strong>Музей в главном здание</strong>
+        </div>
+    </div>
+    <main class="main">
     <div class="left">
+        <main class="main">
         <h2>Новости</h2>
         <div class="left-column">
             @foreach ($posts as $key => $post)
@@ -27,7 +35,7 @@
             @endforeach
 
         </div>
-        <a class="post-href" href="#"> Все посты › </a>
+        <a class="post-href" href="/posts"> Все посты › </a>
         <div class="clear"></div>
 
 
@@ -48,10 +56,29 @@
                 </div>
             @endif
         @endforeach
-        <a class="an-href" href="#"> Все анонсы › </a>
+        <a class="an-href" href="/announcements"> Все анонсы › </a>
     </div>
 
-
     <div class="clear"></div>
+    </main>
+    <div class="map">
+        <a class="dg-widget-link"
+           href="http://2gis.ru/moscow/firm/4504583175018476/center/37.597315,55.596969/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть
+            на карте Москвы</a>
+        <div class="dg-widget-link"><a
+                    href="http://2gis.ru/moscow/center/37.597315,55.596969/zoom/16/routeTab/rsType/bus/to/37.597315,55.596969╎Российский государственный гуманитарный университет?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти
+                проезд до Российский государственный гуманитарный университет</a></div>
+        <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+        <script charset="utf-8">new DGWidgetLoader({
+                "width": "100%",
+                "height": 300,
+                "pos": {"lat": 55.596969, "lon": 37.597315, "zoom": 16},
+                "opt": {"city": "moscow"},
+                "org": [{"id": "4504583175018476"}]
+            });</script>
+        <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в
+            настройках вашего браузера.
+        </noscript>
+    </div>
 
 @endsection
