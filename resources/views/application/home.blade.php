@@ -39,7 +39,7 @@
             @if($key<4)
                 <div class="announcement">
                     <div class="circle">
-                        <div>{{  $announcement->announceTime()  }}</div>
+                        <div>{{ $announcement->announcementDay() }}<br>{{ $announcement->announcementMonth() }}</div>
                     </div>
                     <h3 class="title">{{ $announcement->title}} </h3>
 

@@ -29,6 +29,7 @@ class Post extends Model
     {
 
         //TODO: убрать проверуку на null
+
         $postTime = new Carbon();
         if($this->created_at!=null) {
             $postTime = $this->created_at;
