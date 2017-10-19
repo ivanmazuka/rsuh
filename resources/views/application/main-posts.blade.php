@@ -6,4 +6,5 @@
     <h3>{{ $post->title }}</h3>
     <p>{{ $post->postTime() }}</p>
     <p>{{ $post->short() }}</p>
+
 </div>

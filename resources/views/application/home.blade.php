@@ -51,6 +51,7 @@
         <a class="an-href" href="#"> Все анонсы › </a>
     </div>
 
+
     <div class="clear"></div>
 
 @endsection
