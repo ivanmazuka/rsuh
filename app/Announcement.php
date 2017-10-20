@@ -12,23 +12,21 @@ class Announcement extends Model
     {
 
 
-
-
         //TODO: убрать проверуку на null
         $dateTime = new Carbon();
         if ($this->created_at != null) {
             $dateTime = $this->created_at;
 
 
-            $monthNumber=$dateTime->month;
+            $monthNumber = $dateTime->month;
 
             $months = [
                 '1' => 'Янв',
                 '2' => 'Фев',
-                '3'	=> 'Мар',
+                '3' => 'Мар',
                 '4' => 'Апр',
-                '5'	=> 'Май',
-                '6'	=> 'Июн',
+                '5' => 'Май',
+                '6' => 'Июн',
                 '7' => 'Июл',
                 '8' => 'Авг',
                 '9' => 'Сен',
@@ -36,16 +34,18 @@ class Announcement extends Model
                 '11' => 'Ноя',
                 '12' => 'Дек',
             ];
-            $day=$dateTime->day;
+            $day = $dateTime->day;
 
-            $month=$months[$monthNumber];
+            $month = $months[$monthNumber];
 
 
-        return $month;
+            return $month;
+        }
+        //
     }
-    //
-}
-    public function announcementDay(){
+
+    public function announcementDay()
+    {
         $dataTime = $this->created_at;
         return $dataTime->day;
 

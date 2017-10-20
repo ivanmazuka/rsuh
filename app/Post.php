@@ -31,10 +31,10 @@ class Post extends Model
         //TODO: убрать проверуку на null
 
         $postTime = new Carbon();
-        if($this->created_at!=null) {
+        if ($this->created_at != null) {
             $postTime = $this->created_at;
             $postTime = $postTime->format('d/m/Y');
-        }else{
+        } else {
             $postTime = Carbon::now();
             $postTime = $postTime->format('d/m/Y');
         }
