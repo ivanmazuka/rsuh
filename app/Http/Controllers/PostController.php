@@ -17,8 +17,9 @@ class PostController extends Controller
         $posts = Post::orderBy('id','desc')->get();
 
 
-        return view('application.Posts', compact('posts','announcements'));
+        return view('application.Posts', compact('posts'));
         //
+
     }
 
     /**
@@ -50,7 +51,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('post.show', compact('post'));
     }
 
     /**

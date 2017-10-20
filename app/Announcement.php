@@ -13,6 +13,7 @@ class Announcement extends Model
 
 
 
+
         //TODO: убрать проверуку на null
         $dateTime = new Carbon();
         if ($this->created_at != null) {

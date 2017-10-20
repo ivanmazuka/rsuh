@@ -53,6 +53,11 @@ header {
   border-right: thin solid white;
 }
 
+.header-wrapper li a {
+  text-decoration: none;
+  color: white;
+}
+
 .header-wrapper li:first-of-type {
   margin-left: 0;
 }
@@ -67,6 +72,7 @@ header {
   background-size: cover;
   height: 70px;
   padding: 256px 0 32px;
+  margin-bottom: 64px;
 }
 
 .slider div {
@@ -81,7 +87,6 @@ header {
 .main {
   margin: auto;
   max-width: 800px;
-  padding-top: 32px;
 }
 
 .main .post {
@@ -166,6 +171,11 @@ header {
 .main .title {
   float: left;
   margin: 0;
+}
+
+.main .title a {
+  text-decoration: none;
+  color: white;
 }
 
 .footer-bg {

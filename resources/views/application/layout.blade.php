@@ -20,12 +20,12 @@
             <h1>Институт Информационных Наук и Технологий Безопасности</h1>
 
             <ul>
-                <li>Об института</li>
-                <li>Образование</li>
-                <li>Поступающим</li>
-                <li>Студентам</li>
-                <li>Наука</li>
-                <li>Информация</li>
+                <li><a href="/about">Об института</a></li>
+                <li><a href="/education">Образование</a></li>
+                <li><a href="/forapplicant">Поступающим</a></li>
+                <li><a href="/forstudents">Студентам</a></li>
+                <li><a href="/science">Наука</a></li>
+                <li><a href="/info">Информация</a></li>
                 <div class="clear"></div>
             </ul>
 
@@ -37,14 +37,13 @@
 </header>
 
 
-
-    @yield('content')
+@yield('content')
 
 
 <footer>
     <div class="footer-bg">
         <div class=" wtf">
-            <div class="rggu">RGGU.RU</div>
+            <div class="rggu"><a href="http://rggu.ru" style=" text-decoration: none; color: #dcdcdc;">RGGU.RU</a></div>
             <div class="notrggu"> ИИНТБ РГГУ © 2001 - 2017</div>
         </div>
     </div>

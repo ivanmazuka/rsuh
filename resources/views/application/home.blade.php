@@ -11,56 +11,62 @@
             <strong>Музей в главном здание</strong>
         </div>
     </div>
+
     <main class="main">
-    <div class="left">
-        <main class="main">
-        <h2>Новости</h2>
-        <div class="left-column">
-            @foreach ($posts as $key => $post)
-                @if($key<4)
-                    @if (($key + 1) % 2 == 1)
-                        @include('application.main-posts')
+        <div class="left">
+            <h2>Новости</h2>
+            <div class="left-column">
+                @foreach ($posts as $key => $post)
+                    @if($key<4)
+                        @if (($key + 1) % 2 == 1)
+                            @include('application.main-posts')
+                        @endif
                     @endif
+                @endforeach
+
+            </div>
+
+            <div class="right-column">
+                @foreach ($posts as $key => $post )
+                    @if($key<4)
+                        @if (($key + 1) % 2 == 0)
+                            @include('application.main-posts')
+                        @endif
+                    @endif
+                @endforeach
+            </div>
+
+            <a class="post-href" href="/posts"> Все посты › </a>
+            <div class="clear"></div>
+        </div>
+
+        <div class="right">
+            <h2>Анонсы</h2>
+            @foreach($announcements as $key=>$announcement)
+                @if($key<4)
+                    <div class="announcement">
+                        <div class="circle">
+                            <div>{{ $announcement->announcementDay() }}<br>{{ $announcement->announcementMonth() }}
+                            </div>
+                        </div>
+                        <h3 class="title"><a href=" /announcements/{{ $announcement->id }}"
+                                             style="color: inherit; text-decoration: none;">
+                                {{ $announcement->title}}
+                            </a>
+                        </h3>
+
+                        <div class="clear"></div>
+
+                    </div>
                 @endif
             @endforeach
-
+            <a class="an-href" href="/announcements"> Все анонсы › </a>
         </div>
-        <div class="right-column">
-            @foreach ($posts as $key => $post )
-                @if($key<4)
-                    @if (($key + 1) % 2 == 0)
-                        @include('application.main-posts')
-                    @endif
-                @endif
-            @endforeach
 
-        </div>
-        <a class="post-href" href="/posts"> Все посты › </a>
         <div class="clear"></div>
 
-
-    </div>
-
-    <div class="right">
-        <h2>Анонсы</h2>
-        @foreach($announcements as $key=>$announcement)
-            @if($key<4)
-                <div class="announcement">
-                    <div class="circle">
-                        <div>{{ $announcement->announcementDay() }}<br>{{ $announcement->announcementMonth() }}</div>
-                    </div>
-                    <h3 class="title">{{ $announcement->title}} </h3>
-
-                    <div class="clear"></div>
-
-                </div>
-            @endif
-        @endforeach
-        <a class="an-href" href="/announcements"> Все анонсы › </a>
-    </div>
-
-    <div class="clear"></div>
     </main>
+
     <div class="map">
         <a class="dg-widget-link"
            href="http://2gis.ru/moscow/firm/4504583175018476/center/37.597315,55.596969/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть
@@ -80,5 +86,6 @@
             настройках вашего браузера.
         </noscript>
     </div>
+
 
 @endsection
