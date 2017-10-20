@@ -3,8 +3,10 @@
 @section('title')
     ИИНТБ | Главная
 @endsection
+
 @section('content')
 
+    @include('submenu.news')
     <div class="announcement">
         <div class="circle">
             <div>{{ $announcement->created_at }}</div>

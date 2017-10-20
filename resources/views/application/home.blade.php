@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <main class="main">
+    <main>
         <div class="left">
             <h2>Новости</h2>
             <div class="left-column">
@@ -49,8 +49,7 @@
                             <div>{{ $announcement->announcementDay() }}<br>{{ $announcement->announcementMonth() }}
                             </div>
                         </div>
-                        <h3 class="title"><a href=" /announcements/{{ $announcement->id }}"
-                                             style="color: inherit; text-decoration: none;">
+                        <h3 class="title"><a href=" /announcements/{{ $announcement->id }}">
                                 {{ $announcement->title}}
                             </a>
                         </h3>
