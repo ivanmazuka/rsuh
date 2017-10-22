@@ -54,9 +54,9 @@
 
 <footer>
     <div class="footer-bg">
-        <div class=" wtf">
-            <div class="rggu"><a href="http://rggu.ru" style=" text-decoration: none; color: #dcdcdc;">RGGU.RU</a></div>
-            <div class="notrggu"> ИИНТБ РГГУ © 2001 - 2017</div>
+        <div class="footer-bottom">
+            <div class="site"><a href="http://rggu.ru">RGGU.RU</a></div>
+            <div class="copyright"> ИИНТБ РГГУ © 2001 - 2017</div>
         </div>
     </div>
 </footer>

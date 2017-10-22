@@ -11,7 +11,7 @@ Route::get('/news', function () {
     return view('application.Posts');
 })->name('posts');
 Route::get('/news/useful-information/', function () {
-     return view('news.useful-information' );
+    return view('news.useful-information');
 })->name('useful-information');
 
 

@@ -10,14 +10,15 @@ class AnnouncementController extends Controller
 
     public function index()
     {
-        $announcements = Announcement::orderBy('id','desc')->get();
+        $announcements = Announcement::orderBy('id', 'desc')->get();
 
 
-        return view('application.announces', compact('posts','announcements'));
+        return view('application.announces', compact('posts', 'announcements'));
         //
     }
+
     //
-    public function show( Announcement $announcement)
+    public function show(Announcement $announcement)
     {
         return view('announce.show', compact('announcement'));
     }

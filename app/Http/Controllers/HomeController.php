@@ -13,8 +13,8 @@ class HomeController extends Controller
     {
         $posts = Post::orderBy('id', 'desc')->get();
 
-        $announcements = Announcement::orderBy('id','desc')->get();
+        $announcements = Announcement::orderBy('id', 'desc')->get();
 
-        return view('application.home', compact('posts','announcements'));
+        return view('application.home', compact('posts', 'announcements'));
     }
 }
