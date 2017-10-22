@@ -19,13 +19,25 @@
 
             <h1>Институт Информационных Наук и Технологий Безопасности</h1>
 
+
             <ul>
-                <li><a href="/about">Об института</a></li>
-                <li><a href="/education">Образование</a></li>
-                <li><a href="/forapplicant">Поступающим</a></li>
-                <li><a href="/forstudents">Студентам</a></li>
-                <li><a href="/science">Наука</a></li>
-                <li><a href="/posts">Информация</a></li>
+                <li><a class="{{Request::is('about/*')    || Request::is('about')             ? 'active' : ''}}"
+                       href="/about">Об института</a></li>
+
+                <li><a class="{{Request::is('education/*')  || Request::is('education')       ? 'active' : ''}}"
+                       href="/education">Образование</a></li>
+
+                <li><a class="{{Request::is('forapplicant/*') || Request::is('forapplicant')   ? 'active' : ''}}"
+                       href="/forapplicant">Поступающим</a></li>
+
+                <li><a class="{{Request::is('forstudents/*') || Request::is('forstudents')     ? 'active' : ''}}"
+                       href="/forstudents">Студентам</a></li>
+
+                <li><a class="{{Request::is('science/*') || Request::is('science')             ? 'active' : ''}}"
+                       href="/science">Наука</a></li>
+
+                <li><a class="{{Request::is('news/*')? 'active' : ''}}" href="/news/posts">Информация</a></li>
+
                 <div class="clear"></div>
             </ul>
 

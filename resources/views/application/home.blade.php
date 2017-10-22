@@ -23,7 +23,6 @@
                         @endif
                     @endif
                 @endforeach
-
             </div>
 
             <div class="right-column">
@@ -36,7 +35,7 @@
                 @endforeach
             </div>
 
-            <a class="post-href" href="/posts"> Все посты › </a>
+            <a class="post-href" href="/news/posts"> Все посты › </a>
             <div class="clear"></div>
         </div>
 
@@ -49,7 +48,7 @@
                             <div>{{ $announcement->announcementDay() }}<br>{{ $announcement->announcementMonth() }}
                             </div>
                         </div>
-                        <h3 class="title"><a href=" /announcements/{{ $announcement->id }}">
+                        <h3 class="title"><a class="an-href" href="/news/announcements/{{ $announcement->id }}">
                                 {{ $announcement->title}}
                             </a>
                         </h3>
@@ -59,7 +58,7 @@
                     </div>
                 @endif
             @endforeach
-            <a class="an-href" href="/announcements"> Все анонсы › </a>
+            <a class="all-an-href" href="/news/announcements"> Все анонсы › </a>
         </div>
 
         <div class="clear"></div>

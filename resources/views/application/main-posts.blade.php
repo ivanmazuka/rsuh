@@ -5,7 +5,7 @@
     @endif
 
     <h3>
-        <a href="/post/{{ $post->id }}" style="color: inherit; text-decoration: none;">{{ $post->title }}</a>
+        <a  href="/news/post/{{ $post->id }}" style="color: inherit; text-decoration: none;">{{ $post->title }}</a>
     </h3>
     <p>{{ $post->postTime() }}</p>
     <p>{{ $post->short() }}</p>
