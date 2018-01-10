@@ -16,6 +16,6 @@ class TestretrieveAnnouncements extends TestCase
     {
         $this->seeInDatabase('announcements');
         $this->visit('/da')
-            ->see('id:2');
+            ->see('id');
     }
 }
