@@ -70,16 +70,17 @@
 <script src="js/app.js"></script>
 <script>
     function api(url, method = 'get', data = null) {
-        axios({
+        $.ajax({
             url: url,
             method: method,
             data: data
-        }).then(function (response) {
-            console.log(response.data);
-          })
-          .catch(function (error) {
+        })
+        .done(function (response) {
+            console.log(response);
+        })
+        .fail(function (error) {
             console.log(error);
-          });
+        });
     }
 </script>
 

@@ -19,12 +19,14 @@ class AnnouncementController extends Controller
   
     public function retrieve()
     {
+        $limitFrom = $_POST['limitFrom'] ?? 0;
         $limitTo = $_POST['limitTo'] ?? 4;
         $dataFrom = $_POST['dateFrom'] ?? '1999-01-01';
         $dataTo = $_POST['dateTo'] ?? '2020-12-12';
 
         $announsements = Announcement::where('created_at', '>', $dataFrom )
-                                     ->where('created_at', '<', $dataTo)   
+                                     ->where('created_at', '<', $dataTo)
+                                     ->skip($limitFrom)
                                      ->take($limitTo)
                                      ->get();
 

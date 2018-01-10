@@ -20,4 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::delete('delete/{announcement}', 'AnnouncementController@delete');
-Route::get('announcements', 'AnnouncementController@retrieve');
+Route::post('announcements', 'AnnouncementController@retrieve');
