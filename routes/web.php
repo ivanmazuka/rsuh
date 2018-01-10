@@ -8,6 +8,9 @@ Route::get('/news/announcements/{announcement}', 'AnnouncementController@show')-
 
 Route::get('/da','AnnouncementController@retrieveAnnouncements');
 
+Route::delete('/del/{announcement}','AnnouncementController@delete');
+
+
 Route::get('/news', function () {
     return view('application.Posts');
 })->name('posts');

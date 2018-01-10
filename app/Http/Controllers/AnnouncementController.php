@@ -44,6 +44,12 @@ class AnnouncementController extends Controller
 
     }
 
+    public function delete(Announcement $announcement){
+
+            return $announcement->delete();
+
+    }
+
 
     public function show(Announcement $announcement)
     {
