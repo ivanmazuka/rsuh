@@ -4,7 +4,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
 
 </head>
@@ -61,7 +61,26 @@
     </div>
 </footer>
 
-
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 </body>
+
+<script src="js/app.js"></script>
+<script>
+    function api(url, method = 'get', data = null) {
+        axios({
+            url: url,
+            method: method,
+            data: data
+        }).then(function (response) {
+            console.log(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }
+</script>
 
 </html>

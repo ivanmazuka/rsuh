@@ -16,38 +16,27 @@ class AnnouncementController extends Controller
         return view('application.announces', compact('posts', 'announcements'));
         //
     }
-
-    //
   
-    public function retrieveAnnouncements(){
-        
-        /** 
-         * Не нужно.
-         *
-         * $limitFrom = $_POST['limitFrom'] ?? 0;   
-         */
+    public function retrieve()
+    {
         $limitTo = $_POST['limitTo'] ?? 4;
-        
         $dataFrom = $_POST['dateFrom'] ?? '1999-01-01';
-        
         $dataTo = $_POST['dateTo'] ?? '2020-12-12';
-        
-       // $announsements = DB::select('SELECT * FROM announcements WHERE created_at >= ?::date and created_at <= ?::date LIMIT ? OFFSET ?',
-       //                            [$dataFrom, $dataTo, $limitTo, $limitFrom]);
 
         $announsements = Announcement::where('created_at', '>', $dataFrom )
-                                    ->where('created_at', '<', $dataTo)   
-                                    ->take($limitTo)
-                                    ->get();
+                                     ->where('created_at', '<', $dataTo)   
+                                     ->take($limitTo)
+                                     ->get();
 
-        return $announsements;
+        return response()->json($announsements);
 
     }
 
-    public function delete(Announcement $announcement){
-
-            return $announcement->delete();
-
+    public function delete(Announcement $announcement)
+    {
+        return response()->json([
+            'result' => $announcement->delete()
+        ]);
     }
 
 

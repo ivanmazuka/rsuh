@@ -6,10 +6,6 @@ Route::get('/news/announcements', 'AnnouncementController@index')->name('annouce
 Route::get('/news/post/{post}', 'PostController@show')->name('show');
 Route::get('/news/announcements/{announcement}', 'AnnouncementController@show')->name('show');
 
-Route::get('/da','AnnouncementController@retrieveAnnouncements');
-
-Route::delete('/del/{announcement}','AnnouncementController@delete');
-
 
 Route::get('/news', function () {
     return view('application.Posts');
@@ -112,4 +108,3 @@ Route::get('/about/contacts', function () {
 Route::get('/about/structure', function () {
     return view('about.structure');
 })->name('structure');
-
