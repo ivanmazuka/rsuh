@@ -7,11 +7,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TestretrieveAnnouncements extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
     public function testExample()
     {
         $this->seeInDatabase('announcements');
