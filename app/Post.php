@@ -8,6 +8,15 @@ use Carbon\Carbon;
 
 class Post extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'body', 'picture',
+    ];
+    
     public function short()
     {
         $result = substr($this->body, 0, 100);
@@ -23,15 +32,11 @@ class Post extends Model
         }
 
     }
-
-    //
+    
     public function postTime()
     {
-
-        //TODO: убрать проверуку на null
-
         $postTime = new Carbon();
-        if ($this->created_at != null) {
+        if ($this->created_at) {
             $postTime = $this->created_at;
             $postTime = $postTime->format('d/m/Y');
         } else {
