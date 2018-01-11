@@ -22,7 +22,7 @@ class PostController extends Controller
 
     }
 
-    public function retrieveNews(){
+    public function retrieve(){
         /**
         * Не нужно.
         * 
@@ -54,7 +54,17 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $title = $_POST['postTitle'];
+        $body = $_POST['postBody'];
+        $picture = $_POST['postPic'];
+        
+        $post = Post::create(['title' => $title, 'body' => $body, 'pic' => $picture,
+                                        'created_at' => now(),'updated_at' => null]);
+
+        return response()->json([
+            'result' => $post
+        ]);
+        
     }
 
     /**
@@ -110,6 +120,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        return response()->json([
+            'result' => $post->delete()
+        ]);
     }
 }
