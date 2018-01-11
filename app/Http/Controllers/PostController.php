@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'body', 'picture',
+    ];
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -16,10 +25,7 @@ class PostController extends Controller
     {
         $posts = Post::orderBy('id', 'desc')->get();
 
-
         return view('application.Posts', compact('posts'));
-        //
-
     }
 
     public function retrieve(){
@@ -54,17 +60,15 @@ class PostController extends Controller
      */
     public function create()
     {
-        $title = $_POST['postTitle'];
-        $body = $_POST['postBody'];
-        $picture = $_POST['postPic'];
-        
-        $post = Post::create(['title' => $title, 'body' => $body, 'pic' => $picture,
-                                        'created_at' => now(),'updated_at' => null]);
+        $post = new Post;
+        $post->title = $_POST['title'];
+        $post->body = $_POST['body'];
+        $post->picture = $_POST['picture'];
+        $post->save();
 
         return response()->json([
             'result' => $post
         ]);
-        
     }
 
     /**
