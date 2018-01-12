@@ -92,7 +92,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        
+
+
     }
 
     /**
@@ -103,8 +105,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Post $post)
-    {
-        //
+    {   
+        $post->update($request->all());
     }
 
     /**
