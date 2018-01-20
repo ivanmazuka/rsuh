@@ -19,14 +19,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-Route::delete('announcements/delete/{announcement}', 'AnnouncementController@delete')->name('deleteAnnouncement');
+Route::delete('announcements/delete/{announcement}', 'AnnouncementController@delete');
 Route::delete('posts/delete/{post}', 'PostController@delete')->name('deletePost');
 
 
-Route::post('posts/update/{post}', 'PostController@update');
+Route::put('posts/update/{post}', 'PostController@update');
+Route::put('announcements/update/{announcement}', 'AnnouncementController@update');
 
-Route::post('announcements', 'AnnouncementController@retrieve');
-Route::post('posts', 'PostController@retrieve');
+Route::get('announcements', 'AnnouncementController@retrieve');
+Route::get('posts', 'PostController@retrieve');
 
 Route::post('posts/create','PostController@create');
-Route::post('posts/edit','PostController@edit');
+Route::post('announcements/create','AnnouncementController@create');

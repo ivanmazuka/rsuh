@@ -45,7 +45,7 @@
                 @if($key<4)
                     <div class="announcement">
                         <div class="circle">
-                            <div>{{ $announcement->announcementDay() }}<br>{{ $announcement->announcementMonth() }}
+                            <div>{{ $announcement->created_at }}
                             </div>
                         </div>
                         <h3 class="title"><a class="an-href" href="/news/announcements/{{ $announcement->id }}">

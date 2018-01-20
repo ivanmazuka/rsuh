@@ -4,47 +4,88 @@ namespace App\Http\Controllers;
 
 use App\Announcement;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;  
+use App\Actions\{
+    Create, Retrieve, Update, Delete
+};
+
 class AnnouncementController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
-        $announcements = Announcement::orderBy('id', 'desc')->get();
-
-
+        $announcements = (new Announcement())->orderBy('id', 'desc')->get();
         return view('application.announces', compact('posts', 'announcements'));
-        //
-    }
-  
-    public function retrieve()
-    {
-        $limitFrom = $_POST['limitFrom'] ?? 0;
-        $limitTo = $_POST['limitTo'] ?? 4;
-        $dataFrom = $_POST['dateFrom'] ?? '1999-01-01';
-        $dataTo = $_POST['dateTo'] ?? '2020-12-12';
-
-        $announsements = Announcement::where('created_at', '>', $dataFrom )
-                                     ->where('created_at', '<', $dataTo)
-                                     ->skip($limitFrom)
-                                     ->take($limitTo)
-                                     ->get();
-
-        return response()->json($announsements);
-
     }
 
-    public function delete(Announcement $announcement)
-    {
-        return response()->json([
-            'result' => $announcement->delete()
-        ]);
-    }
-
-
+    /**
+     * Display the specified resource.
+     *
+     * @param Announcement $announcement
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show(Announcement $announcement)
     {
         return view('announce.show', compact('announcement'));
     }
 
+    /**
+     * Create an announcement.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function create(Request $request)
+    {
+        $handler = new Create(new Announcement, $request);
+        return response()->json([
+            'result' => $handler->do()
+        ]);
+    }
+
+    /**
+     * Get all the announcements.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function retrieve(Request $request)
+    {
+        $handler = new Retrieve(new Announcement, $request);
+        return response()->json($handler->do());
+    }
+
+    /**
+     * Update the announcement.
+     *
+     * @param Announcement $announcement
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update(Announcement $announcement, Request $request)
+    {
+        $handler = new Update($announcement, $request);
+        return response()->json([
+            'result' => $handler->do()
+        ]);
+    }
+
+    /**
+     * Delete the announcement.
+     *
+     * @param Announcement $announcement
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function delete(Announcement $announcement, Request $request)
+    {
+        $handler = new Delete($announcement, $request);
+        return response()->json([
+            'result' => $handler->do()
+        ]);
+    }
 }
+

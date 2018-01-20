@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use App\Actions\{
+    Create, Retrieve, Update, Delete
+};
+
 
 class PostController extends Controller
 {
@@ -14,63 +18,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id', 'desc')->get();
+        $posts = (new Post())->orderBy('id', 'desc')->get();
 
         return view('application.Posts', compact('posts'));
-    }
-
-    public function retrieve(){
-        /**
-        * Не нужно.
-        * 
-        * $limitFrom = $_POST['limitFrom'] ?? 0;
-        */
-        
-        $limitTo = $_POST['limitTo'] ?? 6;
-        
-        $dataFrom = $_POST['dateFrom'] ?? '1999-01-01';
-        
-        $dataTo = $_POST['dateTo'] ?? '2020-12-12';
-        
-        //$announsements = DB::select('SELECT * FROM announcements WHERE created_at >= ?::date and created_at <= ?::date LIMIT ? OFFSET ?',
-        //                           [$dataFrom, $dataTo, $limitTo, $limitFrom]);
-        
-        $news = Posts::where('created_at', '>', $dataFrom)
-                      ->where('created_at', '<', $dataTo)
-                      ->take($limitTo)
-                      ->get();
-
-
-        return $news;
-
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $post = new Post;
-        $post->title = $_POST['title'];
-        $post->body = $_POST['body'];
-        $post->picture = $_POST['picture'];
-        $post->save();
-
-        return response()->json([
-            'result' => $post
-        ]);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -84,41 +34,54 @@ class PostController extends Controller
         return view('post.show', compact('post'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Post $post
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Post $post)
+    public function create(Request $request)
     {
-        
 
-
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Post $post
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Post $post)
-    {   
-        $post->update($request->all());
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Post $post
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Post $post)
-    {
+        $handler = new Create(new Post, $request);
         return response()->json([
-            'result' => $post->delete()
+            'result' => $handler->do()
+        ]);
+    }
+
+    /**
+     * Get all the posts.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function retrieve(Request $request)
+    {
+        $handler = new Retrieve(new Post, $request);
+        return response()->json($handler->do());
+    }
+
+    /**
+     * Update the post.
+     *
+     * @param Post $post
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update(Post $post, Request $request)
+    {
+        $handler = new Update($post, $request);
+        return response()->json([
+            'result' => $handler->do()
+        ]);
+    }
+
+    /**
+     * Delete the post.
+     *
+     * @param Post $post
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function delete(Post $post, Request $request)
+    {
+        $handler = new Delete($post, $request);
+        return response()->json([
+            'result' => $handler->do()
         ]);
     }
 }
