@@ -1,0 +1,13 @@
+$blueLight: #3a82a6
+$blueDark: #3a5ea6
+
+=shadow($horizontal, $vertical, $blur, $spread, $opacity)
+  -webkit-box-shadow: $horizontal $vertical $blur $spread rgba(0, 0, 0, $opacity)
+  -moz-box-shadow: $horizontal $vertical $blur $spread rgba(0, 0, 0, $opacity)
+  box-shadow: $horizontal $vertical $blur $spread rgba(0, 0, 0, $opacity)
+
+=gradient($light, $dark)
+  background: $light
+  background: -moz-linear-gradient(left, $light 0%, $dark 100%)
+  background: -webkit-linear-gradient(left, $light 0%, $dark 100%)
+  background: linear-gradient(to right, $light 0%, $dark 100%)

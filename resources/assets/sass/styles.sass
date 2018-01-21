@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&subset=cyrillic')
-
-$blueLight: #3a82a6
-$blueDark: #3a5ea6
-
-=gradient($light, $dark)
-  background: $light
-  background: -moz-linear-gradient(left, $light 0%, $dark 100%)
-  background: -webkit-linear-gradient(left, $light 0%, $dark 100%)
-  background: linear-gradient(to right, $light 0%, $dark 100%)
+@import "~animate.css"
+@import "variables"
 
 body
   margin: 0 auto
@@ -16,11 +9,23 @@ body
   font-family: 'Ubuntu', sans-serif
 
 header
-  +gradient($blueLight, $blueDark)
-  background-color: #3a77a6
-  width: 100%
+  position: relative
+  z-index: 2
+
   padding: 32px
+
+  width: 100%
+
+  background-color: #3a77a6
   box-sizing: border-box
+
+  +shadow(0, 5px, 10px, 0, 0.25)
+  +gradient($blueLight, $blueDark)
+
+h4
+  margin: 1em 0
+
+  font-weight: normal
 
 .submenu
   width: 100%
@@ -39,16 +44,19 @@ header
   div
     margin: auto
     width: 800px
+
     ul
       font-size: 14px
       margin: 0
       padding: 0
+
     li
       list-style-type: none
       float: left
       margin-left: 8px
       padding-right: 8px
       border-right: thin solid gray
+
     li:first-of-type
       margin-left: 0
 
@@ -57,18 +65,21 @@ header
       border-right: 0
 
 .header-wrapper
-  max-width: 800px
+  max-width: 1024px
   margin: auto
 
+  .logo, .menu
+    float: left
+
   .logo
+    margin-right: 32px
+
     height: 66px
     width: 66px
-    float: left
+
     background: url("/img/logo.svg") center no-repeat
     background-size: contain
 
-  .menu
-    float: right
   .active
     text-decoration: underline
 
@@ -100,113 +111,77 @@ header
     border-right: 0
 
 .slider
+  position: relative
+  z-index: 1
+
+  height: 512px
+
   background: url("/img/1.png") no-repeat
   background-size: cover
-  height: 70px
-  padding: 256px 0 32px
-  margin-bottom: 64px
 
-  div
-    margin: 0 auto
-    max-width: 800px
+  +shadow(0, 5px, 10px, 0, 0.25)
 
-    strong
-      font-size: 48px
 .post-title
   color: inherit
   text-decoration: none
+
 .postin
   max-width: 800px
   margin: 0 auto
-main
-  margin: auto
-  max-width: 800px
-  .post
-    margin-bottom: 48px
-    width: 85%
 
+main
+  margin: 32px auto 128px
+
+  max-width: 1024px
+
+  a
+    color: white
+    text-decoration: none
 
   img
     width: 120px
     height: 60px
 
+  .left, .right
+    > div > a
+      font-size: 1.25em
+
   .left
     float: left
-    width: 512px
+    width: 768px
 
   .right
     float: right
     width: 256px
 
-  .left-column
-    width: 50%
-    float: left
-
-  .right-column
-    width: 50%
-    float: left
-
-  .picture
-    width: 100%
-    height: 96px
-    background-size: cover
-  .post-href
-    color: white
-    font-weight: bold
-    text-decoration: none
-  .announcement
-    margin-bottom: 48px
-
-    h3
-      width: 176px
-      color: inherit
-      text-decoration: none
-
-  .announcement:last-of-type
-    margin-bottom: 0
-
-  .circle
-    +gradient($blueLight, $blueDark)
-    width: 64px
-    height: 64px
-    border-radius: 50%
-    float: left
-    margin-right: 16px
-    div
-      margin: 11px 10px
-      font-weight: bold
-      text-align: center
-
-  .an-href
-    color: white
-    float: left
-    text-decoration: none
-  .all-an-href
-    all: inherit
-    font-weight: bold
-    margin-top: 30px
-
   .title
     float: left
     margin: 0
 
-.footer-bg
-  +gradient($blueLight, $blueDark)
-  height: 50px
-  width: 100%
+footer
   margin: 0 auto
-  .footer-bottom
-    width: 800px
+
+  height: 72px
+  width: 100%
+
+  +shadow(0, 5px, 10px, 0, 0.25)
+  +gradient($blueLight, $blueDark)
+
+  .footer-wrapper
+    width: 1024px
     margin: 0 auto
-    .copyright
-      padding-top: 15px
-      float: right
-    .site
-      padding-top: 15px
+
+    div.copyright, a
+      line-height: 72px
+
+    div.copyright
       float: left
-      a
-        text-decoration: none
-        color: white
+
+    a
+      float: right
+
+      text-decoration: none
+      color: white
 
 .clear
   clear: both

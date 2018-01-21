@@ -10,7 +10,7 @@ abstract class Action
     protected $model;
     protected $request;
 
-    public  function __construct(Model $model, Request $request)
+    public function __construct(Model $model, Request $request)
     {
         $this->model = $model;
         $this->request = $request;
