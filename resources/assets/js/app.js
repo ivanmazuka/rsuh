@@ -1,5 +1,6 @@
 import Vue from 'vue';
 
+
 Vue.component('homepage-news', require('./components/HomepageNews.vue'));
 Vue.component('homepage-post', require('./components/HomapagePost.vue'));
 Vue.component('homepage-announcements', require('./components/HomepageAnnouncements.vue'));
@@ -13,3 +14,14 @@ new Vue({
 
 window.$(document).ready(function () {
 });
+
+window.api = function (url, method = 'get', data = null) {
+    $.ajax({
+        url: url,
+        method: method,
+        data: data
+    })
+        .always(function (response) {
+            console.log(response);
+        });
+}

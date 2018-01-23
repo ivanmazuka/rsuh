@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,17 +16,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-
-Route::delete('announcements/delete/{announcement}', 'AnnouncementController@delete');
-Route::delete('posts/delete/{post}', 'PostController@delete')->name('deletePost');
-
-
-Route::put('posts/update/{post}', 'PostController@update');
-Route::put('announcements/update/{announcement}', 'AnnouncementController@update');
+Route::post('announcements/create','AnnouncementController@create');
+Route::post('posts/create','PostController@create');
 
 Route::get('announcements', 'AnnouncementController@retrieve');
 Route::get('posts', 'PostController@retrieve');
 
-Route::post('posts/create','PostController@create');
-Route::post('announcements/create','AnnouncementController@create');
+Route::put('announcements/{announcement}', 'AnnouncementController@update');
+Route::put('posts/{post}', 'PostController@update');
+
+Route::delete('announcements/{announcement}', 'AnnouncementController@delete');
+Route::delete('posts/{post}', 'PostController@delete');
