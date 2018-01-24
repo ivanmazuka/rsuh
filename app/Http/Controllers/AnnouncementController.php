@@ -55,7 +55,8 @@ class AnnouncementController extends Controller
     public function retrieve(Request $request)
     {
         $handler = new Retrieve(new Announcement, $request);
-        return response()->json($handler->do());
+
+        return response()->json($handler->do('date'));
     }
 
     /**
@@ -65,6 +66,7 @@ class AnnouncementController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
+
     public function update(Announcement $announcement, Request $request)
     {
         $handler = new Update($announcement, $request);

@@ -1,27 +1,30 @@
 <?php
 
 namespace App\Actions;
-
+use Carbon\Carbon;
 class Retrieve extends Action
 {
-    public function do()
+
+    public function do($time)
     {
         $limitFrom = $this->request->input('limitFrom') ?? 0;
         $limitTo = $this->request->input('limitTo') ?? 6;
-        $dateFrom = $this->request->input('dateFrom');
+        $dateFrom =    $time=='date' ? Carbon::now():$this->request->input('dateFrom');
         $dateTo = $this->request->input('dateTo');
 
+
+
         if ($dateFrom) {
-            $this->model = $this->model->where('created_at', '>', $dateFrom);
+            $this->model = $this->model->where($time, '>', $dateFrom);
         }
 
         if ($dateTo) {
-            $this->model = $this->model->where('created_at', '<', $dateTo);
+            $this->model = $this->model->where($time, '<', $dateTo);
         }
 
         $this->model = $this->model->skip($limitFrom)
             ->take($limitTo)
-            ->orderBy('created_at', 'desc')
+            ->orderBy($time, 'asc')
             ->get();
 
         return $this->model;

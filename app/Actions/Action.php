@@ -16,5 +16,4 @@ abstract class Action
         $this->request = $request;
     }
 
-    abstract public function do();
 }
