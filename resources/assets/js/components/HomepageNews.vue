@@ -62,6 +62,10 @@
 <!-- Styles -->
 <style lang="sass">
     .left-column, .center-column, .right-column
-        width: 33.33%
         float: left
+        
+        width: 30%
+
+    .left-column, .center-column
+        margin-right: 5%
 </style>

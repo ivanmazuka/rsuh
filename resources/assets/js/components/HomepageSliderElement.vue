@@ -27,6 +27,8 @@
         strong.title
             position: absolute
 
+            padding: 0 32px
+
             right: 0
             bottom: 32px
             left: 0
@@ -35,5 +37,6 @@
 
             max-width: 1024px
 
+            box-sizing: border-box
             font-size: 48px
 </style>

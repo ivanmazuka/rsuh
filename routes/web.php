@@ -96,6 +96,7 @@ Route::get('/education/math-appl', function () {
 Route::get('/about', function () {
     return view('about.index');
 })->name('about');
+
 Route::get('/about/management', function () {
     return view('about.management');
 })->name('management');

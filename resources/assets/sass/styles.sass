@@ -28,22 +28,28 @@ h4
   font-weight: normal
 
 .submenu
+  padding-top: 16px
+  padding-bottom: 16px
+
   width: 100%
+
   background: white
-  padding: 10px
   box-sizing: border-box
+
   .active
     text-decoration: underline
 
   a
     text-decoration: none
     color: #202020
+
   a:hover
     text-decoration: underline
 
   div
     margin: auto
-    width: 800px
+
+    max-width: 1024px
 
     ul
       font-size: 14px
@@ -63,6 +69,12 @@ h4
     li:last-of-type
       padding-right: 0
       border-right: 0
+
+div.header-wrapper, nav.submenu div, .footer-wrapper
+  padding-right: 32px
+  padding-left: 32px
+
+  box-sizing: border-box
 
 .header-wrapper
   max-width: 1024px
@@ -134,16 +146,14 @@ h4
 
 main
   margin: 32px auto 128px
+  padding: 0 32px
 
+  box-sizing: border-box
   max-width: 1024px
 
   a
     color: white
     text-decoration: none
-
-  img
-    width: 120px
-    height: 60px
 
   .left, .right
     > div > a
@@ -151,7 +161,7 @@ main
 
   .left
     float: left
-    width: 768px
+    width: 640px
 
   .right
     float: right
@@ -171,7 +181,7 @@ footer
   +gradient($blueLight, $blueDark)
 
   .footer-wrapper
-    width: 1024px
+    max-width: 1024px
     margin: 0 auto
 
     div.copyright, a
@@ -185,6 +195,37 @@ footer
 
       text-decoration: none
       color: white
+
+section
+  a:link
+    text-decoration: underline
+
+  a:hover
+    text-decoration: none
+
+  h2:not(:first-of-type)
+    margin: 2em 0 0.83em 0
+
+div.manager
+  margin: 64px 0
+
+  div.image, div.body
+    float: left
+
+  div.image
+    margin-right: 32px
+
+    height: 192px
+    width: 192px
+
+    background-position: center
+    background-size: cover
+    border-radius: 50%
+
+    +shadow(0, 5px, 10px, 0, 0.25)
+
+  div.body
+    max-width: 512px
 
 .clear
   clear: both

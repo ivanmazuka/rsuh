@@ -1,63 +1,66 @@
 @extends('application.layout')
 
 @section('title')
-    ИИНТБ | Главная
+    История
 @endsection
 @section('content')
     @include('submenu.about')
 
     <main>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta lorem eros, non congue lectus aliquam
-            ut.
-            Donec pretium ante ut consequat sollicitudin. Quisque et ligula sodales, dictum urna ac, imperdiet erat.
-            Curabitur
-            nec risus id ipsum vehicula molestie quis vitae nibh. Donec ipsum sem, bibendum et pretium sit amet, laoreet
-            sit
-            amet magna. Nullam ultricies, ligula quis imperdiet dapibus, ligula urna sollicitudin dolor, eget rhoncus
-            nisi leo
-            ac enim. Phasellus sit amet suscipit nisl. Duis mollis tincidunt sapien, nec ullamcorper turpis pulvinar
-            vitae. Sed
-            a malesuada lorem, at suscipit est. Mauris rutrum eros sed felis mollis euismod sit amet vel arcu. Nullam
-            viverra
-            massa eu lacus tempor vulputate.
-        </p>
-        <p>
-            Integer ut mattis neque, a volutpat tortor. Donec volutpat sem congue libero auctor semper. Nulla ut mauris
-            ac
-            mauris imperdiet auctor sed vitae sem. In tristique lacus lectus. In blandit dui a imperdiet ultricies. Nunc
-            arcu
-            risus, laoreet et consequat nec, faucibus vel est. Nulla vulputate tortor ante, id auctor enim condimentum
-            sit amet.
-            Sed dapibus risus tempus massa sollicitudin consectetur. Phasellus pharetra arcu massa, et pharetra elit
-            tristique
-            eu.
-        </p>
-        <p>
-            Curabitur congue diam urna, non maximus nunc cursus in. Nam sagittis efficitur tortor eget feugiat. Nullam
-            rutrum
-            neque in erat tincidunt maximus at ut neque. Maecenas sit amet pretium purus. Quisque mollis interdum orci,
-            a
-            porttitor lorem eleifend at. Sed posuere diam et nisl pellentesque pretium. Nunc aliquam rutrum diam in
-            rutrum.
-            Proin eget odio nunc. Maecenas ut euismod lectus. Nullam efficitur hendrerit dolor, pellentesque mollis nunc
-            bibendum et. Curabitur vehicula nunc posuere ligula commodo, dictum pellentesque augue tempus.
-        </p>
-        <p>
-            Sed elementum mi eget tellus ultrices, nec vehicula sapien volutpat. Aenean varius mattis varius. Proin
-            tempor nibh
-            sit amet dui pellentesque scelerisque. Vivamus commodo ipsum at tristique vulputate. Sed ut turpis venenatis
-            lacus
-            ullamcorper hendrerit. Nulla magna leo, cursus eget lorem condimentum, faucibus sollicitudin velit. Nunc non
-            venenatis libero.
-        </p>
-        <p>
-            Curabitur placerat mauris sit amet felis finibus, a consequat felis tincidunt. Donec eget lacus sapien. Duis
-            auctor,
-            lorem eu semper accumsan, mauris nibh posuere mi, sit amet semper magna mi eu purus. Vestibulum cursus
-            pretium
-            congue. Proin vitae interdum orci. Donec viverra porta efficitur. Ut ac efficitur mi, ac volutpat erat.
+        <span>// ОБ ИНСТИТУТЕ /</span>
+        <h1>История</h1>
+        <section>
+            <h2>История факультета защиты информации</h2>
+            <p>
+                Первоначально, приказом Минвуза России от 16 июля 1985 года № 84С в Московском историко-архивном институте был организован факультет специального документоведения для подготовки студентов по специальности «Организация делопроизводства и специальных работ». Выпускникам присваивалась    квалификация «Инженер-организатор специальных работ».
+            </p>
+            <p>
+                В 1987 году на факультете были созданы специальные кафедры: кафедра № 1 (по организационно-правовой защите информации), кафедра № 2 (по организации конфиденциального делопроизводства) и кафедра № 3 (по инженерно-технической защите информации), а с 1988 года - и кафедра № 4 (по программно-аппаратной защите информации). В 1988-1990 гг. при кафедрах № 3 и 4 были созданы специальные лаборатории для проведения практических занятий.
+            </p>
+            <p>
+                Для обеспечения закрытого учебного процесса и проведения научно- исследовательских работ в 1988 году на территории факультета были созданы режимно- секретные органы (1-й отдел, отдел безопасности, библиотека специальной литературы). В рамках реализуемых специальностей были открыты специальности в аспирантуре РГГУ.
+            </p>
+            <p>
+                05.13.19 и 05.11.16, создан диссертационный совет Д.212.016.02 для защиты кандидатских и докторских диссертаций на соискание степени кандидата/доктора технических наук по вышеуказанным специальностям.
+            </p>
+            <p>
+                В 1990 году специальность подготовки была переименована на специальность «Организация и технология защиты информации» и, соответственно, решением Ученого совета, факультет получил название «факультет защиты информации». Выпускникам присваивалась квалификация: «инженер-организатор защиты информации». Подготовка специалистов стала реализовываться в открытом режиме.
+            </p>
+            <p>
+                С 2000 года на факультете началась подготовка специалистов по двум специальностям «Организация и технология защиты информации» и «Комплексная защита объектов информатизации».
+            </p>
+            <p>
+                Одновременно, с 1999 по 2011 год на факультете осуществлялся набор и подготовка студентов по специальности «Юриспруденция», со специализацией «Организационно-правовая защита информации».
+            </p>
+            <p>
+                С 2011 года факультет перешел на подготовку бакалавров по направлению подготовки «Информационная безопасность».
+            </p>
+            <p>
+                Область профессиональной деятельности выпускников факультета включает сферы науки, техники и технологии, обеспечивающие защищенность информационных объектов (систем) государственных, муниципальных и коммерческих структур. В качестве объектов профессиональной деятельности рассматриваются информационные системы, ресурсы и технологии, а также процессы организации и управления информационной безопасностью объектов. 
+            </p>
 
-        </p>
+            <h2>История факультета информатики</h2>
+            <p>
+                Факультет ведет свою историю с 1976 года, когда в МГИАИ был создан факультет научно-технической информации, для подготовки студентов по специальности «Системы научно-технической информации». В 1986 г. указанная специальность была преобразована в специальность «Информационные системы (по областям применения)».
+            </p>
+            <p>
+                В 1991 г. МГИАИ был преобразован в РГГУ, а факультет научно-технической информации — в «факультет информатики».
+            </p>
+            <p>
+                В 2000 году специальность «Информационные системы» была переименована в специальность «Прикладная информатика (по областям применения)», для придания ей более прикладного характера. С этого же времени факультет готовит специалистов по специальности «Прикладная математика».
+            </p>
+            <p>
+                С 2011 года факультет перешел на подготовку бакалавров по аналогичным направлениям подготовки.
+            </p>
+            <p>
+                Деятельность факультета информатики была направлена на подготовку кадров с высшим образованием в области математического моделирования объектов и процессов в социально-экономической и гуманитарной сферах, а также в области создания, использования и управления информационными системами и ресурсами.
+            </p>
+            <p>
+                В 2001 году на базе факультета защиты информации и факультета информатики решением Ученого совета был создан Институт информационных наук и технологий безопасности РГГУ.
+            </p>
+            <p>
+                За годы работы научно-педагогический состав факультетов защиты информации и информатики был в составе разработчиков всех стандартов ВПО, связанных с реализуемыми специальностями и направлением подготовки.
+            </p>
+        </section>
     </main>
 @endsection

@@ -1,63 +1,50 @@
 @extends('application.layout')
 
 @section('title')
-    ИИНТБ | Главная
+    Об институте
 @endsection
 @section('content')
     @include('submenu.about')
 
     <main>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta lorem eros, non congue lectus aliquam
-            ut.
-            Donec pretium ante ut consequat sollicitudin. Quisque et ligula sodales, dictum urna ac, imperdiet erat.
-            Curabitur
-            nec risus id ipsum vehicula molestie quis vitae nibh. Donec ipsum sem, bibendum et pretium sit amet, laoreet
-            sit
-            amet magna. Nullam ultricies, ligula quis imperdiet dapibus, ligula urna sollicitudin dolor, eget rhoncus
-            nisi leo
-            ac enim. Phasellus sit amet suscipit nisl. Duis mollis tincidunt sapien, nec ullamcorper turpis pulvinar
-            vitae. Sed
-            a malesuada lorem, at suscipit est. Mauris rutrum eros sed felis mollis euismod sit amet vel arcu. Nullam
-            viverra
-            massa eu lacus tempor vulputate.
-        </p>
-        <p>
-            Integer ut mattis neque, a volutpat tortor. Donec volutpat sem congue libero auctor semper. Nulla ut mauris
-            ac
-            mauris imperdiet auctor sed vitae sem. In tristique lacus lectus. In blandit dui a imperdiet ultricies. Nunc
-            arcu
-            risus, laoreet et consequat nec, faucibus vel est. Nulla vulputate tortor ante, id auctor enim condimentum
-            sit amet.
-            Sed dapibus risus tempus massa sollicitudin consectetur. Phasellus pharetra arcu massa, et pharetra elit
-            tristique
-            eu.
-        </p>
-        <p>
-            Curabitur congue diam urna, non maximus nunc cursus in. Nam sagittis efficitur tortor eget feugiat. Nullam
-            rutrum
-            neque in erat tincidunt maximus at ut neque. Maecenas sit amet pretium purus. Quisque mollis interdum orci,
-            a
-            porttitor lorem eleifend at. Sed posuere diam et nisl pellentesque pretium. Nunc aliquam rutrum diam in
-            rutrum.
-            Proin eget odio nunc. Maecenas ut euismod lectus. Nullam efficitur hendrerit dolor, pellentesque mollis nunc
-            bibendum et. Curabitur vehicula nunc posuere ligula commodo, dictum pellentesque augue tempus.
-        </p>
-        <p>
-            Sed elementum mi eget tellus ultrices, nec vehicula sapien volutpat. Aenean varius mattis varius. Proin
-            tempor nibh
-            sit amet dui pellentesque scelerisque. Vivamus commodo ipsum at tristique vulputate. Sed ut turpis venenatis
-            lacus
-            ullamcorper hendrerit. Nulla magna leo, cursus eget lorem condimentum, faucibus sollicitudin velit. Nunc non
-            venenatis libero.
-        </p>
-        <p>
-            Curabitur placerat mauris sit amet felis finibus, a consequat felis tincidunt. Donec eget lacus sapien. Duis
-            auctor,
-            lorem eu semper accumsan, mauris nibh posuere mi, sit amet semper magna mi eu purus. Vestibulum cursus
-            pretium
-            congue. Proin vitae interdum orci. Donec viverra porta efficitur. Ut ac efficitur mi, ac volutpat erat.
+        <h1>Об институте</h1>
+        <section>
+            <h2>Институт информационных наук и технологий безопасности</h2>
+            <img src="/img/iintb.jpg">
+            
+            <p>
+                Институт имеет высококвалифицированный профессорско-преподавательский состав, отдельное здание, оборудованное современными техническими средствами и компьютерными классами, необходимыми для подготовки компетентных кадров по направлениям подготовки:
+            </p>
+            <ul>
+                <li>Информационная безопасность</li>
+                <li>Прикладная информатика</li>
+                <li>Прикладная математика</li>
+            </ul>
 
-        </p>
+            <p>
+                В состав института входят:
+            </p>
+            <ul>
+                <li>
+                    <a href="/education/faculty">
+                        Факультет информационных систем и безопасности
+                    </a>
+                </li>
+                <li>
+                    <a href="/structure/laboratory">
+                        Лаборатория компьютерной техники и средств защиты информации
+                    </a>
+                </li>
+            </ul>
+
+            <h2>Перспективы трудоустройства</h2>
+            <p>
+                Выпускники института работают в качестве: менеджеров ИТ-проектов, системных аналитиков, бизнес-аналитиков, системных интеграторов, системных администраторов, аудиторов информационных систем и информационной безопасности, постановщиков прикладных задач и прикладных программистов. Для того, чтобы учебный процесс образования гибко реагировал на постоянно изменяющийся спрос на специалистов в области прикладной информатики и технологий безопасности, в институте преподавателям предоставлена возможность творческого поиска и реализации оптимальных форм, методов, содержания обучения, использования современных отечественных и зарубежных информационных технологий. Поэтому целью образования в институте является не просто преподавание дисциплин, а обучение студентов умению мыслить, рассуждать, самостоятельно изучать новые разделы различных знаний. Особенность подготовки специалистов состоит в фундаментальности, конкретности, практической направленности обучения, основной принцип которого - повышение роли самостоятельной работы студентов. Студенты, прошедшие подготовку в рамках образовательных программ института, получают прекрасное представление не только о состоянии и новейших достижениях в области ИТ - технологий и технологий безопасности, но и прочно овладевают современными экономико-математическими методами анализа экономических процессов, научно-практическим потенциалом, способностью квалифицированно решать нестандартные задачи, что позволяет им чувствовать себя социально защищенными специалистами в условиях современного неустойчивого рынка труда.
+            </p>
+
+            <p>
+                <a href="/docs/iisst.pdf">Положение об ИИНТБ</a>
+            </p>
+        </section>
     </main>
 @endsection

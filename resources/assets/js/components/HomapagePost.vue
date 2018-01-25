@@ -38,7 +38,7 @@
     div.post
         margin-bottom: 48px
 
-        width: 85%
+        width: 100%
 
         overflow: hidden
 

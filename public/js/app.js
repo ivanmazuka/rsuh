@@ -28094,7 +28094,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.left-column, .center-column, .right-column {\n  width: 33.33%;\n  float: left;\n}\n", ""]);
+exports.push([module.i, "\n.left-column, .center-column, .right-column {\n  float: left;\n  width: 30%;\n}\n.left-column, .center-column {\n  margin-right: 5%;\n}\n", ""]);
 
 // exports
 
@@ -28339,7 +28339,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\ndiv.post {\n  margin-bottom: 48px;\n  width: 85%;\n  overflow: hidden;\n}\ndiv.post span.date {\n    color: grey;\n    font-size: 1em;\n}\ndiv.post div.picture {\n    height: 128px;\n    width: 100%;\n    background-size: cover;\n    -webkit-transition: -webkit-transform 125ms ease;\n    transition: -webkit-transform 125ms ease;\n    transition: transform 125ms ease;\n    transition: transform 125ms ease, -webkit-transform 125ms ease;\n}\ndiv.post:hover div.picture {\n  -webkit-transform: scale(1.125);\n          transform: scale(1.125);\n}\n", ""]);
+exports.push([module.i, "\ndiv.post {\n  margin-bottom: 48px;\n  width: 100%;\n  overflow: hidden;\n}\ndiv.post span.date {\n    color: grey;\n    font-size: 1em;\n}\ndiv.post div.picture {\n    height: 128px;\n    width: 100%;\n    background-size: cover;\n    -webkit-transition: -webkit-transform 125ms ease;\n    transition: -webkit-transform 125ms ease;\n    transition: transform 125ms ease;\n    transition: transform 125ms ease, -webkit-transform 125ms ease;\n}\ndiv.post:hover div.picture {\n  -webkit-transform: scale(1.125);\n          transform: scale(1.125);\n}\n", ""]);
 
 // exports
 
@@ -29338,7 +29338,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\ndiv[data-v-50c11426] {\n  height: 100%;\n}\ndiv div.wrapper[data-v-50c11426] {\n    position: absolute;\n    z-index: 2;\n    width: 100%;\n}\ndiv strong.title[data-v-50c11426] {\n    position: absolute;\n    right: 0;\n    bottom: 32px;\n    left: 0;\n    margin: auto;\n    max-width: 1024px;\n    font-size: 48px;\n}\n", ""]);
+exports.push([module.i, "\ndiv[data-v-50c11426] {\n  height: 100%;\n}\ndiv div.wrapper[data-v-50c11426] {\n    position: absolute;\n    z-index: 2;\n    width: 100%;\n}\ndiv strong.title[data-v-50c11426] {\n    position: absolute;\n    padding: 0 32px;\n    right: 0;\n    bottom: 32px;\n    left: 0;\n    margin: auto;\n    max-width: 1024px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    font-size: 48px;\n}\n", ""]);
 
 // exports
 

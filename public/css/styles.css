@@ -3365,9 +3365,10 @@ h4 {
 }
 
 .submenu {
+  padding-top: 16px;
+  padding-bottom: 16px;
   width: 100%;
   background: white;
-  padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -3387,7 +3388,7 @@ h4 {
 
 .submenu div {
   margin: auto;
-  width: 800px;
+  max-width: 1024px;
 }
 
 .submenu div ul {
@@ -3411,6 +3412,15 @@ h4 {
 .submenu div li:last-of-type {
   padding-right: 0;
   border-right: 0;
+}
+
+div.header-wrapper,
+nav.submenu div,
+.footer-wrapper {
+  padding-right: 32px;
+  padding-left: 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .header-wrapper {
@@ -3495,17 +3505,15 @@ h4 {
 
 main {
   margin: 32px auto 128px;
+  padding: 0 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   max-width: 1024px;
 }
 
 main a {
   color: white;
   text-decoration: none;
-}
-
-main img {
-  width: 120px;
-  height: 60px;
 }
 
 main .left > div > a,
@@ -3515,7 +3523,7 @@ main .right > div > a {
 
 main .left {
   float: left;
-  width: 768px;
+  width: 640px;
 }
 
 main .right {
@@ -3540,7 +3548,7 @@ footer {
 }
 
 footer .footer-wrapper {
-  width: 1024px;
+  max-width: 1024px;
   margin: 0 auto;
 }
 
@@ -3557,6 +3565,42 @@ footer .footer-wrapper a {
   float: right;
   text-decoration: none;
   color: white;
+}
+
+section a:link {
+  text-decoration: underline;
+}
+
+section a:hover {
+  text-decoration: none;
+}
+
+section h2:not(:first-of-type) {
+  margin: 2em 0 0.83em 0;
+}
+
+div.manager {
+  margin: 64px 0;
+}
+
+div.manager div.image,
+div.manager div.body {
+  float: left;
+}
+
+div.manager div.image {
+  margin-right: 32px;
+  height: 192px;
+  width: 192px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+div.manager div.body {
+  max-width: 512px;
 }
 
 .clear {
