@@ -207,13 +207,22 @@ section
     margin: 2em 0 0.83em 0
 
 div.manager
+  position: relative
+
   margin: 64px 0
+  
+  padding-left: 224px
+
+  min-height: 192px
 
   div.image, div.body
-    float: left
+    display: inline-block
 
   div.image
-    margin-right: 32px
+    position: absolute
+
+    top: 0
+    left: 0
 
     height: 192px
     width: 192px
@@ -226,6 +235,24 @@ div.manager
 
   div.body
     max-width: 512px
+
+table.contacts
+  margin-bottom: 64px
+
+  width: 100%
+
+  td
+    padding: 32px 0
+
+    width: 33.3333%
+
+    border-bottom: $blueLight solid thin
+
+  td:nth-of-type(2n)
+    text-align: center
+
+  td:nth-of-type(3n)
+    text-align: right
 
 .clear
   clear: both
