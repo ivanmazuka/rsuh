@@ -56,7 +56,7 @@ class AnnouncementController extends Controller
     {
         $handler = new Retrieve(new Announcement, $request);
 
-        return response()->json($handler->do('date'));
+        return response()->json($handler->do('date', 'asc'));
     }
 
     /**

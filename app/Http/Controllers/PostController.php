@@ -52,7 +52,7 @@ class PostController extends Controller
     public function retrieve(Request $request)
     {
         $handler = new Retrieve(new Post, $request);
-        return response()->json($handler->do('created_at'));
+        return response()->json($handler->do('created_at', 'desc'));
     }
 
     /**
