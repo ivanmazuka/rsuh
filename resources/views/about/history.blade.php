@@ -7,7 +7,7 @@
     @include('submenu.about')
 
     <main>
-        <span>// ОБ ИНСТИТУТЕ /</span>
+        <span class="bread">// ОБ ИНСТИТУТЕ /</span>
         <h1>История</h1>
         <section>
             <h2>История факультета защиты информации</h2>

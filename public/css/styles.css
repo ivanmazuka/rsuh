@@ -3627,6 +3627,34 @@ table.contacts td:nth-of-type(3n) {
   text-align: right;
 }
 
+span.bread {
+  display: block;
+}
+
+h1.blue,
+h1.green,
+h1.purple {
+  display: inline-block;
+}
+
+h1.blue {
+  background: #3a82a6;
+  background: -webkit-gradient(linear, left top, right top, from(#3a82a6), to(#3a5ea6));
+  background: linear-gradient(to right, #3a82a6 0%, #3a5ea6 100%);
+}
+
+h1.green {
+  background: #3aa68b;
+  background: -webkit-gradient(linear, left top, right top, from(#3aa68b), to(#3a9da6));
+  background: linear-gradient(to right, #3aa68b 0%, #3a9da6 100%);
+}
+
+h1.purple {
+  background: #a63a93;
+  background: -webkit-gradient(linear, left top, right top, from(#a63a93), to(#943aa6));
+  background: linear-gradient(to right, #a63a93 0%, #943aa6 100%);
+}
+
 .clear {
   clear: both;
 }

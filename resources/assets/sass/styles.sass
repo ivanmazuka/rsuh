@@ -254,5 +254,20 @@ table.contacts
   td:nth-of-type(3n)
     text-align: right
 
+span.bread
+  display: block
+
+h1.blue, h1.green, h1.purple
+  display: inline-block
+
+h1.blue
+  +gradient($blueLight, $blueDark)
+
+h1.green
+  +gradient($greenLight, $greenDark)
+
+h1.purple
+  +gradient($purpleLight, $purpleDark)
+
 .clear
   clear: both

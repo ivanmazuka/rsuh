@@ -3,11 +3,13 @@
 @section('title')
     Контакты
 @endsection
+
 @section('content')
+
     @include('submenu.about')
 
     <main>
-        <span>// ОБ ИНСТИТУТЕ /</span>
+        <span class="bread">// ОБ ИНСТИТУТЕ /</span>
         <h1>Контакты</h1>
         <h2>Институт Информационных Наук и Технологий Безопасности</h2>
         <section>

@@ -77,20 +77,24 @@ Route::get('/forapplicant/the-address-of-the-director', function () {
 
 
 Route::get('/education', function () {
-    return view('application.education');
-})->name('education');
+    return redirect('/education/faculty');
+});
+
 Route::get('/education/faculty', function () {
     return view('education.faculty');
 })->name('faculty');
-Route::get('/education/info-appl', function () {
-    return view('education.info-appl');
-})->name('info-appl');
-Route::get('/education/infosec', function () {
-    return view('education.infosec');
-})->name('infosec');
-Route::get('/education/math-appl', function () {
-    return view('education.math-appl');
-})->name('math-appl');;
+
+Route::get('/education/informatics', function () {
+    return view('education.informatics');
+})->name('informatics');
+
+Route::get('/education/security', function () {
+    return view('education.security');
+})->name('security');
+
+Route::get('/education/maths', function () {
+    return view('education.maths');
+})->name('maths');;
 
 
 Route::get('/about', function () {

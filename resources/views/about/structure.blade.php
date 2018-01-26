@@ -8,7 +8,7 @@
     @include('submenu.about')
 
     <main>
-        <span>// ОБ ИНСТИТУТЕ /</span>
+        <span class="bread">// ОБ ИНСТИТУТЕ /</span>
         <h1>Структурные подразделения</h1>
         <section>
             
