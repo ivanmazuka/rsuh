@@ -2,6 +2,10 @@
 @import "~animate.css"
 @import "variables"
 
+html, body
+  height: 100%
+  min-height: 100%
+
 body
   margin: 0 auto
   background-color: #2f2f2f
@@ -140,13 +144,11 @@ div.header-wrapper, nav.submenu div, .footer-wrapper
   color: inherit
   text-decoration: none
 
-.postin
-  max-width: 800px
-  margin: 0 auto
-
 main
-  margin: 32px auto 128px
-  padding: 0 32px
+  margin: -178px auto -72px
+  padding: 210px 32px 200px
+
+  min-height: 100%
 
   box-sizing: border-box
   max-width: 1024px
@@ -210,7 +212,7 @@ div.manager
   position: relative
 
   margin: 64px 0
-  
+
   padding-left: 224px
 
   min-height: 192px
@@ -268,6 +270,20 @@ h1.green
 
 h1.purple
   +gradient($purpleLight, $purpleDark)
+
+blockquote
+  margin: 32px 0 32px 16px
+
+  padding: 0 32px
+
+  border-left: $blueLight thick solid
+
+span.signature
+  float: right
+
+  width: 512px
+
+  font-style: italic
 
 .clear
   clear: both

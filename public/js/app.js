@@ -16734,8 +16734,6 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app'
 });
 
-window.$(document).ready(function () {});
-
 window.api = function (url) {
     var method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'get';
     var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;

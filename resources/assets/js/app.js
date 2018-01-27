@@ -12,9 +12,6 @@ new Vue({
     el: '#app'
 });
 
-window.$(document).ready(function () {
-});
-
 window.api = function (url, method = 'get', data = null) {
     $.ajax({
         url: url,
@@ -24,4 +21,4 @@ window.api = function (url, method = 'get', data = null) {
         .always(function (response) {
             console.log(response);
         });
-}
+};

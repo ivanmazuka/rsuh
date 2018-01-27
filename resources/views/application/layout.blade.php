@@ -28,8 +28,8 @@
                 <li><a class="{{Request::is('education/*') || Request::is('education') ? 'active' : ''}}"
                        href="/education">Образование</a></li>
 
-                <li><a class="{{Request::is('forapplicant/*') || Request::is('forapplicant') ? 'active' : ''}}"
-                       href="/forapplicant">Поступающим</a></li>
+                <li><a class="{{Request::is('applicants/*') || Request::is('applicants') ? 'active' : ''}}"
+                       href="/applicants">Поступающим</a></li>
 
                 <li><a class="{{Request::is('forstudents/*') || Request::is('forstudents') ? 'active' : ''}}"
                        href="/forstudents">Студентам</a></li>

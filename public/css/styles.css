@@ -3337,6 +3337,12 @@
   animation-name: slideOutUp;
 }
 
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
 body {
   margin: 0 auto;
   background-color: #2f2f2f;
@@ -3498,14 +3504,10 @@ nav.submenu div,
   text-decoration: none;
 }
 
-.postin {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 main {
-  margin: 32px auto 128px;
-  padding: 0 32px;
+  margin: -178px auto -72px;
+  padding: 210px 32px 200px;
+  min-height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-width: 1024px;
@@ -3653,6 +3655,18 @@ h1.purple {
   background: #a63a93;
   background: -webkit-gradient(linear, left top, right top, from(#a63a93), to(#943aa6));
   background: linear-gradient(to right, #a63a93 0%, #943aa6 100%);
+}
+
+blockquote {
+  margin: 32px 0 32px 16px;
+  padding: 0 32px;
+  border-left: #3a82a6 thick solid;
+}
+
+span.signature {
+  float: right;
+  width: 512px;
+  font-style: italic;
 }
 
 .clear {

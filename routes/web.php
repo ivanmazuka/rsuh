@@ -62,18 +62,18 @@ Route::get('/forstudents/library', function () {
 })->name('library');
 
 
-Route::get('/forapplicant', function () {
-    return view('application.applicant');
-})->name('applicant');
-Route::get('/forapplicant/campaign', function () {
-    return view('forapplicant.campaign');
+Route::get('/applicants', function () {
+    return view('applicants.index');
+})->name('applicants');
+Route::get('/applicants/campaign', function () {
+    return view('applicants.campaign');
 })->name('campaign');
-Route::get('/forapplicant/opendays', function () {
-    return view('forapplicant.opendays');
+Route::get('/applicants/opendays', function () {
+    return view('applicants.opendays');
 })->name('opendays');
-Route::get('/forapplicant/the-address-of-the-director', function () {
-    return view('forapplicant.the-address-of-the-director');
-})->name('the-address-of-the-director');
+Route::get('/applicants/address', function () {
+    return view('applicants.address');
+})->name('address');
 
 
 Route::get('/education', function () {
