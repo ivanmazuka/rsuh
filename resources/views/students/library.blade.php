@@ -4,7 +4,7 @@
     ИИНТБ | Главная
 @endsection
 @section('content')
-    @include('submenu.forstudents')
+    @include('submenu.students')
     <main>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta lorem eros, non congue lectus aliquam

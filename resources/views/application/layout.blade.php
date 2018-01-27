@@ -22,22 +22,40 @@
             <h1>Институт Информационных Наук и Технологий Безопасности</h1>
 
             <ul>
-                <li><a class="{{Request::is('about/*') || Request::is('about') ? 'active' : ''}}"
-                       href="/about">Об институте</a></li>
+                <li>
+                    <a class="{{Request::is('about/*') || Request::is('about') ? 'active' : ''}}"
+                       href="/about">Об институте
+                    </a>
+                </li>
 
-                <li><a class="{{Request::is('education/*') || Request::is('education') ? 'active' : ''}}"
-                       href="/education">Образование</a></li>
+                <li>
+                    <a class="{{Request::is('education/*') || Request::is('education') ? 'active' : ''}}"
+                       href="/education">Образование
+                    </a>
+                </li>
 
-                <li><a class="{{Request::is('applicants/*') || Request::is('applicants') ? 'active' : ''}}"
-                       href="/applicants">Поступающим</a></li>
+                <li>
+                    <a class="{{Request::is('applicants/*') || Request::is('applicants') ? 'active' : ''}}"
+                       href="/applicants">Поступающим
+                    </a>
+                </li>
 
-                <li><a class="{{Request::is('forstudents/*') || Request::is('forstudents') ? 'active' : ''}}"
-                       href="/forstudents">Студентам</a></li>
+                <li>
+                    <a class="{{Request::is('students/*') || Request::is('students') ? 'active' : ''}}"
+                       href="/students">Студентам
+                    </a>
+                </li>
 
-                <li><a class="{{Request::is('science/*') || Request::is('science') ? 'active' : ''}}"
-                       href="/science">Наука</a></li>
+                <li>
+                    <a class="{{Request::is('science/*') || Request::is('science') ? 'active' : ''}}"
+                       href="/science">Наука
+                    </a>
+                </li>
 
-                <li><a class="{{Request::is('news/*')? 'active' : ''}}" href="/news/posts">Информация</a></li>
+                <li>
+                    <a class="{{Request::is('news/*')? 'active' : ''}}" href="/news/posts">Информация
+                    </a>
+                </li>
 
                 <div class="clear"></div>
             </ul>

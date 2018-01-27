@@ -40,25 +40,24 @@ Route::get('/science/scientific-events/', function () {
 })->name('scientific-events');
 
 
-Route::get('/forstudents', function () {
-    return view('application.forstudents');
-})->name('forstudents');
-
-Route::get('/forstudents/graduates', function () {
-    return view('forstudents.graduates');
-})->name('graduates');
-Route::get('/forstudents/welcome', function () {
-    return view('forstudents.welcome');
-})->name('welcome');
-Route::get('/forstudents/timetable', function () {
-    return view('forstudents.timetable');
+// Для студентов.
+Route::get('/students', function () {
+    return redirect('/students/timetable');
+})->name('students');
+Route::get('/students/timetable', function () {
+    return view('students.timetable');
 })->name('timetable');
-Route::get('/forstudents/work-with-students', function () {
-    return view('forstudents.work-with-students');
-})->name('work-with-students');
-
-Route::get('/forstudents/library', function () {
-    return view('forstudents.library');
+Route::get('/students/graduates', function () {
+    return view('students.graduates');
+})->name('graduates');
+Route::get('/students/welcome', function () {
+    return view('students.welcome');
+})->name('welcome');
+Route::get('/students/work', function () {
+    return view('students.work');
+})->name('work');
+Route::get('/students/library', function () {
+    return view('students.library');
 })->name('library');
 
 
