@@ -1,7 +1,7 @@
 @extends('application.layout')
 
 @section('title')
-    Расписания
+    Расписание
 @endsection
 
 @section('content')

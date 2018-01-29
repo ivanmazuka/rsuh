@@ -7,6 +7,8 @@ Vue.component('homepage-announcements', require('./components/HomepageAnnounceme
 Vue.component('homepage-announcement', require('./components/HomepageAnnouncement.vue'));
 Vue.component('homepage-slider', require('./components/HomepageSlider.vue'));
 Vue.component('homepage-slider-element', require('./components/HomepageSliderElement.vue'));
+Vue.component('news-posts', require('./components/NewsPosts.vue'));
+Vue.component('news-post', require('./components/NewsPost.vue'));
 
 new Vue({
     el: '#app'

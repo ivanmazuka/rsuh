@@ -30,5 +30,4 @@ class Retrieve extends Action
 
         return $this->model;
     }
-
 }

@@ -2,14 +2,18 @@
     <div>
         <ul>
 
-            <li><a class="{{Route::currentRouteName() == 'management' ? 'active' : ''}}" href="/about/management">
-                    Руководство</a></li>
-            <li><a class="{{Route::currentRouteName() == 'structure' ? 'active' : ''}}" href="/about/structure">
-                    Структурные подразделения</a></li>
-            <li><a class="{{Route::currentRouteName() == 'history' ? 'active' : ''}}" href="/about/history">
-                    История</a></li>
-            <li><a class="{{Route::currentRouteName() == 'contacts' ? 'active' : ''}}"
-                   href="/about/contacts">Контакты</a></li>
+            <li>
+                <a class="{{ isActive('management') }}" href="/about/management">Руководство</a>
+            </li>
+            <li>
+                <a class="{{ isActive('structure') }}" href="/about/structure">Структурные подразделения</a>
+            </li>
+            <li>
+                <a class="{{ isActive('history') }}" href="/about/history">История</a>
+            </li>
+            <li>
+                <a class="{{ isActive('contacts') }}" href="/about/contacts">Контакты</a>
+            </li>
             <div class="clear"></div>
 
         </ul>

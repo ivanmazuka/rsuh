@@ -31,7 +31,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('post.show', compact('post'));
+        return view('application.post', compact('post'));
     }
 
     public function create(Request $request)
@@ -83,5 +83,37 @@ class PostController extends Controller
         return response()->json([
             'result' => $handler->do()
         ]);
+    }
+
+    /**
+     * Get posts by API.
+     *
+     * @param  int $number
+     * @return mixed
+     */
+    public function get($number)
+    {
+        return Post::orderBy('id', 'desc')->limit($number)->get();
+    }
+
+    /**
+     * Get 4 more posts.
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function more($id)
+    {
+        return Post::orderBy('id', 'desc')->where('id', '<', $id)->limit(4)->get();
+    }
+
+    /**
+     * Count posts.
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return Post::all()->count();
     }
 }

@@ -3504,6 +3504,16 @@ nav.submenu div,
   text-decoration: none;
 }
 
+span.date {
+  color: grey;
+  font-size: 1em;
+}
+
+img.picture {
+  margin-top: 16px;
+  width: 100%;
+}
+
 main {
   margin: -178px auto -72px;
   padding: 210px 32px 200px;

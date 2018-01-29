@@ -2,24 +2,16 @@
     <div>
         <ul>
             <li>
-                <a class="{{Route::currentRouteName() == 'faculty' ? 'active' : ''}}" href="/education/faculty">
-                    Факультет
-                </a>
+                <a class="{{ isActive('faculty') }}" href="/education/faculty">Факультет</a>
             </li>
             <li>
-                <a class="{{Route::currentRouteName() == 'security' ? 'active' : ''}}" href="/education/security">
-                    Информационная безопасность
-                </a>
+                <a class="{{ isActive('security') }}" href="/education/security">Информационная безопасность</a>
             </li>
             <li>
-                <a class="{{Route::currentRouteName() == 'informatics' ? 'active' : ''}}" href="/education/informatics">
-                    Прикладная информатика
-                </a>
+                <a class="{{ isActive('informatics') }}" href="/education/informatics">Прикладная информатика</a>
             </li>
             <li>
-                <a class="{{Route::currentRouteName() == 'maths' ? 'active' : ''}}" href="/education/maths">
-                    Прикладная математика
-                </a>
+                <a class="{{ isActive('maths') }}" href="/education/maths">Прикладная математика</a>
             </li>
             <div class="clear"></div>
         </ul>

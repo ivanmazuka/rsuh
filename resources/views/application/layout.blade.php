@@ -5,6 +5,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
 
 </head>
@@ -23,38 +24,27 @@
 
             <ul>
                 <li>
-                    <a class="{{Request::is('about/*') || Request::is('about') ? 'active' : ''}}"
-                       href="/about">Об институте
-                    </a>
+                    <a class="{{ isActive('about') }}" href="/about">Об институте</a>
                 </li>
 
                 <li>
-                    <a class="{{Request::is('education/*') || Request::is('education') ? 'active' : ''}}"
-                       href="/education">Образование
-                    </a>
+                    <a class="{{ isActive('education') }}" href="/education">Образование</a>
                 </li>
 
                 <li>
-                    <a class="{{Request::is('applicants/*') || Request::is('applicants') ? 'active' : ''}}"
-                       href="/applicants">Поступающим
-                    </a>
+                    <a class="{{ isActive('applicants') }}" href="/applicants">Поступающим</a>
                 </li>
 
                 <li>
-                    <a class="{{Request::is('students/*') || Request::is('students') ? 'active' : ''}}"
-                       href="/students">Студентам
-                    </a>
+                    <a class="{{ isActive('students') }}" href="/students">Студентам</a>
                 </li>
 
                 <li>
-                    <a class="{{Request::is('science/*') || Request::is('science') ? 'active' : ''}}"
-                       href="/science">Наука
-                    </a>
+                    <a class="{{ isActive('science') }}" href="/science">Наука</a>
                 </li>
 
                 <li>
-                    <a class="{{Request::is('news/*')? 'active' : ''}}" href="/news/posts">Информация
-                    </a>
+                    <a class="{{ isActive('news') }}" href="/news/posts">Информация</a>
                 </li>
 
                 <div class="clear"></div>
@@ -84,7 +74,7 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
 
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 </body>
 
 </html>
