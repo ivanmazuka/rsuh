@@ -1,21 +1,21 @@
 <template>
     <div class="animated fadeIn post">
-        <a :href="'/post/' + post.id" class="picture">
+        <a :href="'/announcement/' + announcement.id" class="picture">
             <div
                     class="picture"
-                    v-if="post.picture"
-                    :style="{ 'background-image': 'url(/img/' + post.picture + ')' }"
+                    v-if="announcement.picture"
+                    :style="{ 'background-image': 'url(/img/' + announcement.picture + ')' }"
             >
             </div>
 
             <h2 class="post-title">
-                {{ post.title }}
+                {{ announcement.title }}
             </h2>
 
-            <span class="date">{{ post.created_at | moment }}</span>
+            <span class="date">{{ announcement.date | moment }}</span>
 
             <span class="body">
-                {{ post.body }}
+                {{ announcement.body }}
             </span>
         </a>
 
@@ -28,7 +28,7 @@
     moment.locale('ru');
 
     export default {
-        props: ['post'],
+        props: ['announcement'],
 
         filters: {
             moment: function (date) {

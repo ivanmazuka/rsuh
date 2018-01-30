@@ -3353,7 +3353,8 @@ body {
 header {
   position: relative;
   z-index: 2;
-  padding: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
   width: 100%;
   background-color: #3a77a6;
   -webkit-box-sizing: border-box;
@@ -3591,6 +3592,10 @@ section h2:not(:first-of-type) {
   margin: 2em 0 0.83em 0;
 }
 
+section img {
+  width: 100%;
+}
+
 div.manager {
   position: relative;
   margin: 64px 0;
@@ -3675,11 +3680,86 @@ blockquote {
 
 span.signature {
   float: right;
-  width: 512px;
+  max-width: 512px;
   font-style: italic;
 }
 
 .clear {
   clear: both;
+}
+
+@media screen and (max-width: 1024px) {
+  .menu {
+    display: none;
+  }
+
+  main .left,
+  main .right {
+    float: none;
+    width: 100%;
+  }
+
+  main .right {
+    margin-top: 64px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  main {
+    margin: -98px auto -72px;
+    padding: 130px 16px 200px;
+  }
+
+  div.header-wrapper,
+  nav.submenu div,
+  .footer-wrapper {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  section h2 {
+    font-size: 1.25em;
+  }
+
+  section h3 {
+    font-size: 1em;
+  }
+
+  .submenu {
+    display: none;
+  }
+
+  .slider {
+    height: 256px;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  blockquote {
+    margin: 32px 0;
+    padding: 0;
+    border-left: 0;
+  }
+
+  main .left-column,
+  main .center-column,
+  main .right-column {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  footer .footer-wrapper a {
+    display: none;
+  }
 }
 

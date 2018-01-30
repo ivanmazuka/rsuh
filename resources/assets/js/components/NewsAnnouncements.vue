@@ -1,21 +1,21 @@
 <!-- Template -->
 <template>
     <div>
-        <news-post
-                v-for="post in list"
-                :key="post.id"
-                :post="post"
-                ref="post"
+        <news-announcement
+                v-for="announcement in list"
+                :key="announcement.id"
+                :announcement="announcement"
+                ref="announcement"
         >
-        </news-post>
-        <button v-if="count > 6" @click="morePosts()">Загрузить ещё</button>
+        </news-announcement>
+        <button v-if="count > 6" @click="moreAnnouncements()">Загрузить ещё</button>
     </div>
 </template>
 
 <!-- Logic -->
 <script>
-
     export default {
+
         data() {
             return {
                 list: [],
@@ -26,34 +26,34 @@
 
         // Methods
         methods: {
-            getPosts(number) {
-                $.getJSON('/api/posts/get/' + number, function (posts) {
-                    this.list = posts;
-                    this.latest = posts[posts.length - 1].id;
+            getAnnouncements(number) {
+                $.getJSON('/api/announcements/get/' + number, function (announcements) {
+                    this.list = announcements;
+                    this.latest = announcements[announcements.length - 1].date;
                 }.bind(this));
             },
 
-            countPosts() {
-                $.get('/api/posts/count', function (result) {
+            countAnnouncements() {
+                $.get('/api/announcements/count', function (result) {
                     this.count = result;
                 }.bind(this));
             },
 
-            morePosts() {
-                $.get('/api/posts/more/' + this.latest, function (posts) {
-                    for (let i = 0; i < posts.length; i++) {
-                        this.list.push(posts[i]);
+            moreAnnouncements() {
+                $.get('/api/announcements/more/' + this.latest, function (announcements) {
+                    for (let i = 0; i < announcements.length; i++) {
+                        this.list.push(announcements[i]);
                     }
-                    this.latest = this.list[this.list.length - 1].id;
-                    this.count -= posts.length;
+                    this.latest = this.list[this.list.length - 1].date;
+                    this.count -= announcements.length;
                 }.bind(this));
             }
         },
 
         // Get all the posts
         created() {
-            this.getPosts(6);
-            this.countPosts()
+            this.getAnnouncements(6);
+            this.countAnnouncements()
         },
     }
 </script>

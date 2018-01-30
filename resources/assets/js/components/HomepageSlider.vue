@@ -6,11 +6,6 @@
                 :element="element"
         >
         </homepage-slider-element>
-
-        <div class="buttons-wrapper">
-            <button class="previous">1</button>
-            <button class="next">2</button>
-        </div>
     </div>
 </template>
 

@@ -17,6 +17,7 @@ class AnnouncementsTableSeeder extends Seeder
             DB::table('announcements')->insert([
                 'title' => $faker->realText(64),
                 'body' => $faker->realText(1024),
+                'picture' => '1.png',
                 'date' => $faker->dateTimeInInterval('now', '+ 365 days')
             ]);
         }

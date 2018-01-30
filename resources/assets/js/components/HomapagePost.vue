@@ -1,6 +1,6 @@
 <template>
     <div class="post">
-        <a :href="'/news/post/' + post.id" class="picture">
+        <a :href="'/post/' + post.id" class="picture">
             <div
                     class="picture"
                     v-if="post.picture"

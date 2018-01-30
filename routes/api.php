@@ -31,3 +31,7 @@ Route::delete('/posts/{post}', 'PostController@delete');
 Route::get('/posts/get/{number}', 'PostController@get');
 Route::get('/posts/more/{id}', 'PostController@more');
 Route::get('/posts/count', 'PostController@count');
+
+Route::get('/announcements/get/{date}', 'AnnouncementController@get');
+Route::get('/announcements/more/{id}', 'AnnouncementController@more');
+Route::get('/announcements/count', 'AnnouncementController@count');

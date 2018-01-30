@@ -9,7 +9,7 @@
     @include('submenu.news')
 
     <main>
-        <div class="announcement">
+        <div class="post">
             <h1>{{ $post->title }}</h1>
             <span class="date">{{ $post->created_at->format('d.m.y в H:i:s') }}</span>
             <p>{{ $post->body }}</p>

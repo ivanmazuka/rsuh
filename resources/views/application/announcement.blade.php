@@ -8,13 +8,13 @@
 
     @include('submenu.news')
 
-    <div class="announcement">
-        <div class="circle">
-            <div>{{ $announcement->created_at }}</div>
+    <main>
+        <div class="announcement">
+            <h1>{{ $announcement->title }}</h1>
+            <span class="date">{{ $announcement->created_at->format('d.m.y в H:i:s') }}</span>
+            <p>{{ $announcement->body }}</p>
+            <img class="picture" src="/img/{{ $announcement->picture }}">
         </div>
-        <h3 class="title">{{ $announcement->title }} </h3>
-        <h4>  {{ $announcement->body }}  </h4>
-        <div class="clear"></div>
-    </div>
+    </main>
 
 @endsection

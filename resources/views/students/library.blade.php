@@ -1,62 +1,50 @@
 @extends('application.layout')
 
 @section('title')
-    ИИНТБ | Главная
+    Библиотека
 @endsection
-@section('content')
-    @include('submenu.students')
-    <main>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta lorem eros, non congue lectus aliquam
-            ut.
-            Donec pretium ante ut consequat sollicitudin. Quisque et ligula sodales, dictum urna ac, imperdiet erat.
-            Curabitur
-            nec risus id ipsum vehicula molestie quis vitae nibh. Donec ipsum sem, bibendum et pretium sit amet, laoreet
-            sit
-            amet magna. Nullam ultricies, ligula quis imperdiet dapibus, ligula urna sollicitudin dolor, eget rhoncus
-            nisi leo
-            ac enim. Phasellus sit amet suscipit nisl. Duis mollis tincidunt sapien, nec ullamcorper turpis pulvinar
-            vitae. Sed
-            a malesuada lorem, at suscipit est. Mauris rutrum eros sed felis mollis euismod sit amet vel arcu. Nullam
-            viverra
-            massa eu lacus tempor vulputate.
-        </p>
-        <p>
-            Integer ut mattis neque, a volutpat tortor. Donec volutpat sem congue libero auctor semper. Nulla ut mauris
-            ac
-            mauris imperdiet auctor sed vitae sem. In tristique lacus lectus. In blandit dui a imperdiet ultricies. Nunc
-            arcu
-            risus, laoreet et consequat nec, faucibus vel est. Nulla vulputate tortor ante, id auctor enim condimentum
-            sit amet.
-            Sed dapibus risus tempus massa sollicitudin consectetur. Phasellus pharetra arcu massa, et pharetra elit
-            tristique
-            eu.
-        </p>
-        <p>
-            Curabitur congue diam urna, non maximus nunc cursus in. Nam sagittis efficitur tortor eget feugiat. Nullam
-            rutrum
-            neque in erat tincidunt maximus at ut neque. Maecenas sit amet pretium purus. Quisque mollis interdum orci,
-            a
-            porttitor lorem eleifend at. Sed posuere diam et nisl pellentesque pretium. Nunc aliquam rutrum diam in
-            rutrum.
-            Proin eget odio nunc. Maecenas ut euismod lectus. Nullam efficitur hendrerit dolor, pellentesque mollis nunc
-            bibendum et. Curabitur vehicula nunc posuere ligula commodo, dictum pellentesque augue tempus.
-        </p>
-        <p>
-            Sed elementum mi eget tellus ultrices, nec vehicula sapien volutpat. Aenean varius mattis varius. Proin
-            tempor nibh
-            sit amet dui pellentesque scelerisque. Vivamus commodo ipsum at tristique vulputate. Sed ut turpis venenatis
-            lacus
-            ullamcorper hendrerit. Nulla magna leo, cursus eget lorem condimentum, faucibus sollicitudin velit. Nunc non
-            venenatis libero.
-        </p>
-        <p>
-            Curabitur placerat mauris sit amet felis finibus, a consequat felis tincidunt. Donec eget lacus sapien. Duis
-            auctor,
-            lorem eu semper accumsan, mauris nibh posuere mi, sit amet semper magna mi eu purus. Vestibulum cursus
-            pretium
-            congue. Proin vitae interdum orci. Donec viverra porta efficitur. Ut ac efficitur mi, ac volutpat erat.
 
-        </p>
+@section('content')
+
+    @include('submenu.students')
+
+    <main>
+        <span>// Студентам /</span>
+        <h1>Библиотека</h1>
+        <section>
+            <h2>Библиотека в вопросах и ответах</h2>
+            <h3>
+                <u>Как записаться в библиотеку?</u>
+            </h3>
+            <p>Для этого надо прийти на абонемент библиотеки по месту размещения факультета (РГГУ, ИАИ, ИИНТБ), имея при
+                себе студенческий билет или другой документ, подтверждающий прикрепление к РГГУ, и заполнить Договор об
+                обслуживании. Ваши данные будут введены в БД, на студенческий билет наклеен штрих-код и после этого
+                будет возможно заказывать литературу через электронный каталог библиотеки.</p>
+
+            <h3>
+                <u>Как можно продлить срок пользования литературой?</u>
+            </h3>
+            <p>Для этого надо прийти на абонемент в РГГУ или ИАИ. Сотрудник абонемента продлит срок пользования еще на
+                месяц или семестр (в зависимости от того, из какого фонда книга).</p>
+            <p>Студенты вечерней и заочной форм обучения, студенты-пятикурсники дневной формы обучения и преподаватели
+                могут продлить срок пользования литературой по телефону, позвонив на тот абонемент, на котором издания
+                были получены.</p>
+            <h3>
+                <u>Что делать, если библиотечная книга потеряна?</u>
+            </h3>
+            <p>Не надо затягивать решение этой проблемы. Если книга потеряна, надо прийти на абонемент, на котором эта
+                книга была получена, и сообщить об утере. Вам будет предложено купить либо точно такую же книгу, либо
+                другую книгу, нужную в данный момент библиотеке (сотрудник абонемент назовет какую).</p>
+            <p>Если проблему не решить своевременно, то помимо покупки книги придется оплачивать компенсацию за
+                нарушение сроков пользования изданием.</p>
+            <h3>Время работы:</h3>
+            <p>Понедельник-пятница 10:00-18:00.</p>
+            <h3>Главный библиотекарь</h3>
+            <p>Янбакова Галина Маликовна</p>
+            <p>Телефон: (495) 250-64-30</p>
+            <p>
+                <a href="http://liber.rsuh.ru/" target="_blank">Центральная библиотека РГГУ</a>
+            </p>
+        </section>
     </main>
 @endsection

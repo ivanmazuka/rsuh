@@ -1,6 +1,6 @@
 <template>
-    <div class="announcement">
-        <a :href="'/news/announcements/' + announcement.id">
+    <div class="animated fadeIn announcement">
+        <a :href="'/announcement/' + announcement.id">
             <div class="circle">
                 <div class="background">
 

@@ -29,7 +29,7 @@ class AnnouncementController extends Controller
      */
     public function show(Announcement $announcement)
     {
-        return view('announce.show', compact('announcement'));
+        return view('application.announcement', compact('announcement'));
     }
 
     /**
@@ -88,6 +88,38 @@ class AnnouncementController extends Controller
         return response()->json([
             'result' => $handler->do()
         ]);
+    }
+
+    /**
+     * Get posts by API.
+     *
+     * @param  int $number
+     * @return mixed
+     */
+    public function get($number)
+    {
+        return Announcement::orderBy('date', 'asc')->limit($number)->get();
+    }
+
+    /**
+     * Get 4 more posts.
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function more($date)
+    {
+        return Announcement::orderBy('date', 'asc')->where('date', '>', $date)->limit(4)->get();
+    }
+
+    /**
+     * Count posts.
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return Announcement::all()->count();
     }
 }
 

@@ -1,8 +1,10 @@
 <?php
 
 Route::get('/', 'HomeController@index');
-Route::get('/post/{post}', 'PostController@show')->name('show');
-Route::get('/announcement/{announcement}', 'AnnouncementController@show')->name('show');
+Route::get('/post/{post}', 'PostController@show')
+    ->name('posts');
+Route::get('/announcement/{announcement}', 'AnnouncementController@show')
+    ->name('announcements');
 
 
 // Об институте.

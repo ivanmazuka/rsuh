@@ -24,6 +24,9 @@
 
             width: 100%
 
+            background-position: center
+            background-size: cover
+
         strong.title
             position: absolute
 
@@ -39,4 +42,13 @@
 
             box-sizing: border-box
             font-size: 48px
+
+    @media screen and (max-width: 768px)
+        div strong.title
+            font-size: 1.5em
+
+    @media screen and (max-width: 512px)
+        div strong.title
+            font-size: 1em
+
 </style>
