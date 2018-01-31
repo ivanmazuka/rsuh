@@ -26,3 +26,10 @@ window.api = function (url, method = 'get', data = null) {
             console.log(response);
         });
 };
+
+$(document).ready(function () {
+    $('.unwrap-nav, .wrap-nav').on('click', function () {
+        const nav = $('nav.main');
+        nav.toggleClass('unwrapped');
+    });
+});

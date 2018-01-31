@@ -26,6 +26,41 @@ header
   +shadow(0, 5px, 10px, 0, 0.25)
   +gradient($blueLight, $blueDark)
 
+
+// Mobile navigation blocks.
+h1.mobile-title
+  display: none
+  float: left
+
+  margin-bottom: 0
+
+div.unwrap-nav, div.wrap-nav
+  position: absolute
+  float: right
+
+  top: 25px
+  right: 16px
+  bottom: 25px
+
+  height: 48px
+  width: 48px
+
+  background: url('/img/lines.svg') center no-repeat
+  background-size: contain
+
+div.unwrap-nav
+  display: none
+
+  background: url('/img/lines.svg') center no-repeat
+
+div.wrap-nav
+  display: block
+
+  background: url('/img/cross.svg') center no-repeat
+
+li.hidden-element
+  display: none
+
 h4
   margin: 1em 0
 
@@ -302,7 +337,19 @@ span.signature
 
 @media screen and (max-width: 1024px)
   .menu
-    display: none
+    h1, nav.main
+      display: none
+      
+    h1.mobile-title
+      display: block
+
+      line-height: 66px
+
+  div.unwrap-nav, div.wrap-nav
+    display: block
+
+  div.unwrap-nav
+    z-index: 1
 
   main
     .left, .right
@@ -312,6 +359,53 @@ span.signature
 
     .right
       margin-top: 64px
+
+  .header-wrapper
+    ul
+      height: 100%
+
+      padding: 32px 0
+
+      box-sizing: border-box
+      overflow-y: scroll 
+
+    .logo
+      margin-right: 16px
+
+  .menu nav.unwrapped
+    z-index: 2
+
+    display: block
+
+    position: fixed
+
+    padding: 0 16px
+
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+    background: rgba(#2f2f2f, 0.975)
+
+    li
+      float: none
+
+      margin: 16px 0
+      padding: 0
+
+      border: none
+      font-size: 1.25em
+
+    li:first-of-type
+      margin-top: 0
+
+    li.hidden-element
+      display: block
+
+      margin: 8px 0 0 16px
+
+      font-size: 1em
 
 @media screen and (max-width: 768px)
   header
