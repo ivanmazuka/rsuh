@@ -3366,12 +3366,6 @@ header {
   background: linear-gradient(to right, #3a82a6 0%, #3a5ea6 100%);
 }
 
-h1.mobile-title {
-  display: none;
-  float: left;
-  margin-bottom: 0;
-}
-
 div.unwrap-nav,
 div.wrap-nav {
   display: none;
@@ -3494,6 +3488,12 @@ nav.submenu div,
   font-size: 24px;
   margin-top: 0;
   font-weight: normal;
+}
+
+.header-wrapper h1.mobile-title {
+  display: none;
+  float: left;
+  margin-bottom: 0;
 }
 
 .header-wrapper li {
