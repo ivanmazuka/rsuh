@@ -3374,6 +3374,7 @@ h1.mobile-title {
 
 div.unwrap-nav,
 div.wrap-nav {
+  display: none;
   position: absolute;
   float: right;
   top: 25px;
@@ -3386,12 +3387,10 @@ div.wrap-nav {
 }
 
 div.unwrap-nav {
-  display: none;
   background: url("/img/lines.svg") center no-repeat;
 }
 
 div.wrap-nav {
-  display: block;
   background: url("/img/cross.svg") center no-repeat;
 }
 
