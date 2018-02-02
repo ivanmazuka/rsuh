@@ -10,7 +10,9 @@
 
     <main>
         <span>// ПОСТУПАЮЩИМ /</span>
-        <h1>Обращение к поступающим</h1>
+        <div class="page-title">
+            <h1>Обращение к поступающим</h1>
+        </div>
         <section>
             <blockquote>
                 <p>

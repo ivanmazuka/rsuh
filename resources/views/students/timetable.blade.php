@@ -10,7 +10,9 @@
 
     <main>
         <span>// Студентам /</span>
-        <h1>Расписание</h1>
+        <div class="page-title">
+            <h1>Расписание</h1>
+        </div>
         <section>
             <p>
                 В этом семестре расписание составляется <a href="http://rggu.ru/raspis/"

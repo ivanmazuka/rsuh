@@ -1,0 +1,151 @@
+@media screen and (max-width: 1024px)
+  .menu
+    h1, nav.main
+      display: none
+      
+    h1.mobile-title
+      display: block
+
+      line-height: 66px
+
+  // Кнопки открытия/закрытия мобильного меню
+  div.unwrap-nav, div.wrap-nav
+    display: block
+
+  // Кнопка закрытия меню
+  div.unwrap-nav
+    z-index: 1
+
+  // Главный блок
+  main
+    .left, .right
+      float: none
+
+      width: 100%
+
+    .right
+      margin-top: 64px
+
+  // Обертка шапки
+  .header-wrapper
+    ul
+      height: 100%
+
+      padding: 32px 0
+
+      box-sizing: border-box
+      overflow-y: scroll 
+
+    .logo
+      margin-right: 16px
+
+  // Блок меню мобильной верстки
+  .menu nav.unwrapped
+    z-index: 2
+
+    display: block
+
+    position: fixed
+
+    padding: 0 16px
+
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+    background: rgba(#2f2f2f, 0.975)
+
+    li
+      float: none
+
+      margin: 16px 0
+      padding: 0
+
+      border: none
+      font-size: 1.25em
+
+    li:first-of-type
+      margin-top: 0
+
+    div.sub-menu
+      display: block
+
+      li
+        margin: 8px 0 0 16px
+
+        font-size: 1em
+
+@media screen and (max-width: 768px)
+
+  // Шапка
+  header
+    padding-top: 16px
+    padding-bottom: 16px
+
+  // Главный блок
+  main
+    margin: -98px auto -72px
+    padding: 130px 16px 200px
+
+  // Обертки
+  div.header-wrapper, nav.submenu div, .footer-wrapper
+    padding-right: 16px
+    padding-left: 16px
+
+  // Заголовок
+  h1
+    font-size: 1.5em
+
+  // Верстка страниц
+  section
+    h2
+      font-size: 1.25em
+
+    h3
+      font-size: 1em
+
+  // Подменю в мобильной версии
+  .submenu
+    display: none
+
+  // Слайдер
+  .slider
+    height: 256px
+
+  table.contacts
+    td
+      font-size: 0.83em
+
+@media screen and (max-width: 640px)
+
+  // Блок руководителя
+  div.manager
+    padding: 0
+
+    text-align: center
+
+    div.image
+      position: static
+
+@media screen and (max-width: 512px)
+
+  // Главный блок
+  main
+    .left-column, .center-column, .right-column
+      float: none
+
+      margin-right: 0
+
+      width: 100%
+
+  // Цитата
+  blockquote
+    margin: 32px 0
+    padding: 0
+
+    border-left: 0
+
+  // Ссылка в подвале
+  footer .footer-wrapper a
+    display: none

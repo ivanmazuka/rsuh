@@ -3,12 +3,16 @@
 @section('title')
     История
 @endsection
+
 @section('content')
+
     @include('submenu.about')
 
     <main>
         <span class="bread">// ОБ ИНСТИТУТЕ /</span>
-        <h1>История</h1>
+        <div class="page-title">
+            <h1>История</h1>
+        </div>
         <section>
             <h2>История факультета защиты информации</h2>
             <p>

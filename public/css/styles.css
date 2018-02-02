@@ -3388,7 +3388,7 @@ div.wrap-nav {
   background: url("/img/cross.svg") center no-repeat;
 }
 
-li.hidden-element {
+div.sub-menu {
   display: none;
 }
 
@@ -3662,10 +3662,19 @@ table.contacts {
   width: 100%;
 }
 
+table.contacts th,
 table.contacts td {
   padding: 32px 0;
-  width: 33.3333%;
   border-bottom: #3a82a6 solid thin;
+  word-wrap: break-word;
+}
+
+table.contacts th {
+  font-size: 1.17em;
+}
+
+table.contacts td {
+  width: 33.3333%;
 }
 
 table.contacts td:nth-of-type(2n) {
@@ -3680,10 +3689,18 @@ span.bread {
   display: block;
 }
 
+div.page-title {
+  margin: 1em 0;
+}
+
+div.page-title h1 {
+  margin: 0;
+}
+
 h1.blue,
 h1.green,
 h1.purple {
-  display: inline-block;
+  display: inline;
 }
 
 h1.blue {
@@ -3786,8 +3803,11 @@ span.signature {
     margin-top: 0;
   }
 
-  .menu nav.unwrapped li.hidden-element {
+  .menu nav.unwrapped div.sub-menu {
     display: block;
+  }
+
+  .menu nav.unwrapped div.sub-menu li {
     margin: 8px 0 0 16px;
     font-size: 1em;
   }
@@ -3830,21 +3850,36 @@ span.signature {
   .slider {
     height: 256px;
   }
+
+  table.contacts td {
+    font-size: 0.83em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  div.manager {
+    padding: 0;
+    text-align: center;
+  }
+
+  div.manager div.image {
+    position: static;
+  }
 }
 
 @media screen and (max-width: 512px) {
-  blockquote {
-    margin: 32px 0;
-    padding: 0;
-    border-left: 0;
-  }
-
   main .left-column,
   main .center-column,
   main .right-column {
     float: none;
     margin-right: 0;
     width: 100%;
+  }
+
+  blockquote {
+    margin: 32px 0;
+    padding: 0;
+    border-left: 0;
   }
 
   footer .footer-wrapper a {

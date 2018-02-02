@@ -5,11 +5,14 @@
 @endsection
 
 @section('content')
+
     @include('submenu.about')
 
     <main>
         <span class="bread">// ОБ ИНСТИТУТЕ /</span>
-        <h1>Структурные подразделения</h1>
+        <div class="page-title">
+            <h1>Структура</h1>
+        </div>
         <section>
             
             <div class="manager">

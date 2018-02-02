@@ -1,5 +1,5 @@
-@import "~animate.css"
-@import "variables"
+@import "~animate.css"  // Библиотека Animate.css
+@import "variables"     // Все переменные
 
 html, body
   height: 100%
@@ -27,7 +27,7 @@ header
   +gradient($blueLight, $blueDark)
 
 
-// Mobile navigation blocks.
+// Mobile navigation blocks
 div.unwrap-nav, div.wrap-nav
   display: none
 
@@ -50,7 +50,8 @@ div.unwrap-nav
 div.wrap-nav
   background: url('/img/cross.svg') center no-repeat
 
-li.hidden-element
+// Подменю для мобильной верстки
+div.sub-menu
   display: none
 
 h4
@@ -148,6 +149,7 @@ div.header-wrapper, nav.submenu div, .footer-wrapper
     margin-left: 8px
     padding-right: 8px
     border-right: thin solid white
+
     a
       text-decoration: none
       color: white
@@ -283,17 +285,23 @@ div.manager
   div.body
     max-width: 512px
 
+// Таблица с контактами
 table.contacts
   margin-bottom: 64px
 
   width: 100%
 
-  td
+  th, td
     padding: 32px 0
 
-    width: 33.3333%
-
     border-bottom: $blueLight solid thin
+    word-wrap: break-word
+
+  th
+    font-size: 1.17em
+
+  td
+    width: 33.3333%
 
   td:nth-of-type(2n)
     text-align: center
@@ -301,11 +309,20 @@ table.contacts
   td:nth-of-type(3n)
     text-align: right
 
+// Хлебные крошки
 span.bread
   display: block
 
+// Обертка всех заголовков
+div.page-title
+  margin: 1em 0
+
+  h1
+    margin: 0
+
+// Заголовки направлений подготовки 
 h1.blue, h1.green, h1.purple
-  display: inline-block
+  display: inline
 
 h1.blue
   +gradient($blueLight, $blueDark)
@@ -316,6 +333,7 @@ h1.green
 h1.purple
   +gradient($purpleLight, $purpleDark)
 
+// Цитата
 blockquote
   margin: 32px 0 32px 16px
 
@@ -323,6 +341,7 @@ blockquote
 
   border-left: $blueLight thick solid
 
+// Подпись
 span.signature
   float: right
 
@@ -332,122 +351,6 @@ span.signature
 
 .clear
   clear: both
-
-@media screen and (max-width: 1024px)
-  .menu
-    h1, nav.main
-      display: none
-      
-    h1.mobile-title
-      display: block
-
-      line-height: 66px
-
-  div.unwrap-nav, div.wrap-nav
-    display: block
-
-  div.unwrap-nav
-    z-index: 1
-
-  main
-    .left, .right
-      float: none
-
-      width: 100%
-
-    .right
-      margin-top: 64px
-
-  .header-wrapper
-    ul
-      height: 100%
-
-      padding: 32px 0
-
-      box-sizing: border-box
-      overflow-y: scroll 
-
-    .logo
-      margin-right: 16px
-
-  .menu nav.unwrapped
-    z-index: 2
-
-    display: block
-
-    position: fixed
-
-    padding: 0 16px
-
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-
-    background: rgba(#2f2f2f, 0.975)
-
-    li
-      float: none
-
-      margin: 16px 0
-      padding: 0
-
-      border: none
-      font-size: 1.25em
-
-    li:first-of-type
-      margin-top: 0
-
-    li.hidden-element
-      display: block
-
-      margin: 8px 0 0 16px
-
-      font-size: 1em
-
-@media screen and (max-width: 768px)
-  header
-    padding-top: 16px
-    padding-bottom: 16px
-
-  main
-    margin: -98px auto -72px
-    padding: 130px 16px 200px
-
-  div.header-wrapper, nav.submenu div, .footer-wrapper
-    padding-right: 16px
-    padding-left: 16px
-
-  h1
-    font-size: 1.5em
-
-  section
-    h2
-      font-size: 1.25em
-
-    h3
-      font-size: 1em
-
-  .submenu
-    display: none
-
-  .slider
-    height: 256px
-
-@media screen and (max-width: 512px)
-  blockquote
-    margin: 32px 0
-    padding: 0
-
-    border-left: 0
-
-  main
-    .left-column, .center-column, .right-column
-      float: none
-
-      margin-right: 0
-
-      width: 100%
-
-  footer .footer-wrapper a
-    display: none
+  
+// Импорт адаптивной верстки
+@import "adaptive"

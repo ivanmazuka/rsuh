@@ -10,7 +10,9 @@
 
     <main id="app">
         <span>// ИНФОРМАЦИЯ /</span>
-        <h1>Новости</h1>
+        <div class="page-title">
+            <h1>Новости</h1>
+        </div>
         <news-posts></news-posts>
     </main>
 
