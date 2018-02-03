@@ -1,4 +1,11 @@
 @media screen and (max-width: 1024px)
+
+  // Шапка
+  header
+    padding-top: 16px
+    padding-bottom: 16px
+
+  // Меню навигации
   .menu
     h1, nav.main
       display: none
@@ -18,6 +25,9 @@
 
   // Главный блок
   main
+    margin: -98px auto -72px
+    padding: 130px 16px 200px
+
     .left, .right
       float: none
 
@@ -38,6 +48,10 @@
 
     .logo
       margin-right: 16px
+
+  // Подменю в мобильной версии
+  .submenu
+    display: none
 
   // Блок меню мобильной верстки
   .menu nav.unwrapped
@@ -78,16 +92,6 @@
 
 @media screen and (max-width: 768px)
 
-  // Шапка
-  header
-    padding-top: 16px
-    padding-bottom: 16px
-
-  // Главный блок
-  main
-    margin: -98px auto -72px
-    padding: 130px 16px 200px
-
   // Обертки
   div.header-wrapper, nav.submenu div, .footer-wrapper
     padding-right: 16px
@@ -104,10 +108,6 @@
 
     h3
       font-size: 1em
-
-  // Подменю в мобильной версии
-  .submenu
-    display: none
 
   // Слайдер
   .slider
