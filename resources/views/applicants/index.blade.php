@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Информация для поступающих в институт. 
+@endsection
+
 @section('title')
     Поступающим
 @endsection

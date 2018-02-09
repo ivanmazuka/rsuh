@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Обращение к поступающим в Институт Информационных Наук и Технологий Безопасности. 
+@endsection
+
 @section('title')
     Обращение к поступающим
 @endsection

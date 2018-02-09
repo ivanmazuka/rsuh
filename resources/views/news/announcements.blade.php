@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Список всех предстоящих событий.
+@endsection
+
 @section('title')
     Анонсы
 @endsection

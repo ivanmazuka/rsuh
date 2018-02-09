@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    В РГГУ для помощи студентам существует Управление по работе со студентами.
+@endsection
+
 @section('title')
     Работа со студентами
 @endsection

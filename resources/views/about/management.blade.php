@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Руководство Института Информационных Наук и Технологий Безопасности. 
+@endsection
+
 @section('title')
     Руководство
 @endsection

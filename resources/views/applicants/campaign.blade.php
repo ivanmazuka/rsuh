@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Информация о работе приемной комиссии. 
+@endsection
+
 @section('title')
     Приемная комиссия
 @endsection

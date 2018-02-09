@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Расписания занятий ИИНТБ.
+@endsection
+
 @section('title')
     Расписание
 @endsection

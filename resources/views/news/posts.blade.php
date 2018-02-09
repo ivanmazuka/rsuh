@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Список всех новостей сайта.
+@endsection
+
 @section('title')
     Новости
 @endsection

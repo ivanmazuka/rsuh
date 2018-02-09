@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Общая информация о факультете: напраления подготовки, положение, краткая историческая справка.
+@endsection
+
 @section('title')
     Факультет
 @endsection

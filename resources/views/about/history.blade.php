@@ -1,7 +1,7 @@
 @extends('application.layout')
 
-@section('title')
-    История
+@section('description')
+    История Факультета Защиты Информации (сейчас Факультет Информационных Систем и Безопасности).
 @endsection
 
 @section('content')

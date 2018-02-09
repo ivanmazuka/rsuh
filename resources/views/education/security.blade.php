@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Информация о направлении подготовки 10.03.01 «Информационная безопасность»
+@endsection
+
 @section('title')
     Информационная безопасность
 @endsection

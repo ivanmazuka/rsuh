@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Информация о направлении подготовки 09.03.03 «Прикладная информатика»
+@endsection
+
 @section('title')
     Прикладная информатика
 @endsection

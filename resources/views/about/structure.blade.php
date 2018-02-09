@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Структурные подразделения института. 
+@endsection
+
 @section('title')
     Структура
 @endsection

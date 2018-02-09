@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    О вестнике РГГУ и его номера.
+@endsection
+
 @section('title')
     Вестник РГГУ
 @endsection

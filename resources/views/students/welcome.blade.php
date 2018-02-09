@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Руководство для первокурсников. Что надо сделать после поступления в первую очередь?
+@endsection
+
 @section('title')
     Первокурсникам
 @endsection

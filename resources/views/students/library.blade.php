@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Вопросы и ответы о работе библиотеки РГГУ.
+@endsection
+
 @section('title')
     Библиотека
 @endsection

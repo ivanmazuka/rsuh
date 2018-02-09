@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Информация о работе студентов в РГГУ.
+@endsection
+
 @section('title')
     Работа студентов
 @endsection

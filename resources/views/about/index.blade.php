@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Коротко об институте: структура, перспективы трудоустройства и общая инфформация.
+@endsection
+
 @section('title')
     Об институте
 @endsection

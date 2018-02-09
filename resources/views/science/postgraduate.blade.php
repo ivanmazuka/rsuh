@@ -1,5 +1,9 @@
 @extends('application.layout')
 
+@section('description')
+    Информация для аспирантов РГГУ, направления подготовки аспирантуры.
+@endsection
+
 @section('title')
     Аспирантам
 @endsection

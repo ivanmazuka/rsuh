@@ -1,5 +1,10 @@
 @extends('application.layout')
 
+@section('description')
+    Институт Информационных Наук и Технологий Безопасности
+    Российского Государственного Гуманитарного Университета.
+@endsection
+
 @section('title')
     ИИНТБ | Главная
 @endsection
