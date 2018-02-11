@@ -3777,7 +3777,11 @@ span.signature {
     margin-top: 64px;
   }
 
-  .header-wrapper ul {
+  div.header-wrapper {
+    padding: 0 16px;
+  }
+
+  div.header-wrapper ul {
     height: 100%;
     padding: 32px 0;
     -webkit-box-sizing: border-box;
@@ -3785,7 +3789,7 @@ span.signature {
     overflow-y: scroll;
   }
 
-  .header-wrapper .logo {
+  div.header-wrapper .logo {
     margin-right: 16px;
   }
 

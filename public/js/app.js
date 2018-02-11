@@ -29326,7 +29326,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\ndiv[data-v-50c11426] {\n  height: 100%;\n}\ndiv div.wrapper[data-v-50c11426] {\n    position: absolute;\n    z-index: 2;\n    width: 100%;\n    background-position: center;\n    background-size: cover;\n}\ndiv strong.title[data-v-50c11426] {\n    position: absolute;\n    padding: 0 32px;\n    right: 0;\n    bottom: 32px;\n    left: 0;\n    margin: auto;\n    max-width: 1024px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    font-size: 48px;\n}\n@media screen and (max-width: 768px) {\ndiv strong.title[data-v-50c11426] {\n    font-size: 1.5em;\n}\n}\n@media screen and (max-width: 512px) {\ndiv strong.title[data-v-50c11426] {\n    font-size: 1em;\n}\n}\n", ""]);
+exports.push([module.i, "\ndiv[data-v-50c11426] {\n  height: 100%;\n}\ndiv div.wrapper[data-v-50c11426] {\n    position: absolute;\n    z-index: 2;\n    width: 100%;\n    background-position: center;\n    background-size: cover;\n}\ndiv strong.title[data-v-50c11426] {\n    position: absolute;\n    padding: 0 32px;\n    right: 0;\n    bottom: 32px;\n    left: 0;\n    margin: auto;\n    max-width: 1024px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    font-size: 48px;\n}\n@media screen and (max-width: 1024px) {\ndiv strong.title[data-v-50c11426] {\n    padding: 0 16px;\n    font-size: 2em;\n}\n}\n@media screen and (max-width: 768px) {\ndiv strong.title[data-v-50c11426] {\n    font-size: 1.5em;\n}\n}\n@media screen and (max-width: 512px) {\ndiv strong.title[data-v-50c11426] {\n    font-size: 1em;\n}\n}\n", ""]);
 
 // exports
 

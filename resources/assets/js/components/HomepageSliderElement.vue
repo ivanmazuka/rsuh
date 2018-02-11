@@ -43,6 +43,12 @@
             box-sizing: border-box
             font-size: 48px
 
+    @media screen and (max-width: 1024px)
+        div strong.title
+            padding: 0 16px
+
+            font-size: 2em
+
     @media screen and (max-width: 768px)
         div strong.title
             font-size: 1.5em
