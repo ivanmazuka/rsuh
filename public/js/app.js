@@ -28378,7 +28378,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 var _moment = __webpack_require__(0);
 _moment().format();
@@ -28386,6 +28385,15 @@ _moment.locale('ru');
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['post'],
+
+    computed: {
+        backgroundImage: function backgroundImage() {
+            if (this.post.picture) {
+                return this.post.picture;
+            }
+            return 'default.jpg';
+        }
+    },
 
     filters: {
         moment: function moment(date) {
@@ -28695,14 +28703,10 @@ var render = function() {
       "a",
       { staticClass: "picture", attrs: { href: "/post/" + _vm.post.id } },
       [
-        _vm.post.picture
-          ? _c("div", {
-              staticClass: "picture",
-              style: {
-                "background-image": "url(/img/" + _vm.post.picture + ")"
-              }
-            })
-          : _vm._e(),
+        _c("div", {
+          staticClass: "picture",
+          style: { "background-image": "url(/img/" + _vm.backgroundImage + ")" }
+        }),
         _vm._v(" "),
         _c("h4", { staticClass: "post-title" }, [
           _vm._v("\n            " + _vm._s(_vm.post.title) + "\n        ")
@@ -28811,7 +28815,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -28822,6 +28826,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -28874,6 +28879,8 @@ var render = function() {
           attrs: { announcement: announcement }
         })
       }),
+      _vm._v(" "),
+      _c("div", { staticClass: "clear" }),
       _vm._v(" "),
       _c("a", { attrs: { href: "/news/announcements" } }, [
         _vm._v("Все анонсы ›")
@@ -28978,7 +28985,7 @@ exports = module.exports = __webpack_require__(1)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&subset=cyrillic);", ""]);
 
 // module
-exports.push([module.i, "\ndiv.announcement {\n  margin-bottom: 48px;\n}\ndiv.announcement h4 {\n    width: 176px;\n}\ndiv.announcement .announcement:last-of-type {\n    margin-bottom: 0;\n}\ndiv.announcement div.circle {\n    position: relative;\n    float: left;\n    margin-right: 16px;\n    padding: 11px 0;\n    height: 64px;\n    width: 64px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    text-align: center;\n}\ndiv.announcement div.circle div.day, div.announcement div.circle div.month {\n      position: relative;\n      z-index: 2;\n}\ndiv.announcement div.circle div.day {\n      font-size: 1.5em;\n      line-height: 24px;\n}\ndiv.announcement div.circle div.month {\n      line-height: 18px;\n}\ndiv.announcement div.background {\n    position: absolute;\n    z-index: 1;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    border-radius: 50%;\n    -webkit-transition: -webkit-transform 125ms ease, -webkit-box-shadow 125ms ease;\n    transition: -webkit-transform 125ms ease, -webkit-box-shadow 125ms ease;\n    transition: transform 125ms ease, box-shadow 125ms ease;\n    transition: transform 125ms ease, box-shadow 125ms ease, -webkit-transform 125ms ease, -webkit-box-shadow 125ms ease;\n    background: #3a82a6;\n    background: -webkit-gradient(linear, left top, right top, from(#3a82a6), to(#3a5ea6));\n    background: linear-gradient(to right, #3a82a6 0%, #3a5ea6 100%);\n    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);\n    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);\n}\ndiv.announcement:hover div.background {\n  -webkit-transform: scale(1.125);\n          transform: scale(1.125);\n  -webkit-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.25);\n  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.25);\n}\n", ""]);
+exports.push([module.i, "\ndiv.announcement {\n  float: left;\n  margin-bottom: 48px;\n}\ndiv.announcement h4 {\n    width: 176px;\n}\ndiv.announcement .announcement:last-of-type {\n    margin-bottom: 0;\n}\ndiv.announcement div.circle {\n    position: relative;\n    float: left;\n    margin-right: 16px;\n    padding: 11px 0;\n    height: 64px;\n    width: 64px;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    text-align: center;\n}\ndiv.announcement div.circle div.day, div.announcement div.circle div.month {\n      position: relative;\n      z-index: 2;\n}\ndiv.announcement div.circle div.day {\n      font-size: 1.5em;\n      line-height: 24px;\n}\ndiv.announcement div.circle div.month {\n      line-height: 18px;\n}\ndiv.announcement div.background {\n    position: absolute;\n    z-index: 1;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    border-radius: 50%;\n    -webkit-transition: -webkit-transform 125ms ease, -webkit-box-shadow 125ms ease;\n    transition: -webkit-transform 125ms ease, -webkit-box-shadow 125ms ease;\n    transition: transform 125ms ease, box-shadow 125ms ease;\n    transition: transform 125ms ease, box-shadow 125ms ease, -webkit-transform 125ms ease, -webkit-box-shadow 125ms ease;\n    background: #3a82a6;\n    background: -webkit-gradient(linear, left top, right top, from(#3a82a6), to(#3a5ea6));\n    background: linear-gradient(to right, #3a82a6 0%, #3a5ea6 100%);\n    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);\n    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);\n}\ndiv.announcement:hover div.background {\n  -webkit-transform: scale(1.125);\n          transform: scale(1.125);\n  -webkit-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.25);\n  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.25);\n}\n@media screen and (max-width: 1024px) {\ndiv.announcement {\n    margin-right: 16px;\n}\n}\n", ""]);
 
 // exports
 
@@ -29349,7 +29356,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['element']
+    props: ['element'],
+
+    computed: {
+        backgroundImage: function backgroundImage() {
+            if (this.element.picture) {
+                return this.element.picture;
+            }
+            return 'default.jpg';
+        }
+    }
 });
 
 /***/ }),
@@ -29365,7 +29381,7 @@ var render = function() {
     {
       staticClass: "wrapper",
       class: { active: _vm.element.active },
-      style: { "background-image": "url(/img/" + _vm.element.picture + ")" }
+      style: { "background-image": "url(/img/" + _vm.backgroundImage + ")" }
     },
     [
       _c("strong", { staticClass: "title" }, [
@@ -29706,7 +29722,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 var _moment = __webpack_require__(0);
 _moment().format();
@@ -29718,6 +29733,15 @@ _moment.locale('ru');
     filters: {
         moment: function moment(date) {
             return _moment(date).format("dddd, Do MMMM");
+        }
+    },
+
+    computed: {
+        backgroundImage: function backgroundImage() {
+            if (this.post.picture) {
+                return this.post.picture;
+            }
+            return 'default.jpg';
         }
     }
 });
@@ -29735,14 +29759,10 @@ var render = function() {
       "a",
       { staticClass: "picture", attrs: { href: "/post/" + _vm.post.id } },
       [
-        _vm.post.picture
-          ? _c("div", {
-              staticClass: "picture",
-              style: {
-                "background-image": "url(/img/" + _vm.post.picture + ")"
-              }
-            })
-          : _vm._e(),
+        _c("div", {
+          staticClass: "picture",
+          style: { "background-image": "url(/img/" + _vm.backgroundImage + ")" }
+        }),
         _vm._v(" "),
         _c("h2", { staticClass: "post-title" }, [
           _vm._v("\n            " + _vm._s(_vm.post.title) + "\n        ")
@@ -30090,7 +30110,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 var _moment = __webpack_require__(0);
 _moment().format();
@@ -30102,6 +30121,15 @@ _moment.locale('ru');
     filters: {
         moment: function moment(date) {
             return _moment(date).format("dddd, Do MMMM");
+        }
+    },
+
+    computed: {
+        backgroundImage: function backgroundImage() {
+            if (this.announcement.picture) {
+                return this.announcement.picture;
+            }
+            return 'default.jpg';
         }
     }
 });
@@ -30122,14 +30150,10 @@ var render = function() {
         attrs: { href: "/announcement/" + _vm.announcement.id }
       },
       [
-        _vm.announcement.picture
-          ? _c("div", {
-              staticClass: "picture",
-              style: {
-                "background-image": "url(/img/" + _vm.announcement.picture + ")"
-              }
-            })
-          : _vm._e(),
+        _c("div", {
+          staticClass: "picture",
+          style: { "background-image": "url(/img/" + _vm.backgroundImage + ")" }
+        }),
         _vm._v(" "),
         _c("h2", { staticClass: "post-title" }, [
           _vm._v(

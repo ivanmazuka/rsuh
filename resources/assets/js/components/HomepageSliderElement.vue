@@ -1,7 +1,7 @@
 <template>
     <div
             class="wrapper"
-            :style="{ 'background-image': 'url(/img/' + element.picture + ')' }"
+            :style="{ 'background-image': 'url(/img/' + backgroundImage + ')' }"
             :class="{ active: element.active }"
     >
         <strong class="title">{{ element.title }}</strong>
@@ -10,7 +10,16 @@
 
 <script>
     export default {
-        props: ['element']
+        props: ['element'],
+
+        computed: {
+            backgroundImage: function () {
+                if (this.element.picture) {
+                    return this.element.picture;
+                }
+                return 'default.jpg';
+            }
+        }
     }
 </script>
 

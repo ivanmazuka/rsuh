@@ -3,8 +3,7 @@
         <a :href="'/post/' + post.id" class="picture">
             <div
                     class="picture"
-                    v-if="post.picture"
-                    :style="{ 'background-image': 'url(/img/' + post.picture + ')' }"
+                    :style="{ 'background-image': 'url(/img/' + backgroundImage + ')' }"
             >
             </div>
 
@@ -33,6 +32,15 @@
         filters: {
             moment: function (date) {
                 return moment(date).format("dddd, Do MMMM");
+            }
+        },
+
+        computed: {
+            backgroundImage: function () {
+                if (this.post.picture) {
+                    return this.post.picture;
+                }
+                return 'default.jpg';
             }
         }
     }

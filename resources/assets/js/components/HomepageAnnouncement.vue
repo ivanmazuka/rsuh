@@ -49,6 +49,8 @@
     @import "../../sass/_variables.sass"
 
     div.announcement
+        float: left
+
         margin-bottom: 48px
 
         h4
@@ -101,4 +103,9 @@
         div.background
             transform: scale(1.125)
             +shadow(0, 10px, 25px, 0, 0.25)
+
+    @media screen and (max-width: 1024px)
+        div.announcement
+            margin-right: 16px
+
 </style>

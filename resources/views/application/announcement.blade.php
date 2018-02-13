@@ -13,7 +13,7 @@
             <h1>{{ $announcement->title }}</h1>
             <span class="date">{{ $announcement->created_at->format('d.m.y в H:i:s') }}</span>
             <p>{{ $announcement->body }}</p>
-            <img class="picture" src="/img/{{ $announcement->picture }}">
+            <img class="picture" src="/img/{{ $announcement->picture ? $announcement->picture : 'default.jpg' }}">
         </div>
     </main>
 

@@ -8,6 +8,7 @@
         >
 
         </homepage-announcement>
+        <div class="clear"></div>
         <a href="/news/announcements">Все анонсы ›</a>
     </div>
 </template>
