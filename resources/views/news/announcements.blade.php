@@ -1,8 +1,6 @@
 @extends('application.layout')
 
-@section('description')
-    Список всех предстоящих событий.
-@endsection
+@section('description', 'Список всех предстоящих событий.')
 
 @section('title')
     Анонсы

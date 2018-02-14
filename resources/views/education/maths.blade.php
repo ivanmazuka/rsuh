@@ -1,8 +1,6 @@
 @extends('application.layout')
 
-@section('description')
-    Информация о направлении подготовки 01.03.04 «Прикладная математика»
-@endsection
+@section('description', 'Информация о направлении подготовки 01.03.04 «Прикладная математика»')
 
 @section('title')
     Прикладная математика

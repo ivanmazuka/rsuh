@@ -1,8 +1,6 @@
 @extends('application.layout')
 
-@section('description')
-    Информация о работе студентов в РГГУ.
-@endsection
+@section('description', 'Информация о работе студентов в РГГУ.')
 
 @section('title')
     Работа студентов

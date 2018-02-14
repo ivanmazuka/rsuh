@@ -1,8 +1,6 @@
 @extends('application.layout')
 
-@section('description')
-    Информация для аспирантов РГГУ, направления подготовки аспирантуры.
-@endsection
+@section('description', 'Информация для аспирантов РГГУ, направления подготовки аспирантуры.')
 
 @section('title')
     Аспирантам

@@ -1,8 +1,6 @@
 @extends('application.layout')
 
-@section('description')
-    Информация о работе приемной комиссии. 
-@endsection
+@section('description', 'Информация о работе приемной комиссии.')
 
 @section('title')
     Приемная комиссия

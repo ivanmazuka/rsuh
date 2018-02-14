@@ -1,8 +1,6 @@
 @extends('application.layout')
 
-@section('description')
-    Даты проведения дней открытых дверей в институте.
-@endsection
+@section('description', 'Даты проведения дней открытых дверей в институте.')
 
 @section('title')
     Дни открытых дверей

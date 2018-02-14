@@ -1,8 +1,6 @@
 @extends('application.layout')
 
-@section('description')
-    В РГГУ для помощи студентам существует Управление по работе со студентами.
-@endsection
+@section('description', 'В РГГУ для помощи студентам существует Управление по работе со студентами.')
 
 @section('title')
     Работа со студентами

@@ -1,8 +1,6 @@
 @extends('application.layout')
 
-@section('description')
-    Структурные подразделения института. 
-@endsection
+@section('description', 'Структурные подразделения института.')
 
 @section('title')
     Структура

@@ -1,8 +1,6 @@
 @extends('application.layout')
 
-@section('description')
-    Контакты администрации ИИНТБ. 
-@endsection
+@section('description', 'Контакты администрации ИИНТБ.')
 
 @section('title')
     Контакты
