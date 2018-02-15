@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     {{-- Meta --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
