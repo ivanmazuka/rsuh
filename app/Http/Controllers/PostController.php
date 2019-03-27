@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use App\Actions\{
+    Create, Retrieve, Update, Delete
+};
+
 
 class PostController extends Controller
 {
@@ -14,33 +18,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id', 'desc')->get();
-
+        $posts = (new Post())->orderBy('id', 'desc')->get();
 
         return view('application.Posts', compact('posts'));
-        //
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -51,40 +31,89 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('post.show', compact('post'));
+        return view('application.post', compact('post'));
+    }
+
+    public function create(Request $request)
+    {
+
+        $handler = new Create(new Post, $request);
+        return response()->json([
+            'result' => $handler->do()
+        ]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Get all the posts.
      *
-     * @param  \App\Post $post
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function edit(Post $post)
+    public function retrieve(Request $request)
     {
-        //
+        $handler = new Retrieve(new Post, $request);
+        return response()->json($handler->do('created_at', 'desc'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the post.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Post $post
-     * @return \Illuminate\Http\Response
+     * @param Post $post
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, Post $post)
+    public function update(Post $post, Request $request)
     {
-        //
+        $handler = new Update($post, $request);
+        return response()->json([
+            'result' => $handler->do()
+        ]);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete the post.
      *
-     * @param  \App\Post $post
-     * @return \Illuminate\Http\Response
+     * @param Post $post
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(Post $post)
+    public function delete(Post $post, Request $request)
     {
-        //
+        $handler = new Delete($post, $request);
+        return response()->json([
+            'result' => $handler->do()
+        ]);
+    }
+
+    /**
+     * Get posts by API.
+     *
+     * @param  int $number
+     * @return mixed
+     */
+    public function get($number)
+    {
+        return Post::orderBy('id', 'desc')->limit($number)->get();
+    }
+
+    /**
+     * Get 4 more posts.
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function more($id)
+    {
+        return Post::orderBy('id', 'desc')->where('id', '<', $id)->limit(4)->get();
+    }
+
+    /**
+     * Count posts.
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return Post::all()->count();
     }
 }

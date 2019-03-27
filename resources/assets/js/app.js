@@ -1,22 +1,35 @@
+import Vue from 'vue';
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 
-require('./bootstrap');
+Vue.component('homepage-news', require('./components/HomepageNews.vue'));
+Vue.component('homepage-post', require('./components/HomapagePost.vue'));
+Vue.component('homepage-announcements', require('./components/HomepageAnnouncements.vue'));
+Vue.component('homepage-announcement', require('./components/HomepageAnnouncement.vue'));
+Vue.component('homepage-slider', require('./components/HomepageSlider.vue'));
+Vue.component('homepage-slider-element', require('./components/HomepageSliderElement.vue'));
+Vue.component('news-posts', require('./components/NewsPosts.vue'));
+Vue.component('news-post', require('./components/NewsPost.vue'));
+Vue.component('news-announcements', require('./components/NewsAnnouncements.vue'));
+Vue.component('news-announcement', require('./components/NewsAnnouncement.vue'));
 
-window.Vue = require('vue');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
+new Vue({
     el: '#app'
+});
+
+window.api = function (url, method = 'get', data = null) {
+    $.ajax({
+        url: url,
+        method: method,
+        data: data
+    })
+        .always(function (response) {
+            console.log(response);
+        });
+};
+
+$(document).ready(function () {
+    $('.unwrap-nav, .wrap-nav').on('click', function () {
+        const nav = $('nav.main');
+        nav.toggleClass('unwrapped');
+    });
 });

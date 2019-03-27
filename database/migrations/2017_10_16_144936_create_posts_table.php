@@ -18,7 +18,9 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->string('picture');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+
         });
     }
 

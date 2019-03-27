@@ -13,13 +13,13 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
     | Database Connections
-    |--------------------------------------------------------------------------
     |
+    |--------------------------------------------------------------------------
     | Here are each of the database connections setup for your application.
     | Of course, examples of configuring each database platform that is
     | supported by Laravel is shown below to make development simple.
@@ -58,9 +58,9 @@ return [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'rsuh'),
+            'username' => env('DB_USERNAME', 'rsuh1'),
+            'password' => env('DB_PASSWORD', 'qwer1234'),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',

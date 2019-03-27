@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+sitemap: http://www.xn--90anauz.xn--p1ai/sitemap.xml
+Host: http://www.xn--90anauz.xn--p1ai/

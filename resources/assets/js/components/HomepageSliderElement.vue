@@ -1,0 +1,69 @@
+<template>
+    <div
+            class="wrapper"
+            :style="{ 'background-image': 'url(/img/' + backgroundImage + ')' }"
+            :class="{ active: element.active }"
+    >
+        <strong class="title">{{ element.title }}</strong>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: ['element'],
+
+        computed: {
+            backgroundImage: function () {
+                if (this.element.picture) {
+                    return this.element.picture;
+                }
+                return 'default.jpg';
+            }
+        }
+    }
+</script>
+
+<style scoped lang="sass">
+    div
+        height: 100%
+
+        div.wrapper
+            position: absolute
+            z-index: 2
+
+            width: 100%
+
+            background-position: center
+            background-size: cover
+
+        strong.title
+            position: absolute
+
+            padding: 0 32px
+
+            right: 0
+            bottom: 32px
+            left: 0
+
+            margin: auto
+
+            max-width: 1024px
+
+            box-sizing: border-box
+            font-size: 48px
+
+    @media screen and (max-width: 1024px)
+        div strong.title
+            padding: 0 16px
+
+            font-size: 2em
+
+    @media screen and (max-width: 768px)
+        div strong.title
+            font-size: 1.5em
+
+    @media screen and (max-width: 512px)
+        div strong.title
+            font-size: 1em
+
+</style>

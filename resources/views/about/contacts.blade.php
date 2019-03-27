@@ -1,62 +1,122 @@
 @extends('application.layout')
 
-@section('title')
-    ИИНТБ | Главная
-@endsection
-@section('content')
-    @include('submenu.about')
-    <main>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta lorem eros, non congue lectus aliquam
-            ut.
-            Donec pretium ante ut consequat sollicitudin. Quisque et ligula sodales, dictum urna ac, imperdiet erat.
-            Curabitur
-            nec risus id ipsum vehicula molestie quis vitae nibh. Donec ipsum sem, bibendum et pretium sit amet, laoreet
-            sit
-            amet magna. Nullam ultricies, ligula quis imperdiet dapibus, ligula urna sollicitudin dolor, eget rhoncus
-            nisi leo
-            ac enim. Phasellus sit amet suscipit nisl. Duis mollis tincidunt sapien, nec ullamcorper turpis pulvinar
-            vitae. Sed
-            a malesuada lorem, at suscipit est. Mauris rutrum eros sed felis mollis euismod sit amet vel arcu. Nullam
-            viverra
-            massa eu lacus tempor vulputate.
-        </p>
-        <p>
-            Integer ut mattis neque, a volutpat tortor. Donec volutpat sem congue libero auctor semper. Nulla ut mauris
-            ac
-            mauris imperdiet auctor sed vitae sem. In tristique lacus lectus. In blandit dui a imperdiet ultricies. Nunc
-            arcu
-            risus, laoreet et consequat nec, faucibus vel est. Nulla vulputate tortor ante, id auctor enim condimentum
-            sit amet.
-            Sed dapibus risus tempus massa sollicitudin consectetur. Phasellus pharetra arcu massa, et pharetra elit
-            tristique
-            eu.
-        </p>
-        <p>
-            Curabitur congue diam urna, non maximus nunc cursus in. Nam sagittis efficitur tortor eget feugiat. Nullam
-            rutrum
-            neque in erat tincidunt maximus at ut neque. Maecenas sit amet pretium purus. Quisque mollis interdum orci,
-            a
-            porttitor lorem eleifend at. Sed posuere diam et nisl pellentesque pretium. Nunc aliquam rutrum diam in
-            rutrum.
-            Proin eget odio nunc. Maecenas ut euismod lectus. Nullam efficitur hendrerit dolor, pellentesque mollis nunc
-            bibendum et. Curabitur vehicula nunc posuere ligula commodo, dictum pellentesque augue tempus.
-        </p>
-        <p>
-            Sed elementum mi eget tellus ultrices, nec vehicula sapien volutpat. Aenean varius mattis varius. Proin
-            tempor nibh
-            sit amet dui pellentesque scelerisque. Vivamus commodo ipsum at tristique vulputate. Sed ut turpis venenatis
-            lacus
-            ullamcorper hendrerit. Nulla magna leo, cursus eget lorem condimentum, faucibus sollicitudin velit. Nunc non
-            venenatis libero.
-        </p>
-        <p>
-            Curabitur placerat mauris sit amet felis finibus, a consequat felis tincidunt. Donec eget lacus sapien. Duis
-            auctor,
-            lorem eu semper accumsan, mauris nibh posuere mi, sit amet semper magna mi eu purus. Vestibulum cursus
-            pretium
-            congue. Proin vitae interdum orci. Donec viverra porta efficitur. Ut ac efficitur mi, ac volutpat erat.
+@section('description', 'Контакты администрации ИИНТБ.')
 
-        </p>
+@section('title')
+    Контакты
+@endsection
+
+@section('content')
+
+    @include('submenu.about')
+
+    <main>
+        <span class="bread">// ОБ ИНСТИТУТЕ /</span>
+        <div class="page-title">
+            <h1>Контакты</h1>
+        </div>
+        <h2>Институт Информационных Наук и Технологий Безопасности</h2>
+        <section>
+            <table class="contacts" cellspacing="0">
+                <tr>
+                    <td>И.О. директора / Декан</td>
+                    <td>Роганов Андрей Арьевич</td>
+                    <td><a href="tel:+7 (495) 250-63-74">+7 (495) 250-63-74</a> (каб. 108)</td>
+                </tr>
+                <tr>
+                    <td>Документовед института</td>
+                    <td>Варенцова Светалана Викторовна</td>
+                    <td><a href="tel:+7 (495) 250-62-66">+7 (495) 250-62-66</a> (каб. 104)</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Заместители декана</th>
+                </tr>
+                <tr>
+                    <td>По учебной работе</td>
+                    <td>Охапкина Елена Павловна</td>
+                    <td><a href="tel:+7 (495) 250-64-36">+7 (495) 250-64-36</a> (каб. 105, 204)</td>
+                </tr>
+                <tr>
+                    <td>По научной работе</td>
+                    <td>Шевцова Галина Александровна</td>
+                    <td><a href="tel:+7 (495) 250-63-56">+7 (495) 250-63-56</a> (каб. 105, 312)</td>
+                </tr>
+                <tr>
+                    <td>По работе со студентами</td>
+                    <td>Охапкин Валентин Павлович</td>
+                    <td><a href="tel:+7 (495) 250-66-99">+7 (495) 250-66-99</a> (каб. 105, 306)</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Деканат</th>
+                </tr>
+                <tr>
+                    <td>Информационная безопасность (бакалавриат)</td>
+                    <td>Лунькова Ирина Евгеньевна</td>
+                    <td><a href="tel:+7 (495) 250-63-64">+7 (495) 250-63-64</a> (каб. 102)</td>
+                </tr>
+                <tr>
+                    <td>Прикладная информатика, прикладная математика (бакалавриат)</td>
+                    <td>Бармасова Валентина Александровна</td>
+                    <td><a href="tel:+7 (495) 250-63-64">+7 (495) 250-63-64</a> (каб. 102)</td>
+                </tr>
+                <tr>
+                    <td>Магистратура и заочное отделение</td>
+                    <td>Силаева Людмила Васильевна</td>
+                    <td><a href="tel:+7 (495) 250-63-64">+7 (495) 250-63-64</a> (каб. 102)</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Кафедра фундаментальной и прикладной математики</th>
+                </tr>
+                <tr>
+                    <td>Заведующий</td>
+                    <td>Жаров Константин Валентинович</td>
+                    <td><a href="tel:+7 (495) 250-64-93">+7 (495) 250-64-93</a> (каб. 310)</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Кафедра информационных технологий и систем</th>
+                </tr>
+                <tr>
+                    <td>Заведующий</td>
+                    <td>Роганов Андрей Арьевич</td>
+                    <td><a href="tel:+7 (495) 250-63-74">+7 (495) 250-63-74</a> (каб. 204)</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Кафедра информационной безопасности</th>
+                </tr>
+                <tr>
+                    <td>Заведующий</td>
+                    <td>Шевцова Галина Александровна</td>
+                    <td><a href="tel:+7 (495) 250-63-56">+7 (495) 250-63-56</a> (каб. 312)</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Кафедра комплексной защиты информации</th>
+                </tr>
+                <tr>
+                    <td>Заведующий</td>
+                    <td>Казарин Олег Викторович</td>
+                    <td><a href="tel:+7 (495) 250-62-57">+7 (495) 250-62-57</a> (каб. 213)</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Лаборатория компьютерной техники и средств защиты</th>
+                </tr>
+                <tr>
+                    <td>И.О. заведующего</td>
+                    <td>Иванов Сергей Анатольевич</td>
+                    <td><a href="tel:+7 (495) 250-63-21">+7 (495) 250-63-21</a> (каб. 121)</td>
+                </tr>
+            </table>
+
+            <h2>Адрес</h2>
+            <span>
+                117534, Москва, ул. Кировоградская, д. 25 корп. 2.
+                <br>
+                Станция метро «Улица Академика Янгеля» (северный выход)
+            </span>
+        </section>
     </main>
+
+    <div class="map">
+        <script type="text/javascript" charset="utf-8" async
+                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aceeb918194538ee4f3aee7d646d2f132223bdd545c858e03995d7db3ce87b783&amp;width=100%25&amp;height=512&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
 @endsection
