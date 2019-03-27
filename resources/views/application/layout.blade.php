@@ -11,7 +11,7 @@
     <meta name="keywords" content="rsuh, iisst, рггу, иинтб, информатика,
         математика, программирование, безопасность">
     <meta name="description" content="@yield('description')">
-    <meta name="yandex-verification" content="5b7fcc07c815669a">
+    <meta name="yandex-verification" content="4f00335489e94bbf">
 
     {{-- Title --}}
     <title>@yield('title')</title>
