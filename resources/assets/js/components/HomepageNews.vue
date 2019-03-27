@@ -70,6 +70,6 @@
 
         width: 30%
 
-        .left-column, .center-column
-            margin-right: 5%
+    .left-column, .center-column
+        margin-right: 5%
 </style>

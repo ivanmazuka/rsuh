@@ -707,7 +707,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".left-column[data-v-673b3dd0], .center-column[data-v-673b3dd0], .right-column[data-v-673b3dd0] {\n  float: left;\n  width: 30%;\n}\n.left-column .left-column[data-v-673b3dd0], .left-column .center-column[data-v-673b3dd0], .center-column .left-column[data-v-673b3dd0], .center-column .center-column[data-v-673b3dd0], .right-column .left-column[data-v-673b3dd0], .right-column .center-column[data-v-673b3dd0] {\n  margin-right: 5%;\n}", ""]);
+exports.push([module.i, ".left-column[data-v-673b3dd0], .center-column[data-v-673b3dd0], .right-column[data-v-673b3dd0] {\n  float: left;\n  width: 30%;\n}\n.left-column[data-v-673b3dd0], .center-column[data-v-673b3dd0] {\n  margin-right: 5%;\n}", ""]);
 
 // exports
 
