@@ -9,21 +9,21 @@
 </template>
 
 <script>
-    export default {
-        props: ['element'],
+  export default {
+    props: ['element'],
 
-        computed: {
-            backgroundImage: function () {
-                if (this.element.picture) {
-                    return this.element.picture;
-                }
-                return 'default.jpg';
-            }
+    computed: {
+      backgroundImage: function () {
+        if (this.element.picture) {
+          return this.element.picture;
         }
+        return 'default.jpg';
+      }
     }
+  };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass" scoped>
     div
         height: 100%
 
@@ -52,18 +52,18 @@
             box-sizing: border-box
             font-size: 48px
 
-    @media screen and (max-width: 1024px)
-        div strong.title
-            padding: 0 16px
+        @media screen and (max-width: 1024px)
+            div strong.title
+                padding: 0 16px
 
-            font-size: 2em
+                font-size: 2em
 
-    @media screen and (max-width: 768px)
-        div strong.title
-            font-size: 1.5em
+        @media screen and (max-width: 768px)
+            div strong.title
+                font-size: 1.5em
 
-    @media screen and (max-width: 512px)
-        div strong.title
-            font-size: 1em
+        @media screen and (max-width: 512px)
+            div strong.title
+                font-size: 1em
 
 </style>

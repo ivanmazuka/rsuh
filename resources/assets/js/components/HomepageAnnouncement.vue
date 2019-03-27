@@ -22,30 +22,30 @@
 </template>
 
 <script>
-    const moment = require('moment');
-    moment().format();
-    moment.locale('ru');
+  const moment = require('moment');
+  moment().format();
+  moment.locale('ru');
 
-    export default {
-        data() {
-            return {}
-        },
+  export default {
+    data() {
+      return {};
+    },
 
-        props: ['announcement'],
+    props: ['announcement'],
 
-        filters: {
-            day: function (date) {
-                return moment(date).format("D");
-            },
+    filters: {
+      day: function (date) {
+        return moment(date).format('D');
+      },
 
-            month: function (date) {
-                return moment(date).format("MMM");
-            }
-        }
+      month: function (date) {
+        return moment(date).format('MMM');
+      }
     }
+  };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
     @import "../../sass/_variables.sass"
 
     div.announcement

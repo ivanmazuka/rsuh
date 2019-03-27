@@ -10,28 +10,32 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                news: []
-            }
-        },
+  import HomepageSliderElement from './HomepageSliderElement';
 
-        created() {
-            $.getJSON({
-                url: 'api/posts',
-                data: {'limitTo': 5}
-            }).done(function (response) {
-                this.news = response;
-                this.news[0].active = true;
-            }.bind(this)).fail(function (error) {
-                console.log(error);
-            });
-        }
+  export default {
+    components: {HomepageSliderElement},
+
+    data() {
+      return {
+        news: []
+      };
+    },
+
+    created() {
+      $.getJSON({
+        url: 'api/posts',
+        data: {'limitTo': 5}
+      }).done(function (response) {
+        this.news = response;
+        this.news[0].active = true;
+      }.bind(this)).fail(function (error) {
+        console.log(error);
+      });
     }
+  };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass" scoped>
     @import "../../sass/_variables.sass"
 
     div.buttons-wrapper

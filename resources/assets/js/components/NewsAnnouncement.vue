@@ -22,31 +22,31 @@
 </template>
 
 <script>
-    const moment = require('moment');
-    moment().format();
-    moment.locale('ru');
+  const moment = require('moment');
+  moment().format();
+  moment.locale('ru');
 
-    export default {
-        props: ['announcement'],
+  export default {
+    props: ['announcement'],
 
-        filters: {
-            moment: function (date) {
-                return moment(date).format("dddd, Do MMMM");
-            }
-        },
+    filters: {
+      moment: function (date) {
+        return moment(date).format('dddd, Do MMMM');
+      }
+    },
 
-        computed: {
-            backgroundImage: function () {
-                if (this.announcement.picture) {
-                    return this.announcement.picture;
-                }
-                return 'default.jpg';
-            }
+    computed: {
+      backgroundImage: function () {
+        if (this.announcement.picture) {
+          return this.announcement.picture;
         }
+        return 'default.jpg';
+      }
     }
+  };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
     @import "../../sass/_variables.sass"
 
     div.post

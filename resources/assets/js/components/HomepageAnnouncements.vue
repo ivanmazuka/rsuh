@@ -4,8 +4,7 @@
         <homepage-announcement
                 v-for="announcement in announcements"
                 :key="announcement.id"
-                :announcement="announcement"
-        >
+                :announcement="announcement">
 
         </homepage-announcement>
         <div class="clear"></div>
@@ -14,26 +13,26 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                announcements: []
-            }
-        },
+  import HomepageAnnouncement from './HomepageAnnouncement';
 
-        created() {
-            $.get({
-                url: 'api/announcements',
-                data: {'limitTo': 5}
-            }).done(function (response) {
-                this.announcements = response;
-            }.bind(this)).fail(function (error) {
-                console.log(error);
-            });
-        }
+  export default {
+    components: {HomepageAnnouncement},
+
+    data() {
+      return {
+        announcements: []
+      };
+    },
+
+    created() {
+      $.get({
+        url: 'api/announcements',
+        data: {'limitTo': 5}
+      }).done(function (response) {
+        this.announcements = response;
+      }.bind(this)).fail(function (error) {
+        console.log(error);
+      });
     }
+  };
 </script>
-
-<style scoped>
-
-</style>

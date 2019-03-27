@@ -39,33 +39,37 @@
 
 <!-- Logic -->
 <script>
-    export default {
-        data() {
-            return {
-                news: []
-            }
-        },
+  import HomepagePost from './HomapagePost';
 
-        created() {
-            $.getJSON({
-                url: 'api/posts',
-                data: {'limitTo': 9}
-            }).done(function (response) {
-                this.news = response;
-            }.bind(this)).fail(function (error) {
-                console.log(error);
-            });
-        }
+  export default {
+    components: {HomepagePost},
+
+    data() {
+      return {
+        news: []
+      };
+    },
+
+    created() {
+      $.getJSON({
+        url: 'api/posts',
+        data: {'limitTo': 9}
+      }).done(function (response) {
+        this.news = response;
+      }.bind(this)).fail(function (error) {
+        console.log(error);
+      });
     }
+  };
 </script>
 
 <!-- Styles -->
-<style lang="sass">
+<style lang="sass" scoped>
     .left-column, .center-column, .right-column
         float: left
-        
+
         width: 30%
 
-    .left-column, .center-column
-        margin-right: 5%
+        .left-column, .center-column
+            margin-right: 5%
 </style>

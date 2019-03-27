@@ -18,31 +18,31 @@
 </template>
 
 <script>
-    const moment = require('moment');
-    moment().format();
-    moment.locale('ru');
+  const moment = require('moment');
+  moment().format();
+  moment.locale('ru');
 
-    export default {
-        props: ['post'],
+  export default {
+    props: ['post'],
 
-        computed: {
-            backgroundImage: function () {
-                if (this.post.picture) {
-                    return this.post.picture;
-                }
-                return 'default.jpg';
-            }
-        },
-
-        filters: {
-            moment: function (date) {
-                return moment(date).format("dddd, Do MMMM");
-            }
+    computed: {
+      backgroundImage: function () {
+        if (this.post.picture) {
+          return this.post.picture;
         }
+        return 'default.jpg';
+      }
+    },
+
+    filters: {
+      moment: function (date) {
+        return moment(date).format('dddd, Do MMMM');
+      }
     }
+  };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
     div.post
         margin-bottom: 48px
 
@@ -61,7 +61,7 @@
             background-size: cover
             transition: transform 125ms ease
 
-    div.post:hover
-        div.picture
-            transform: scale(1.125)
+        div.post:hover
+            div.picture
+                transform: scale(1.125)
 </style>
