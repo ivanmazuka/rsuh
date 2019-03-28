@@ -46,7 +46,7 @@
 </script>
 
 <style lang="sass" scoped>
-    @import "../../sass/_variables.sass"
+    @import "../../../sass/variables"
 
     div.announcement
         float: left

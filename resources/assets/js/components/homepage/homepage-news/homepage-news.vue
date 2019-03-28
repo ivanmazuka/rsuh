@@ -1,8 +1,12 @@
 <!-- Template -->
 <template>
-    <div class="animated fadeIn">
+    <div class="animated fadeIn homePageNews">
+
+        <!-- Heading -->
         <h2>Новости</h2>
-        <div class="left-column">
+
+        <!-- First column -->
+        <div class="homePageNews-leftColumn">
             <homepage-post
                     v-for="(post, index) in news"
                     v-if="(index + 1) % 3 === 1"
@@ -12,7 +16,8 @@
             </homepage-post>
         </div>
 
-        <div class="center-column">
+        <!-- Second column -->
+        <div class="homePageNews-centerColumn">
             <homepage-post
                     v-for="(post, index) in news"
                     v-if="(index + 1) % 3 === 2"
@@ -22,7 +27,8 @@
             </homepage-post>
         </div>
 
-        <div class="right-column">
+        <!-- Last column -->
+        <div class="homePageNews-rightColumn">
             <homepage-post
                     v-for="(post, index) in news"
                     v-if="(index + 1) % 3 === 0"
@@ -32,44 +38,16 @@
             </homepage-post>
         </div>
 
+        <!-- Clear -->
         <div class="clear"></div>
-        <a href="/news/posts">Все посты ›</a>
+
+        <!-- All posts -->
+        <a :href="'/news/posts'">Все посты ›</a>
     </div>
 </template>
 
 <!-- Logic -->
-<script>
-  import HomepagePost from './HomapagePost';
-
-  export default {
-    components: {HomepagePost},
-
-    data() {
-      return {
-        news: []
-      };
-    },
-
-    created() {
-      $.getJSON({
-        url: 'api/posts',
-        data: {'limitTo': 9}
-      }).done(function (response) {
-        this.news = response;
-      }.bind(this)).fail(function (error) {
-        console.log(error);
-      });
-    }
-  };
-</script>
+<script src="./homepage-news.js"></script>
 
 <!-- Styles -->
-<style lang="sass" scoped>
-    .left-column, .center-column, .right-column
-        float: left
-
-        width: 30%
-
-    .left-column, .center-column
-        margin-right: 5%
-</style>
+<style lang="sass" src="./homepage-news.sass" scoped></style>

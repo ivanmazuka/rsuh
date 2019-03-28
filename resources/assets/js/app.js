@@ -1,12 +1,12 @@
 import Vue from 'vue';
 
 // Components
-import HomepageNews from './components/HomepageNews.vue';
-import HomepagePost from './components/HomapagePost.vue';
-import HomepageAnnouncements from './components/HomepageAnnouncements.vue';
-import HomepageAnnouncement from './components/HomepageAnnouncement.vue';
-import HomepageSlider from './components/HomepageSlider.vue';
-import HomepageSliderElement from './components/HomepageSliderElement.vue';
+import HomepageNews from './components/homepage/homepage-news/homepage-news.vue';
+import HomePagePost from './components/homepage/HomapagePost.vue';
+import HomepageAnnouncements from './components/homepage/HomepageAnnouncements.vue';
+import HomepageAnnouncement from './components/homepage/HomepageAnnouncement.vue';
+import HomepageSlider from './components/homepage/HomepageSlider.vue';
+import HomepageSliderElement from './components/homepage/HomepageSliderElement.vue';
 import NewsPosts from './components/NewsPosts.vue';
 import NewsPost from './components/NewsPost.vue';
 import NewsAnnouncements from './components/NewsAnnouncements.vue';
@@ -16,7 +16,7 @@ new Vue({
   el: '#app',
   components: {
     HomepageNews,
-    HomepagePost,
+    HomePagePost,
     HomepageAnnouncements,
     HomepageAnnouncement,
     HomepageSlider,
