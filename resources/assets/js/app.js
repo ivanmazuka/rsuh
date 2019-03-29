@@ -1,12 +1,13 @@
+// Libs
 import Vue from 'vue';
 
 // Components
 import HomepageNews from './components/homepage/homepage-news/homepage-news.vue';
-import HomePagePost from './components/homepage/HomapagePost.vue';
-import HomepageAnnouncements from './components/homepage/HomepageAnnouncements.vue';
-import HomepageAnnouncement from './components/homepage/HomepageAnnouncement.vue';
-import HomepageSlider from './components/homepage/HomepageSlider.vue';
-import HomepageSliderElement from './components/homepage/HomepageSliderElement.vue';
+import HomepagePost from './components/homepage/homepage-post/homepage-post.vue';
+import HomepageAnnouncements from './components/homepage/homepage-announcements/homepage-announcements.vue';
+import HomepageAnnouncement from './components/homepage/homepage-announcement/homepage-announcement.vue';
+import HomepageSlider from './components/homepage/homepage-slider/homepage-slider.vue';
+import HomepageSliderElement from './components/homepage/homepage-slider-element/homepage-slider-element.vue';
 import NewsPosts from './components/NewsPosts.vue';
 import NewsPost from './components/NewsPost.vue';
 import NewsAnnouncements from './components/NewsAnnouncements.vue';
@@ -16,7 +17,7 @@ new Vue({
   el: '#app',
   components: {
     HomepageNews,
-    HomePagePost,
+    HomepagePost,
     HomepageAnnouncements,
     HomepageAnnouncement,
     HomepageSlider,
@@ -28,20 +29,16 @@ new Vue({
   },
 });
 
-// window.api = function (url, method = 'get', data = null) {
-//   $.ajax({
-//     url: url,
-//     method: method,
-//     data: data
-//   })
-//     .always(function (response) {
-//       console.log(response);
-//     });
-// };
+const handleContentLoaded = () => {
+  document.querySelectorAll('.unwrap-nav, .wrap-nav')
+    .forEach((el) => {
+      el.addEventListener('click', hamburgerClickHandler);
+    });
+};
 
-$(document).ready(function () {
-  $('.unwrap-nav, .wrap-nav').on('click', function () {
-    const nav = $('nav.main');
-    nav.toggleClass('unwrapped');
-  });
-});
+const hamburgerClickHandler = () => {
+  const nav = document.querySelector('nav.main');
+  nav.classList.toggle('unwrapped');
+};
+
+document.addEventListener('DOMContentLoaded', handleContentLoaded);

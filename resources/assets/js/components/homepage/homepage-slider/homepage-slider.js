@@ -1,9 +1,9 @@
 // Components
-import HomepagePost from '../homepage-post/homepage-post.vue';
+import HomepageSliderElement from '../homepage-slider-element/homepage-slider-element.vue';
 
 export default {
   // Imported components
-  components: {HomepagePost},
+  components: {HomepageSliderElement},
 
   /**
    * Data function.
@@ -24,9 +24,10 @@ export default {
   created() {
     $.getJSON({
       url: 'api/posts',
-      data: {'limitTo': 9}
+      data: {'limitTo': 5}
     }).done(function (response) {
       this.news = response;
+      this.news[0].active = true;
     }.bind(this)).fail(function (error) {
       console.log(error);
     });

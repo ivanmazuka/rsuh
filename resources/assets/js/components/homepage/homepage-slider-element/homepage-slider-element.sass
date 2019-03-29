@@ -1,0 +1,39 @@
+.homePageSliderElement-wrapper
+  position: absolute
+  z-index: 2
+
+  height: 100%
+  width: 100%
+
+  background-position: center
+  background-size: cover
+
+  .homePageSliderElement-title
+    position: absolute
+
+    padding: 0 32px
+
+    right: 0
+    bottom: 32px
+    left: 0
+
+    margin: auto
+
+    max-width: 1024px
+
+    box-sizing: border-box
+    font-size: 48px
+
+  @media screen and (max-width: 1024px)
+    .homePageSliderElement-title
+      padding: 0 16px
+
+      font-size: 2em
+
+  @media screen and (max-width: 768px)
+    .homePageSliderElement-title
+      font-size: 1.5em
+
+  @media screen and (max-width: 512px)
+    .homePageSliderElement-title
+      font-size: 1em

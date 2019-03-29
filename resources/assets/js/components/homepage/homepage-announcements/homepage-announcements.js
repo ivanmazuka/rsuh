@@ -1,9 +1,9 @@
 // Components
-import HomepagePost from '../homepage-post/homepage-post.vue';
+import HomepageAnnouncement from '../homepage-announcement/homepage-announcement';
 
 export default {
   // Imported components
-  components: {HomepagePost},
+  components: {HomepageAnnouncement},
 
   /**
    * Data function.
@@ -12,7 +12,7 @@ export default {
    */
   data() {
     return {
-      news: []
+      announcements: []
     };
   },
 
@@ -22,11 +22,11 @@ export default {
    * @returns {void}
    */
   created() {
-    $.getJSON({
-      url: 'api/posts',
-      data: {'limitTo': 9}
+    $.get({
+      url: 'api/announcements',
+      data: {'limitTo': 5}
     }).done(function (response) {
-      this.news = response;
+      this.announcements = response;
     }.bind(this)).fail(function (error) {
       console.log(error);
     });

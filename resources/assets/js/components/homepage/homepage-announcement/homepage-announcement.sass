@@ -1,0 +1,65 @@
+@import "../../../../sass/variables"
+
+.homePageAnnouncement
+  float: left
+
+  margin-bottom: 48px
+
+  h4
+    width: 176px
+
+  .homePageAnnouncement:last-of-type
+    margin-bottom: 0
+
+  .homePageAnnouncement-circle
+    position: relative
+
+    float: left
+
+    margin-right: 16px
+    padding: 11px 0
+
+    height: 64px
+    width: 64px
+
+    box-sizing: border-box
+    text-align: center
+
+    .homePageAnnouncement-day, .homePageAnnouncement-month
+      position: relative
+      z-index: 2
+
+    .homePageAnnouncement-day
+      font-size: 1.5em
+      line-height: 24px
+
+    .homePageAnnouncement-month
+      line-height: 18px
+
+  .homePageAnnouncement-background
+    position: absolute
+    z-index: 1
+
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+    border-radius: 50%
+    transition: transform 125ms ease, box-shadow 125ms ease
+
+    +gradient($blueLight, $blueDark)
+    +shadow(0, 5px, 10px, 0, 0.25)
+
+  .homePageAnnouncement-title
+    float: left
+    margin: 0
+
+.homePageAnnouncement:hover
+  .homePageAnnouncement-background
+    transform: scale(1.125)
+    +shadow(0, 10px, 25px, 0, 0.25)
+
+@media screen and (max-width: 1024px)
+  .homePageAnnouncement
+    margin-right: 16px
