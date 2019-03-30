@@ -3386,7 +3386,7 @@ div.wrap-nav {
   background: url("/img/cross.svg") center no-repeat;
 }
 
-div.sub-menu {
+.sub-menu {
   display: none;
 }
 
@@ -3764,7 +3764,7 @@ span.signature {
     padding: 0 16px;
   }
 
-  div.header-wrapper ul {
+  div.header-wrapper ul:not(.sub-menu) {
     height: 100%;
     padding: 32px 0;
     box-sizing: border-box;
@@ -3803,11 +3803,11 @@ span.signature {
     margin-top: 0;
   }
 
-  .menu nav.unwrapped div.sub-menu {
+  .menu nav.unwrapped .sub-menu {
     display: block;
   }
 
-  .menu nav.unwrapped div.sub-menu li {
+  .menu nav.unwrapped .sub-menu li {
     margin: 8px 0 0 16px;
     font-size: 1em;
   }
