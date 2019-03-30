@@ -1,0 +1,49 @@
+@import "../../../../sass/variables"
+
+.newsAnnouncements-post
+  position: relative
+
+  margin-bottom: 64px
+  padding-bottom: 32px
+  padding-left: 288px
+
+  width: 100%
+
+  border-bottom: $blueLight solid thin
+  box-sizing: border-box
+  overflow: hidden
+
+  .newsAnnouncements-postTitle
+    font-size: 1.25em
+    font-weight: normal
+
+  .newsAnnouncements-body
+    display: block
+
+    margin: 0.83em 0
+
+  .newsAnnouncements-date
+    color: grey
+    font-size: 1em
+
+  div.newsAnnouncements-picture
+    position: absolute
+
+    top: 0
+    left: 0
+    bottom: 32px
+
+    width: 256px
+
+    background-position: center
+    background-size: cover
+
+@media screen and (max-width: 768px)
+  .newsAnnouncements-post
+    padding-left: 0
+
+    .newsAnnouncements-picture
+      position: static
+
+      height: 128px
+      width: 100%

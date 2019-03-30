@@ -1,4 +1,7 @@
 export default {
+  /**
+   * Component props.
+   */
   props: {
     element: {
       required: true,
@@ -7,6 +10,11 @@ export default {
   },
 
   computed: {
+    /**
+     * Renders the background image URI.
+     *
+     * @returns {string}
+     */
     backgroundImage() {
       if (this.element.picture) {
         return this.element.picture;

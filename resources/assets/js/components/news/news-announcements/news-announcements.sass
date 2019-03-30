@@ -1,0 +1,30 @@
+@import "../../../../sass/variables"
+
+button
+  padding: 16px
+
+  width: 100%
+
+  border: 0
+  border-radius: 4px
+
+  box-sizing: border-box
+
+  color: white
+
+  cursor: pointer
+
+  font-family: 'Ubuntu', sans-serif
+  font-size: 1em
+
+  opacity: 0.5
+
+  transition: box-shadow 125ms ease, opacity 125ms ease
+
+  +gradient($blueLight, $blueDark)
+  +shadow(0, 5px, 10px, 0, 0.25)
+
+button:hover
+  opacity: 1
+
+  +shadow(0, 10px, 25px, 0, 0.25)

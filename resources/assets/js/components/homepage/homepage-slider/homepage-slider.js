@@ -1,5 +1,6 @@
 // Components
 import HomepageSliderElement from '../homepage-slider-element/homepage-slider-element.vue';
+import homepageService from '../../../services/homepage';
 
 export default {
   // Imported components
@@ -12,7 +13,8 @@ export default {
    */
   data() {
     return {
-      news: []
+      news: [],
+      error: null,
     };
   },
 
@@ -22,14 +24,13 @@ export default {
    * @returns {void}
    */
   created() {
-    $.getJSON({
-      url: 'api/posts',
-      data: {'limitTo': 5}
-    }).done(function (response) {
-      this.news = response;
-      this.news[0].active = true;
-    }.bind(this)).fail(function (error) {
-      console.log(error);
-    });
+    homepageService.getNews(9)
+      .then((response) => {
+        this.news = response.data;
+        this.news[0].active = true;
+      })
+      .catch((err) => {
+        this.error = err.response.statusText;
+      });
   }
 };

@@ -8,10 +8,10 @@ import HomepageAnnouncements from './components/homepage/homepage-announcements/
 import HomepageAnnouncement from './components/homepage/homepage-announcement/homepage-announcement.vue';
 import HomepageSlider from './components/homepage/homepage-slider/homepage-slider.vue';
 import HomepageSliderElement from './components/homepage/homepage-slider-element/homepage-slider-element.vue';
-import NewsPosts from './components/NewsPosts.vue';
-import NewsPost from './components/NewsPost.vue';
-import NewsAnnouncements from './components/NewsAnnouncements.vue';
-import NewsAnnouncement from './components/NewsAnnouncement.vue';
+import NewsAnnouncements from './components/news/news-announcements/news-announcements.vue';
+import NewsAnnouncement from './components/news/news-announcement/news-announcement.vue';
+import NewsPosts from './components/news/news-posts/news-posts.vue';
+import NewsPost from './components/news/news-post/news-post.vue';
 
 new Vue({
   el: '#app',

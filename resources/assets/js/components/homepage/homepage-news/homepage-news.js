@@ -1,5 +1,6 @@
 // Components
 import HomepagePost from '../homepage-post/homepage-post.vue';
+import homepageService from '../../../services/homepage';
 
 export default {
   // Imported components
@@ -12,7 +13,8 @@ export default {
    */
   data() {
     return {
-      news: []
+      news: [],
+      error: null,
     };
   },
 
@@ -22,13 +24,12 @@ export default {
    * @returns {void}
    */
   created() {
-    $.getJSON({
-      url: 'api/posts',
-      data: {'limitTo': 9}
-    }).done(function (response) {
-      this.news = response;
-    }.bind(this)).fail(function (error) {
-      console.log(error);
-    });
+    homepageService.getNews(9)
+      .then((response) => {
+        this.news = response.data;
+      })
+      .catch((err) => {
+        this.error = err.response.statusText;
+      });
   }
 };

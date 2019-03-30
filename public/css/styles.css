@@ -3555,11 +3555,6 @@ main a {
   text-decoration: none;
 }
 
-main .left > div > a,
-main .right > div > a {
-  font-size: 1.25em;
-}
-
 main .left {
   float: left;
   width: 640px;
@@ -3876,5 +3871,13 @@ span.signature {
   footer .footer-wrapper a {
     display: none;
   }
+}
+
+.homePage-allLink {
+  font-size: 1.25em;
+}
+
+.homePage-errorBlock {
+  margin-bottom: 1em;
 }
 

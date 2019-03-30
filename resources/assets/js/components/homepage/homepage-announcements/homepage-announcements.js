@@ -1,5 +1,8 @@
 // Components
-import HomepageAnnouncement from '../homepage-announcement/homepage-announcement';
+import HomepageAnnouncement from '../homepage-announcement/homepage-announcement.vue';
+
+// Services
+import homepageService from '../../../services/homepage';
 
 export default {
   // Imported components
@@ -12,7 +15,8 @@ export default {
    */
   data() {
     return {
-      announcements: []
+      announcements: [],
+      error: null,
     };
   },
 
@@ -22,13 +26,12 @@ export default {
    * @returns {void}
    */
   created() {
-    $.get({
-      url: 'api/announcements',
-      data: {'limitTo': 5}
-    }).done(function (response) {
-      this.announcements = response;
-    }.bind(this)).fail(function (error) {
-      console.log(error);
-    });
+    homepageService.getAnnouncements(5)
+      .then((response) => {
+        this.announcements = response.data;
+      })
+      .catch((err) => {
+        this.error = err.response.statusText;
+      });
   }
 };
