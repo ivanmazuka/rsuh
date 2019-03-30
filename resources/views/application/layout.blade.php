@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="rsuh, iisst, рггу, иинтб, информатика,
         математика, программирование, безопасность">
-    <meta name="description" content="@yield('description')">
+    <meta name="Description" content="@yield('description')">
     <meta name="yandex-verification" content="4f00335489e94bbf">
 
     {{-- Title --}}
