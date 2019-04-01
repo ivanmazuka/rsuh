@@ -1,7 +1,7 @@
 <!-- Template -->
 <template>
     <div class="animated fadeIn newsAnnouncements-post">
-        <a :href="'/announcement/' + announcement.id" class="newsAnnouncements-picture">
+        <a :href="'/announcement/' + announcement.id">
             <div class="newsAnnouncements-picture"
                  :style="{ 'background-image': 'url(/img/' + backgroundImage + ')' }"
             >

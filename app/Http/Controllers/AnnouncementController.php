@@ -3,29 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Announcement;
+use Exception;
+use Illuminate\Contracts\Auth\Factory;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Actions\{
-    Create, Retrieve, Update, Delete
-};
+use Illuminate\View\View;
 
 class AnnouncementController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function index()
-    {
-        $announcements = (new Announcement())->orderBy('id', 'desc')->get();
-        return view('application.announces', compact('posts', 'announcements'));
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param Announcement $announcement
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function show(Announcement $announcement)
     {
@@ -36,27 +26,11 @@ class AnnouncementController extends Controller
      * Create an announcement.
      *
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function create(Request $request)
+    public function create(Request $request): JsonResponse
     {
-        $handler = new Create(new Announcement, $request);
-        return response()->json([
-            'result' => $handler->do()
-        ]);
-    }
-
-    /**
-     * Get all the announcements.
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function retrieve(Request $request)
-    {
-        $handler = new Retrieve(new Announcement, $request);
-
-        return response()->json($handler->do('date', 'asc'));
+        //
     }
 
     /**
@@ -64,52 +38,59 @@ class AnnouncementController extends Controller
      *
      * @param Announcement $announcement
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
 
-    public function update(Announcement $announcement, Request $request)
+    public function update(Announcement $announcement, Request $request): JsonResponse
     {
-        $handler = new Update($announcement, $request);
-        return response()->json([
-            'result' => $handler->do()
-        ]);
+        //
     }
 
     /**
      * Delete the announcement.
      *
      * @param Announcement $announcement
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
+     *
+     * @throws Exception
      */
-    public function delete(Announcement $announcement, Request $request)
+    public function delete(Announcement $announcement): JsonResponse
     {
-        $handler = new Delete($announcement, $request);
-        return response()->json([
-            'result' => $handler->do()
-        ]);
+        if (!auth()->check()) {
+            return response()->json('Access denied', 403);
+        }
+
+        try {
+            return response()->json($announcement->delete());
+        } catch (Exception $exception) {
+            return response()->json(false);
+        }
     }
 
     /**
      * Get posts by API.
      *
-     * @param  int $number
+     * @param int $number Number of posts to fetch.
      * @return mixed
      */
     public function get($number)
     {
-        return Announcement::orderBy('date', 'asc')->limit($number)->get();
+        return Announcement::all()->sortBy('date')->take($number)->values();
     }
 
     /**
      * Get 4 more posts.
      *
-     * @param $id
+     * @param string $date
      * @return mixed
      */
     public function more($date)
     {
-        return Announcement::orderBy('date', 'asc')->where('date', '>', $date)->limit(4)->get();
+        return Announcement::all()
+            ->where('date', '>', $date)
+            ->sortBy('date')
+            ->take(4)
+            ->values();
     }
 
     /**
@@ -117,7 +98,7 @@ class AnnouncementController extends Controller
      *
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return Announcement::all()->count();
     }

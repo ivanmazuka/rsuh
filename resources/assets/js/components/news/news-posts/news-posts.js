@@ -1,4 +1,5 @@
 import NewsPost from '../news-post/news-post.vue';
+import $ from 'jquery';
 
 export default {
   components: {NewsPost},

@@ -7,7 +7,9 @@
 @endsection
 
 @section('content')
+    <div>
     @include('submenu.about')
+    </div>
 
     <main>
         <h1>Об институте</h1>

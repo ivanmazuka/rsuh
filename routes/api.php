@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,22 +18,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/announcements/create','AnnouncementController@create');
-Route::post('/posts/create','PostController@create');
 
+// Posts
 Route::get('/announcements', 'AnnouncementController@retrieve');
-Route::get('/posts', 'PostController@retrieve');
-
-Route::put('/announcements/{announcement}', 'AnnouncementController@update');
-Route::put('/posts/{post}', 'PostController@update');
-
-Route::delete('/announcements/{announcement}', 'AnnouncementController@delete');
-Route::delete('/posts/{post}', 'PostController@delete');
-
 Route::get('/posts/get/{number}', 'PostController@get');
 Route::get('/posts/more/{id}', 'PostController@more');
 Route::get('/posts/count', 'PostController@count');
+Route::post('/posts/create', 'PostController@create');
+Route::put('/posts/{post}', 'PostController@update');
+Route::delete('/posts/{post}', 'PostController@delete');
 
-Route::get('/announcements/get/{date}', 'AnnouncementController@get');
-Route::get('/announcements/more/{id}', 'AnnouncementController@more');
+// Announcements
+Route::get('/posts', 'PostController@retrieve');
+Route::get('/announcements/get/{number}', 'AnnouncementController@get');
+Route::get('/announcements/more/{date}', 'AnnouncementController@more');
 Route::get('/announcements/count', 'AnnouncementController@count');
+Route::post('/announcements/create', 'AnnouncementController@create');
+Route::put('/announcements/{announcement}', 'AnnouncementController@update');
+Route::delete('/announcements/{announcement}', 'AnnouncementController@delete');
