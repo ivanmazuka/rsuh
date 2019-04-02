@@ -4,15 +4,22 @@ moment().format();
 moment.locale('ru');
 
 export default {
-  props: ['announcement'],
-
-  filters: {
-    moment(date) {
-      return moment(date).format('dddd, Do MMMM');
+  /**
+   * Component props.
+   */
+  props: {
+    announcement: {
+      required: true,
+      type: Object,
     }
   },
 
   computed: {
+    /**
+     * Renders the background image URI.
+     *
+     * @returns {string}
+     */
     backgroundImage() {
       if (this.announcement.picture) {
         return this.announcement.picture;
@@ -20,5 +27,17 @@ export default {
 
       return 'default.jpg';
     }
-  }
+  },
+
+  filters: {
+    /**
+     * Formats the date.
+     *
+     * @param {string} date — Date/time timestamp.
+     * @returns {string}
+     */
+    moment(date) {
+      return moment(date).format('dddd, Do MMMM');
+    }
+  },
 };

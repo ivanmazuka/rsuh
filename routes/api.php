@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 // Posts
-Route::get('/announcements', 'AnnouncementController@retrieve');
+Route::get('/posts', 'PostController@retrieve');
 Route::get('/posts/get/{number}', 'PostController@get');
 Route::get('/posts/more/{id}', 'PostController@more');
 Route::get('/posts/count', 'PostController@count');
@@ -29,7 +29,7 @@ Route::put('/posts/{post}', 'PostController@update');
 Route::delete('/posts/{post}', 'PostController@delete');
 
 // Announcements
-Route::get('/posts', 'PostController@retrieve');
+Route::get('/announcements', 'AnnouncementController@retrieve');
 Route::get('/announcements/get/{number}', 'AnnouncementController@get');
 Route::get('/announcements/more/{date}', 'AnnouncementController@more');
 Route::get('/announcements/count', 'AnnouncementController@count');

@@ -2,109 +2,98 @@
 
 namespace App\Http\Controllers;
 
+// Models
 use App\Post;
-use Illuminate\Http\Request;
-use App\Actions\{
-    Create, Retrieve, Update, Delete
-};
 
+// Core
+use Exception;
+
+// Framework
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $posts = (new Post())->orderBy('id', 'desc')->get();
-
-        return view('application.Posts', compact('posts'));
-    }
-
-    /**
      * Display the specified resource.
      *
-     * @param  \App\Post $post
-     * @return \Illuminate\Http\Response
+     * @param Post $post Post instance.
+     * @return View
      */
-    public function show(Post $post)
+    public function show(Post $post): View
     {
         return view('application.post', compact('post'));
     }
 
     public function create(Request $request)
     {
-
-        $handler = new Create(new Post, $request);
-        return response()->json([
-            'result' => $handler->do()
-        ]);
     }
 
     /**
-     * Get all the posts.
+     * Gets all the posts.
      *
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return Collection
      */
-    public function retrieve(Request $request)
+    public function retrieve(): Collection
     {
-        $handler = new Retrieve(new Post, $request);
-        return response()->json($handler->do('created_at', 'desc'));
+        return Post::all()
+            ->sortByDesc('created_at')
+            ->take(9)
+            ->values();
     }
 
-    /**
-     * Update the post.
-     *
-     * @param Post $post
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function update(Post $post, Request $request)
     {
-        $handler = new Update($post, $request);
-        return response()->json([
-            'result' => $handler->do()
-        ]);
     }
 
     /**
      * Delete the post.
      *
-     * @param Post $post
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param Post $post Post instance.
+     * @return JsonResponse
      */
-    public function delete(Post $post, Request $request)
+    public function delete(Post $post): JsonResponse
     {
-        $handler = new Delete($post, $request);
-        return response()->json([
-            'result' => $handler->do()
-        ]);
+        if (!auth()->check()) {
+            return response()->json('Access denied', 403);
+        }
+
+        try {
+            return response()->json($post->delete());
+        } catch (Exception $exception) {
+            return response()->json(false);
+        }
     }
 
     /**
      * Get posts by API.
      *
-     * @param  int $number
-     * @return mixed
+     * @param int $number Number of posts to fetch.
+     * @return Collection
      */
-    public function get($number)
+    public function get(int $number): Collection
     {
-        return Post::orderBy('id', 'desc')->limit($number)->get();
+        return Post::all()
+            ->sortByDesc('id')
+            ->take($number)
+            ->values();
     }
 
     /**
      * Get 4 more posts.
      *
-     * @param $id
-     * @return mixed
+     * @param int $id Last post id.
+     * @return Collection
      */
-    public function more($id)
+    public function more(int $id): Collection
     {
-        return Post::orderBy('id', 'desc')->where('id', '<', $id)->limit(4)->get();
+        return Post::all()
+            ->where('id', '<', $id)
+            ->sortByDesc('id')
+            ->take(4)
+            ->values();
     }
 
     /**
@@ -112,7 +101,7 @@ class PostController extends Controller
      *
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return Post::all()->count();
     }

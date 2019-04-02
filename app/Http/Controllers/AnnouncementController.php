@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+// Models
 use App\Announcement;
+
+// Core
 use Exception;
+
+// Framework
 use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\View\View;
 
 class AnnouncementController extends Controller
@@ -22,37 +28,32 @@ class AnnouncementController extends Controller
         return view('application.announcement', compact('announcement'));
     }
 
-    /**
-     * Create an announcement.
-     *
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function create(Request $request): JsonResponse
+    public function create(Request $request)
     {
-        //
     }
 
     /**
-     * Update the announcement.
+     * Gets all the announcements.
      *
-     * @param Announcement $announcement
-     * @param Request $request
-     * @return JsonResponse
+     * @return Collection
      */
-
-    public function update(Announcement $announcement, Request $request): JsonResponse
+    public function retrieve(): Collection
     {
-        //
+        return Announcement::all()
+            ->sortByDesc('date')
+            ->take(5)
+            ->values();
+    }
+
+    public function update(Announcement $announcement)
+    {
     }
 
     /**
      * Delete the announcement.
      *
-     * @param Announcement $announcement
+     * @param Announcement $announcement Announcement instance.
      * @return JsonResponse
-     *
-     * @throws Exception
      */
     public function delete(Announcement $announcement): JsonResponse
     {
@@ -71,24 +72,27 @@ class AnnouncementController extends Controller
      * Get posts by API.
      *
      * @param int $number Number of posts to fetch.
-     * @return mixed
+     * @return Collection
      */
-    public function get($number)
+    public function get(int $number): Collection
     {
-        return Announcement::all()->sortBy('date')->take($number)->values();
+        return Announcement::all()
+            ->sortByDesc('date')
+            ->take($number)
+            ->values();
     }
 
     /**
      * Get 4 more posts.
      *
-     * @param string $date
-     * @return mixed
+     * @param string $date Date string.
+     * @return Collection
      */
-    public function more($date)
+    public function more($date): Collection
     {
         return Announcement::all()
-            ->where('date', '>', $date)
-            ->sortBy('date')
+            ->where('date', '<', $date)
+            ->sortByDesc('date')
             ->take(4)
             ->values();
     }

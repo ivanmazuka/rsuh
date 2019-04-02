@@ -1,5 +1,5 @@
 import NewsPost from '../news-post/news-post.vue';
-import $ from 'jquery';
+import newsService from '../../../services/news';
 
 export default {
   components: {NewsPost},
@@ -14,31 +14,65 @@ export default {
 
   // Methods
   methods: {
-    getPosts(number) {
-      $.getJSON('/api/posts/get/' + number, function (posts) {
-        this.list = posts;
-        this.latest = posts[posts.length - 1].id;
-      }.bind(this));
+    /**
+     * Gets posts from the database.
+     *
+     * @param offset — Number of posts to fetch.
+     * @return {void}
+     */
+    getPosts(offset) {
+      newsService.getPosts(offset)
+        .then((response) => {
+          const posts = response.data;
+
+          this.list = posts;
+          this.latest = posts[posts.length - 1].id;
+        })
+        .catch((err) => {
+          console.error(err.response.statusText);
+        });
     },
 
+    /**
+     * Counts the number of posts.
+     *
+     * @returns {void}
+     */
     countPosts() {
-      $.get('/api/posts/count', function (result) {
-        this.count = result;
-      }.bind(this));
+      newsService.countPosts()
+        .then((response) => {
+          this.count = response.data;
+        })
+        .catch((err) => {
+          console.error(err.response.statusText);
+        });
     },
 
+    /**
+     * Gets more posts.
+     *
+     * @return {void}
+     */
     morePosts() {
-      $.get('/api/posts/more/' + this.latest, function (posts) {
-        for (let i = 0; i < posts.length; i++) {
-          this.list.push(posts[i]);
-        }
-        this.latest = this.list[this.list.length - 1].id;
-        this.count -= posts.length;
-      }.bind(this));
+      newsService.morePosts(this.latest)
+        .then((response) => {
+          const posts = response.data;
+
+          this.list = [...this.list, ...posts];
+          this.latest = this.list[this.list.length - 1].id;
+          this.count -= posts.length;
+        })
+        .catch((err) => {
+          console.error(err.response.statusText);
+        });
     }
   },
 
-  // Get all the posts
+  /**
+   * React lifecycle hook.
+   *
+   * @returns {void}
+   */
   created() {
     this.getPosts(6);
     this.countPosts();

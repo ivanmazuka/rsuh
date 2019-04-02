@@ -1,8 +1,8 @@
-import NewsAnnouncement from '../news-announcement/news-announcement.vue';
+// Services
+import newsService from '../../../services/news';
 
-// Libs
-import $ from 'jquery';
-import axios from 'axios';
+// Components
+import NewsAnnouncement from '../news-announcement/news-announcement.vue';
 
 export default {
   components: {NewsAnnouncement},
@@ -17,37 +17,65 @@ export default {
 
   // Methods
   methods: {
-    getAnnouncements(number) {
-      axios.get('/api/announcements/get/' + number)
+    /**
+     * Gets announcements from the database.
+     *
+     * @param offset — Number of announcements to fetch.
+     * @return {void}
+     */
+    getAnnouncements(offset) {
+      newsService.getAnnouncements(offset)
         .then((response) => {
           const announcements = response.data;
 
           this.list = announcements;
           this.latest = announcements[announcements.length - 1].date;
+        })
+        .catch((err) => {
+          console.error(err.response.statusText);
         });
     },
 
+    /**
+     * Counts the number of announcements.
+     *
+     * @returns {void}
+     */
     countAnnouncements() {
-      $.get('/api/announcements/count', (result) => {
-        this.count = result;
-      });
+      newsService.countAnnouncements()
+        .then((response) => {
+          this.count = response.data;
+        })
+        .catch((err) => {
+          console.error(err.response.statusText);
+        });
     },
 
+    /**
+     * Gets more announcement.
+     *
+     * @return {void}
+     */
     moreAnnouncements() {
-      $.get('/api/announcements/more/' + this.latest, (announcements) => {
-        console.log(this.latest);
+      newsService.moreAnnouncements(this.latest)
+        .then((response) => {
+          const announcements = response.data;
 
-        for (let i = 0; i < announcements.length; i++) {
-          this.list.push(announcements[i]);
-        }
-
-        this.latest = this.list[this.list.length - 1].date;
-        this.count -= announcements.length;
-      });
+          this.list = [...this.list, ...announcements];
+          this.latest = this.list[this.list.length - 1].date;
+          this.count -= announcements.length;
+        })
+        .catch((err) => {
+          console.error(err.response.statusText);
+        });
     }
   },
 
-  // Get all the posts
+  /**
+   * React lifecycle hook.
+   *
+   * @returns {void}
+   */
   created() {
     this.getAnnouncements(6);
     this.countAnnouncements();

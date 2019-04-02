@@ -41,5 +41,5 @@ export default {
     moment(date) {
       return moment(date).format('dddd, Do MMMM');
     }
-  }
+  },
 };
