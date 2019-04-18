@@ -106,3 +106,6 @@ Route::get('/news/posts', function () {
 Route::get('/news/announcements', function () {
     return view('news.announcements');
 })->name('announcements');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

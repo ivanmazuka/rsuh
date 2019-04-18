@@ -2,18 +2,25 @@
 
 namespace App\Http\Controllers;
 
+// App
 use App\Post;
 use App\Announcement;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+
+// Framework
+use Illuminate\Contracts\View\Factory;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
+    /**
+     * Shows home page.
+     *
+     * @return Factory|View
+     */
     public function index()
     {
-        $posts = Post::orderBy('id', 'desc')->get();
-
-        $announcements = Announcement::orderBy('id', 'desc')->get();
+        $posts = Post::all()->sortByDesc('id')->values();
+        $announcements = Announcement::all()->sortByDesc('id')->values();
 
         return view('application.home', compact('posts', 'announcements'));
     }
