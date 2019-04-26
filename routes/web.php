@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
@@ -60,22 +61,32 @@ Route::get('/applicants/address', function () {
 })->name('address');
 
 
-// Студентам.
+// Студентам
 Route::get('/students', function () {
     return redirect('/students/timetable');
 })->name('students');
+
 Route::get('/students/timetable', function () {
     return view('students.timetable');
 })->name('timetable');
+
 Route::get('/students/graduates', function () {
-    return view('students.graduates');
+    $description = 'Вся информация для студентов-выпускников: контрольные вопросы,
+    образцы форм для выпускной квалификационной работы, методические рекомендации.';
+
+    $description = preg_replace("/\r|\n/", '', $description);
+
+    return view('students.graduates', compact('description'));
 })->name('graduates');
+
 Route::get('/students/welcome', function () {
     return view('students.welcome');
 })->name('welcome');
+
 Route::get('/students/work', function () {
     return view('students.work');
 })->name('work');
+
 Route::get('/students/library', function () {
     return view('students.library');
 })->name('library');
@@ -106,6 +117,7 @@ Route::get('/news/posts', function () {
 Route::get('/news/announcements', function () {
     return view('news.announcements');
 })->name('announcements');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

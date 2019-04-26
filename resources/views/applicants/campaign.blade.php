@@ -1,14 +1,19 @@
+{{-- Parent layout--}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Приемная комиссия')
+
+{{-- Description --}}
 @section('description', 'Информация о работе приемной комиссии.')
 
-@section('title')
-    Приемная комиссия
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.applicants')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.applicants')
+    </div>
 
     <main>
         <span>// ПОСТУПАЮЩИМ /</span>

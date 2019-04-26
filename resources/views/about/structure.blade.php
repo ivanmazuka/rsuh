@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
-@section('description', 'Структурные подразделения института.')
+{{-- Title --}}
+@section('title', 'Структура института')
 
-@section('title')
-    Структура
-@endsection
+{{-- Description --}}
+@section('description', 'Информация о структурных подразделениях института.')
 
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.about')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.about')
+    </div>
 
     <main>
         <span class="bread">// ОБ ИНСТИТУТЕ /</span>
@@ -16,9 +21,9 @@
             <h1>Структура</h1>
         </div>
         <section>
-            
+
             <div class="manager">
-                <div class="image" style="background-image: url('/img/it.jpg')"></div>
+                <div class="image" style="background-image: url({{'/img/it.jpg'}})"></div>
                 <div class="body">
                     <h2>
                         <a href="#">Кафедра Информационных технологий и систем</a>
@@ -28,9 +33,9 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            
+
             <div class="manager">
-                <div class="image" style="background-image: url('/img/is.jpg')"></div>
+                <div class="image" style="background-image: url({{'/img/is.jpg'}})"></div>
                 <div class="body">
                     <h2>
                         <a href="#">Кафедра Информационной безопасности</a>
@@ -40,9 +45,9 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            
+
             <div class="manager">
-                <div class="image" style="background-image: url('/img/cis.jpg')"></div>
+                <div class="image" style="background-image: url({{'/img/cis.jpg'}})"></div>
                 <div class="body">
                     <h2>
                         <a href="#">Кафедра Комплексной защиты информации</a>
@@ -52,9 +57,9 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            
+
             <div class="manager">
-                <div class="image" style="background-image: url('/img/am.jpg')"></div>
+                <div class="image" style="background-image: url({{'/img/am.jpg'}})"></div>
                 <div class="body">
                     <h2>
                         <a href="#">Кафедра Фундаментальной и прикладной математики</a>
@@ -64,9 +69,9 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            
+
             <div class="manager">
-                <div class="image" style="background-image: url('/img/cl.jpg')"></div>
+                <div class="image" style="background-image: url({{'/img/cl.jpg'}})"></div>
                 <div class="body">
                     <h2>
                         <a href="#">Лаборатория компьютерной техники и средств защиты информации</a>

@@ -1,14 +1,19 @@
+{{-- Parent layout--}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Аспирантам')
+
+{{-- Description --}}
 @section('description', 'Информация для аспирантов РГГУ, направления подготовки аспирантуры.')
 
-@section('title')
-    Аспирантам
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.science')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.science')
+    </div>
 
     <main>
         <span class="bread">// НАУКА /</span>
@@ -30,4 +35,5 @@
             <a href="http://aspirant.rggu.ru/" target="_blank">Аспирантура и докторантура РГГУ</a>
         </section>
     </main>
+
 @endsection

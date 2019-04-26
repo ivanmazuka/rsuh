@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Работа со студентами')
+
+{{-- Descrition --}}
 @section('description', 'В РГГУ для помощи студентам существует Управление по работе со студентами.')
 
-@section('title')
-    Работа со студентами
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.students')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.students')
+    </div>
 
     <main>
         <span>// Студентам /</span>
@@ -42,4 +47,5 @@
             <a href="http://student.rggu.ru/" target="_blank">Сайт</a> Управления по работе со студентами.
         </section>
     </main>
+
 @endsection

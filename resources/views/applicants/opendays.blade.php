@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Дни открытых дверей')
+
+{{-- Description --}}
 @section('description', 'Даты проведения дней открытых дверей в институте.')
 
-@section('title')
-    Дни открытых дверей
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.applicants')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.applicants')
+    </div>
 
     <main>
         <span>// ПОСТУПАЮЩИМ /</span>

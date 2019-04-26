@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Библиотека')
+
+{{-- Description --}}
 @section('description', 'Вопросы и ответы о работе библиотеки РГГУ.')
 
-@section('title')
-    Библиотека
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.students')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.students')
+    </div>
 
     <main>
         <span>// Студентам /</span>
@@ -51,4 +56,5 @@
             </p>
         </section>
     </main>
+
 @endsection

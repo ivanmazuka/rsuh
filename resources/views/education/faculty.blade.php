@@ -1,15 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
-@section('description', 'Общая информация о факультете: напраления подготовки,
-    положение, краткая историческая справка.')
+{{-- Description --}}
+@section('description', 'Общая информация о факультете: напраления подготовки, положение, краткая историческая справка.')
 
-@section('title')
-    Факультет
-@endsection
+{{-- Title --}}
+@section('title', 'Факультет')
 
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.education')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.education')
+    </div>
 
     <main>
         <span class="bread">// ОБРАЗОВАНИЕ /</span>
@@ -33,10 +37,10 @@
                 информационной инфраструктуры.
             </p>
             <p>
-                <a href="/about/history">Краткая историческая справка факультета</a>
+                <a href="{{'/about/history'}}">Краткая историческая справка факультета</a>
             </p>
             <p>
-                <a href="/docs/iisst.pdf">Положение о факультете информационных систем и безопасности</a>
+                <a href="{{'/docs/iisst.pdf'}}">Положение о факультете информационных систем и безопасности</a>
             </p>
 
             <h2>Направления подготовки</h2>

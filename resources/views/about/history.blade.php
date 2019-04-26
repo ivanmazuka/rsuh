@@ -1,10 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'История факультета')
+
+{{-- Description --}}
 @section('description', 'История Факультета Защиты Информации (сейчас Факультет Информационных Систем и Безопасности).')
 
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.about')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.about')
+    </div>
 
     <main>
         <span class="bread">// ОБ ИНСТИТУТЕ /</span>

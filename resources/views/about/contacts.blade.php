@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Контакты')
+
+{{-- Description --}}
 @section('description', 'Контакты администрации ИИНТБ.')
 
-@section('title')
-    Контакты
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.about')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.about')
+    </div>
 
     <main>
         <span class="bread">// ОБ ИНСТИТУТЕ /</span>
@@ -17,7 +22,7 @@
         </div>
         <h2>Институт Информационных Наук и Технологий Безопасности</h2>
         <section>
-            <table class="contacts" cellspacing="0">
+            <table class="contacts">
                 <tr>
                     <td>И.О. директора / Декан</td>
                     <td>Роганов Андрей Арьевич</td>

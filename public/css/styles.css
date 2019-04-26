@@ -3386,7 +3386,7 @@ div.wrap-nav {
   background: url("/img/cross.svg") center no-repeat;
 }
 
-.sub-menu {
+nav.main .submenu {
   display: none;
 }
 
@@ -3395,7 +3395,7 @@ h4 {
   font-weight: normal;
 }
 
-.submenu {
+.sitePage-submenu {
   padding-top: 16px;
   padding-bottom: 16px;
   width: 100%;
@@ -3403,52 +3403,52 @@ h4 {
   box-sizing: border-box;
 }
 
-.submenu .active {
+.sitePage-submenu .active {
   text-decoration: underline;
 }
 
-.submenu a {
+.sitePage-submenu a {
   text-decoration: none;
   color: #202020;
 }
 
-.submenu a:hover {
+.sitePage-submenu a:hover {
   text-decoration: underline;
 }
 
-.submenu div {
+.sitePage-submenu nav {
   margin: auto;
   max-width: 1024px;
 }
 
-.submenu div ul {
-  font-size: 14px;
+.sitePage-submenu nav ul {
+  display: flex;
   margin: 0;
   padding: 0;
+  font-size: 14px;
 }
 
-.submenu div li {
-  list-style-type: none;
-  float: left;
+.sitePage-submenu nav li {
   margin-left: 8px;
   padding-right: 8px;
   border-right: thin solid gray;
+  list-style-type: none;
 }
 
-.submenu div li:first-of-type {
+.sitePage-submenu nav li:first-of-type {
   margin-left: 0;
 }
 
-.submenu div li:last-of-type {
+.sitePage-submenu nav li:last-of-type {
   padding-right: 0;
   border-right: 0;
 }
 
 div.header-wrapper,
-nav.submenu div,
+nav.submenu,
 .footer-wrapper {
-  padding-right: 32px;
-  padding-left: 32px;
+  padding-right: 1em;
+  padding-left: 1em;
   box-sizing: border-box;
 }
 
@@ -3646,6 +3646,7 @@ div.manager div.body {
 table.contacts {
   margin-bottom: 64px;
   width: 100%;
+  border-spacing: 0;
 }
 
 table.contacts th,
@@ -3764,7 +3765,7 @@ span.signature {
     padding: 0 16px;
   }
 
-  div.header-wrapper ul:not(.sub-menu) {
+  div.header-wrapper ul:not(.submenu-list) {
     height: 100%;
     padding: 32px 0;
     box-sizing: border-box;
@@ -3775,7 +3776,7 @@ span.signature {
     margin-right: 16px;
   }
 
-  .submenu {
+  .sitePage-submenu {
     display: none;
   }
 
@@ -3803,11 +3804,11 @@ span.signature {
     margin-top: 0;
   }
 
-  .menu nav.unwrapped .sub-menu {
+  .menu nav.unwrapped nav.submenu {
     display: block;
   }
 
-  .menu nav.unwrapped .sub-menu li {
+  .menu nav.unwrapped nav.submenu li {
     margin: 8px 0 0 16px;
     font-size: 1em;
   }

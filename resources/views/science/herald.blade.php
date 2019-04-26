@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Вестник РГГУ')
+
+{{-- Description --}}
 @section('description', 'О вестнике РГГУ и его номера.')
 
-@section('title')
-    Вестник РГГУ
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.science')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.science')
+    </div>
 
     <main>
         <span class="bread">// НАУКА /</span>
@@ -58,4 +63,5 @@
             </ul>
         </section>
     </main>
+
 @endsection

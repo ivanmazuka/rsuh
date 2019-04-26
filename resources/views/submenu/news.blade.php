@@ -1,16 +1,11 @@
 <nav class="submenu">
-    <div>
-        <ul>
+    <ul class="submenu-list">
+        <li>
+            <a class="{{ isActive('posts') }}" href={{'/news/posts'}}>Новости</a>
+        </li>
 
-            <li>
-                <a class="{{ isActive('posts') }}" href="/news/posts">Новости</a>
-            </li>
-
-            <li>
-                <a class="{{ isActive('announcements') }}" href="/news/announcements">Анонсы</a>
-            </li>
-            
-            <div class="clear"></div>
-        </ul>
-    </div>
+        <li>
+            <a class="{{ isActive('announcements') }}" href={{'/news/announcements'}}>Анонсы</a>
+        </li>
+    </ul>
 </nav>

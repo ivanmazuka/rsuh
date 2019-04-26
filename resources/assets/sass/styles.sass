@@ -51,7 +51,7 @@ div.wrap-nav
   background: url('/img/cross.svg') center no-repeat
 
 // Подменю для мобильной верстки
-.sub-menu
+nav.main .submenu
   display: none
 
 h4
@@ -59,7 +59,7 @@ h4
 
   font-weight: normal
 
-.submenu
+.sitePage-submenu
   padding-top: 16px
   padding-bottom: 16px
 
@@ -78,22 +78,26 @@ h4
   a:hover
     text-decoration: underline
 
-  div
+  nav
     margin: auto
 
     max-width: 1024px
 
     ul
-      font-size: 14px
+      display: flex
+
       margin: 0
       padding: 0
 
+      font-size: 14px
+
     li
-      list-style-type: none
-      float: left
       margin-left: 8px
       padding-right: 8px
+
       border-right: thin solid gray
+
+      list-style-type: none
 
     li:first-of-type
       margin-left: 0
@@ -102,9 +106,9 @@ h4
       padding-right: 0
       border-right: 0
 
-div.header-wrapper, nav.submenu div, .footer-wrapper
-  padding-right: 32px
-  padding-left: 32px
+div.header-wrapper, nav.submenu, .footer-wrapper
+  padding-right: 1em
+  padding-left: 1em
 
   box-sizing: border-box
 
@@ -290,6 +294,8 @@ table.contacts
   margin-bottom: 64px
 
   width: 100%
+
+  border-spacing: 0
 
   th, td
     padding: 32px 0

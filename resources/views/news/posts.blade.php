@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Новости')
+
+{{-- Description --}}
 @section('description', 'Список всех новостей сайта.')
 
-@section('title')
-    Новости
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.news')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.news')
+    </div>
 
     <main id="app">
         <span>// ИНФОРМАЦИЯ /</span>

@@ -1,20 +1,26 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Поступающим')
+
+{{-- Description --}}
 @section('description', 'Информация для поступающих в институт.')
 
-@section('title')
-    Поступающим
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.applicants')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.applicants')
+    </div>
 
     <main>
         <h1>Поступающим</h1>
         <section>
-            <h2>Мы рады Вас видеть в <a href="/applicants/opendays">дни открытых дверей</a> и каждый день после поступления!</h2>
-            <img src="/img/students.jpg">
+            <h2>Мы рады Вас видеть в <a href="{{'/applicants/opendays'}}">дни открытых дверей</a> и каждый день после
+                поступления!</h2>
+            <img alt="Студенты" src="{{'/img/students.jpg'}}">
             <p>
                 Обучение в Институте предоставляет Вам уникальную возможность получить двухуровневое высшее образование
                 и стать профессионалами в области прикладной информатики, прикладной математики и информационной

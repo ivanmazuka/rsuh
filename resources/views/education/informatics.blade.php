@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Прикладная информатика')
+
+{{-- Description --}}
 @section('description', 'Информация о направлении подготовки 09.03.03 «Прикладная информатика»')
 
-@section('title')
-    Прикладная информатика
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.education')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.education')
+    </div>
 
     <main>
         <span class="bread">// ОБРАЗОВАНИЕ /</span>

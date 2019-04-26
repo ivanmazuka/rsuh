@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Информационная безопасность')
+
+{{-- Description --}}
 @section('description', 'Информация о направлении подготовки 10.03.01 «Информационная безопасность»')
 
-@section('title')
-    Информационная безопасность
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.education')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.education')
+    </div>
 
     <main>
         <span class="bread">// ОБРАЗОВАНИЕ /</span>
@@ -34,4 +39,5 @@
             </p>
         </section>
     </main>
+
 @endsection

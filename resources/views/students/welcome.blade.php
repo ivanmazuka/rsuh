@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Первокурсникам')
+
+{{-- Description --}}
 @section('description', 'Руководство для первокурсников. Что надо сделать после поступления в первую очередь?')
 
-@section('title')
-    Первокурсникам
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.students')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.students')
+    </div>
 
     <main>
         <span>// Студентам /</span>
@@ -41,4 +46,5 @@
             </p>
         </section>
     </main>
+
 @endsection

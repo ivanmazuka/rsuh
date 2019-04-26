@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Обращение к поступающим')
+
+{{-- Description --}}
 @section('description', 'Обращение к поступающим в Институт Информационных Наук и Технологий Безопасности.')
 
-@section('title')
-    Обращение к поступающим
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.applicants')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.applicants')
+    </div>
 
     <main>
         <span>// ПОСТУПАЮЩИМ /</span>

@@ -1,14 +1,19 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Расписание')
+
+{{-- Description --}}
 @section('description', 'Расписания занятий ИИНТБ.')
 
-@section('title')
-    Расписание
-@endsection
-
+{{-- Content --}}
 @section('content')
 
-    @include('submenu.students')
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.students')
+    </div>
 
     <main>
         <span>// Студентам /</span>
@@ -25,15 +30,16 @@
                         href="mailto:eai.blinova@rggu.ru">blinova@rggu.ru</a>
             </p>
             <p>
-                <a href="/docs/practices.pdf" target="_blank">График проведения практик</a>
+                <a href="{{'/docs/practices.pdf'}}" target="_blank">График проведения практик</a>
             </p>
             <p>
-                <a href="/docs/timetable.pdf" target="_blank">График учебного процесса ИИНТБ</a>
+                <a href="{{'/docs/timetable.pdf'}}" target="_blank">График учебного процесса ИИНТБ</a>
             </p>
             <p>
-                <a href="/docs/comissions.pdf" target="_blank">Расписание пересдач с комиссией промежуточной аттестации
-                    осеннего семестра 2016-2017 учебного года</a>
+                <a href="{{'/docs/comissions.pdf'}}" target="_blank">Расписание пересдач с комиссией промежуточной
+                    аттестации осеннего семестра 2016-2017 учебного года</a>
             </p>
         </section>
     </main>
+
 @endsection

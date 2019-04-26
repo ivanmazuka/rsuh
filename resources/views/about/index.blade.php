@@ -1,21 +1,25 @@
+{{-- Parent layout --}}
 @extends('application.layout')
 
+{{-- Title --}}
+@section('title', 'Об институте')
+
+{{-- Description --}}
 @section('description', 'Коротко об институте: структура, перспективы трудоустройства и общая инфформация.')
 
-@section('title')
-    Об институте
-@endsection
-
+{{-- Content --}}
 @section('content')
-    <div>
-    @include('submenu.about')
+
+    {{-- Submenu --}}
+    <div class="sitePage-submenu">
+        @include('submenu.about')
     </div>
 
     <main>
         <h1>Об институте</h1>
         <section>
             <h2>Институт информационных наук и технологий безопасности</h2>
-            <img src="/img/iintb.jpg">
+            <img alt="ИИНТБ" src="{{'/img/iintb.jpg'}}">
 
             <p>
                 Институт имеет высококвалифицированный профессорско-преподавательский состав, отдельное здание,
@@ -33,12 +37,12 @@
             </p>
             <ul>
                 <li>
-                    <a href="/education/faculty">
+                    <a href="{{'/education/faculty'}}">
                         Факультет информационных систем и безопасности
                     </a>
                 </li>
                 <li>
-                    <a href="/structure/laboratory">
+                    <a href="{{'/structure/laboratory'}}">
                         Лаборатория компьютерной техники и средств защиты информации
                     </a>
                 </li>
@@ -70,7 +74,7 @@
             </p>
 
             <p>
-                <a href="/docs/iisst.pdf">Положение об ИИНТБ</a>
+                <a href="{{'/docs/iisst.pdf'}}">Положение об ИИНТБ</a>
             </p>
         </section>
     </main>
